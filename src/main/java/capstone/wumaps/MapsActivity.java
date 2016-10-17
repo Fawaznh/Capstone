@@ -84,6 +84,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .addApi(LocationServices.API)
                 .build();
         mGoogleApiClient.connect();
+        Log.i(TAG, "just a test");
     }
 
     @Override
