@@ -1,0 +1,32 @@
+<resources>
+    <string-array name="categories">
+        <item>Entrees</item>
+        <item>Side Dishes</item>
+        <item>Beverages</item>
+        <item>Desserts</item>
+    </string-array>
+    <string-array name="entrees">
+        <item>Steak ($18)</item>
+        <item>Fish ($15)</item>
+        <item>Chicken ($12)</item>
+        <item>Vegetarian ($11)</item>
+    </string-array>
+    <string-array name="sides">
+        <item>Baked Potato ($2)</item>
+        <item>Salad ($3)</item>
+        <item>Baked Beans ($2)</item>
+        <item>French Fries ($4)</item>
+    </string-array>
+    <string-array name="beverages">
+        <item>Water (Free)</item>
+        <item>Milk ($2)</item>
+        <item>Iced Tea ($1)</item>
+        <item>Wine ($5)</item>
+    </string-array>
+    <string-array name="desserts">
+        <item>Ice Cream ($3)</item>
+        <item>Cake ($5)</item>
+        <item>Pudding ($2)</item>
+        <item>Gluten Free ($4)</item>
+    </string-array>
+</resources>

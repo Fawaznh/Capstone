@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/activity_find_class"
+    tools:context="capstone.wumaps.FindClassActivity">
+
+
+    <Button
+        android:text="Select Program"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/findDegreeProgramButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/editButton"
+        android:layout_toStartOf="@+id/editButton" />
+    <Button
+        android:text="Select  Course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/findCourseLevelButton"
+        android:layout_below="@+id/findDegreeProgramButton"
+        android:layout_toLeftOf="@+id/editButton"
+        android:layout_toStartOf="@+id/editButton" />
+    <Button
+        android:text="Select a Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/findTimesButton"
+        android:layout_below="@+id/findCourseLevelButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/editButton"
+        android:layout_toStartOf="@+id/editButton" />
+
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <Button
+        android:text="Remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/removeButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:text="Edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:text="Show My Courses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showMyCoursesButton"
+        android:layout_above="@+id/editButton"
+        android:layout_centerHorizontal="true" />
+
+
+
+</RelativeLayout>

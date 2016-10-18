@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<buildings>
+    <building name = "Mabee Library" abbr = "MA" location = "39.033747,-95.702322">
+        <entrance>39.033924,-95.702263</entrance>
+    </building>
+    <building name = "Rec Center" abbr = "SR" location = "39.032313,-95.700788">
+        <entrance>39.032431,-95.700976</entrance>
+    </building>
+    <building name = "Art Building" abbr = "AB" location = "39.032402,-95.701571">
+        <entrance>39.032295,-95.701399</entrance>
+        <entrance>39.032498,-95.701690</entrance>
+    </building>
+    <building name = "KBI Forensics" abbr = "KBI" location = "39.032410,-95.697564">
+        <entrance>39.032675,-95.697776</entrance>
+    </building>
+    <building name = "Falley Field" abbr = "FF" location = "39.031114,-95.703242">
+        <entrance>39.031483,-95.703706</entrance>
+    </building>
+    <building name = "Washburn Village" abbr = "WV" location = "39.031129,-95.704874">
+        <entrance>39.031632,-95.704309</entrance>
+        <entrance>39.031632,-95.704309</entrance>
+    </building>
+    <building name = "Petro Allied Health" abbr = "PC" location = "39.033646,-95.699049">
+        <entrance>39.033410,-95.698595</entrance>
+        <entrance>39.033978,-95.698511</entrance>
+        <entrance>39.034003,-95.699480</entrance>
+        <entrance>39.033380,-95.699462</entrance>
+    </building>
+    <building name = "Stoffer" abbr = "ST" location = "39.035968,-95.698603">
+        <entrance>39.035904,-95.699010</entrance>
+        <entrance>39.036117,-95.699229</entrance>
+        <entrance>39.036176,-95.698544</entrance>
+        <entrance>39.035984,-95.698131</entrance>
+    </building>
+    <building name = "Carnegie" abbr = "CA" location = "39.035052,-95.699930">
+        <entrance>39.035156,-95.699941</entrance>
+        <entrance>39.034964,-95.699820</entrance>
+    </building>
+    <building name = "Bennett" abbr = "BT" location = "39.035756,-95.699699">
+        <entrance>39.035845,-95.700016</entrance>
+        <entrance>39.035845,-95.699370</entrance>
+    </building>
+    <building name = "Morgan" abbr = "MO" location = "39.035828,-95.701297">
+        <entrance>39.035847,-95.700661</entrance>
+        <entrance>39.035507,-95.700746</entrance>
+        <entrance>39.035521,-95.701168</entrance>
+        <entrance>39.035509,-95.701556</entrance>
+        <entrance>39.035830,-95.701662</entrance>
+        <entrance>39.036198,-95.701242</entrance>
+    </building>
+    <building name = "Garvey" abbr = "GC" location = "39.036123,-95.702446">
+        <entrance>39.035944,-95.702179</entrance>
+        <entrance>39.035857,-95.702761</entrance>
+    </building>
+    <building name = "Memorial Union" abbr = "UN" location = "39.035041,-95.702324">
+        <entrance>39.035506,-95.702301</entrance>
+        <entrance>39.035440,-95.702149</entrance>
+        <entrance>39.035134,-95.702095</entrance>
+    </building>
+    <building name = "Law School" abbr = "LA" location = "39.035390,-95.705430">
+        <entrance>39.035745,-95.705369</entrance>
+        <entrance>39.035453,-95.705090</entrance>
+    </building>
+    <building name = "Food Court" abbr = "SC" location = "39.035258,-95.702774">
+        <entrance>39.035407,-95.703028</entrance>
+        <entrance>39.035240,-95.702976</entrance>
+        <entrance>39.035406,-95.702743</entrance>
+    </building>
+    <building name = "Henderson" abbr = "HC" location = "39.033575,-95.703169">
+        <entrance>39.033802,-95.702949</entrance>
+        <entrance>39.033787,-95.703391</entrance>
+        <entrance>39.033439,-95.703451</entrance>
+    </building>
+    <building name = "Benton" abbr = "BE" location = "39.034282,-95.703344">
+        <entrance>39.034199,-95.703197</entrance>
+        <entrance>39.034422,-95.703037</entrance>
+    </building>
+    <building name = "Living Learning Center" abbr = "LLC" location = "39.035273,-95.703514">
+        <entrance>39.035231,-95.703554</entrance>
+        <entrance>39.035167,-95.703318</entrance>
+    </building>
+    <building name = "Mulvane Art Museum" abbr = "MU" location = "39.036045,-95.702911">
+        <entrance>39.035983, -95.703011</entrance>
+    </building>
+    <building name = "White Concert Hall" abbr = "WC" location = "39.036491,-95.702810">
+        <entrance>39.036443, -95.703138</entrance>
+    </building>
+    <building name = "Alumni Center" abbr = "BTAC" location = "39.036453,-95.703695">
+        <entrance>39.036441,-95.703494</entrance>
+        <entrance>39.036270,-95.703666</entrance>
+    </building>
+    <building name = "International House" abbr = "IC" location = "39.034847,-95.702829">
+        <entrance>39.034766,-95.702814</entrance>
+    </building>
+    <building name = "Carole Chapel" abbr = "CH" location = "39.034229,-95.702758">
+        <entrance>39.034214,-95.702657</entrance>
+    </building>
+    <building name = "Yager Stadium" abbr = "YS" location = "39.033505,-95.700956">
+        <entrance>39.033538,-95.701718</entrance>
+    </building>
+    <building name = "Whiting FieldHouse" abbr = "WFH" location = "39.034350,-95.698945">
+        <entrance>39.034712,-95.698997</entrance>
+        <entrance>39.034712,-95.698997</entrance>
+        <entrance>39.034712,-95.698997</entrance>
+    </building>
+</buildings>
