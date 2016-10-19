@@ -1,6 +1,7 @@
 package capstone.wumaps;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -18,7 +19,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -47,7 +47,7 @@ import android.content.Context;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
+public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         GoogleMap.OnMarkerClickListener{
@@ -59,24 +59,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker mCurrLocationMarker;
     private ArrayList<Marker> buildings = new ArrayList<>();
     private HashMap<String, ArrayList<LatLng>> entrances;
-    private String[] myBuildings;
-    private Button selectBuildingButton;
-    private String selection;
     Polyline line;
+    private String buildName;
+    private String roomNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_my_class_maps);
+        Intent intent=getIntent();
+        Bundle extrasBundle=intent.getExtras();
+        if(!extrasBundle.isEmpty())
+        {
+            buildName=extrasBundle.getString("buildingName","none");
+            roomNum=extrasBundle.getString("roomNumber","none");
+        }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        this.selectBuildingButton = (Button) findViewById(R.id.selectBuildingButton);
-        this.selectBuildingButton.setOnClickListener(new MyListener());
-        //this.displayBuildingsTextView = (TextView) findViewById(R.id.displayBuildingTextView);
-        populateBuildings();
+
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -84,6 +87,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .addApi(LocationServices.API)
                 .build();
         mGoogleApiClient.connect();
+
     }
 
     @Override
@@ -113,6 +117,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(campus, 0));
+
     }
 
     @Override
@@ -181,6 +186,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             String url = getDirectionsUrl(latLng, getClosestEntrance(marker, latLng));
             DownloadTask downloadTask = new DownloadTask();
             downloadTask.execute(url);
+            if(!buildName.equals("none")) {
+                findMyClass(buildName, roomNum);
+            }
         }
     }
 
@@ -504,6 +512,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return poly;
         }
     }
+    public void findMyClass(String buildingName, String roomNumber)
+    {
+        for (int i = 0; i < buildings.size(); i++) {
+            if ((buildingName).equals(buildings.get(i).getTitle())) {
+                last=buildings.get(i);
+                onMarkerClick(buildings.get(i));
+            }
+
+        }
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -519,74 +537,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         return super.onOptionsItemSelected(item);
     }
-    class MyListener implements View.OnClickListener {
 
-        public void onClick(View v) {
-
-
-            doPopup(v);
-        }
-    }
-    private void doPopup(View v) {
-        PopupMenu popupMenu = new PopupMenu(this,v);
-        for(int i=1;i<myBuildings.length;i++) {
-            popupMenu.getMenu().add(Menu.NONE, i, i, myBuildings[i]);
-        }
-
-        popupMenu.setOnMenuItemClickListener(
-                new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        if(item.getItemId()!=-1) {
-                            for (int i = 0; i < myBuildings.length; i++) {
-                                if (((String) item.getTitle()).equals(buildings.get(i).getTitle())) {
-                                    last=buildings.get(i);
-                                    onMarkerClick(buildings.get(i));
-                                }
-
-                            }
-                            return true;
-                        }else{
-                            return false;
-                        }
-
-
-                    }
-                }
-        );
-        //MenuInflater inflater = popupMenu.getMenuInflater();
-        //inflater.inflate(R.menu.my_popup_menu, popupMenu.getMenu());
-        popupMenu.show();
-        //for(int i=0;i<buildings.length;i++)
-        //this.displayBuildingsTextView.append(this.buildings[i] + "\n");
-
-    }
-    private void populateBuildings() {
-        myBuildings = new String [25];
-        myBuildings[0] = "Alumni Center";
-        myBuildings[1] = "Art Building";
-        myBuildings[2] = "Bennett";
-        myBuildings[3] = "Benton";
-        myBuildings[4] = "Carnegie";
-        myBuildings[5] = "Carole Chapel";
-        myBuildings[6] = "Falley Field";
-        myBuildings[7] = "Food Court";
-        myBuildings[8] = "Garvey";
-        myBuildings[9] = "Henderson";
-        myBuildings[10] = "International House";
-        myBuildings[11] = "KBI Forensics";
-        myBuildings[12] = "Law School";
-        myBuildings[13] = "Living Learning Center";
-        myBuildings[14] = "Mabee Library";
-        myBuildings[15] = "Memorial Union";
-        myBuildings[16] = "Morgan";
-        myBuildings[17] = "Mulvane Art Museum";
-        myBuildings[18] = "Petro Allied Health";
-        myBuildings[19] = "Rec Center";
-        myBuildings[20] = "Stoffer";
-        myBuildings[21] = "Washburn Village";
-        myBuildings[22] = "White Concert Hall";
-        myBuildings[23] = "Whiting Stadium";
-        myBuildings[24] = "Yager Stadium";
-    }
 }
