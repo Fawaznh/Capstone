@@ -106,6 +106,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setIndoorEnabled(false);
         mMap.getUiSettings().setMapToolbarEnabled(false);
         populate();
+        Log.i(TAG, "test");
     }
 
     @Override
