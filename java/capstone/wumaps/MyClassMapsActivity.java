@@ -68,8 +68,7 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_class_maps);
-        Intent intent=getIntent();
-        Bundle extrasBundle=intent.getExtras();
+        Bundle extrasBundle= getIntent().getExtras();
         if(!extrasBundle.isEmpty())
         {
             buildName=extrasBundle.getString("buildingName","none");
@@ -110,6 +109,9 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
         mMap.setIndoorEnabled(false);
         mMap.getUiSettings().setMapToolbarEnabled(false);
         populate();
+        if(!buildName.equals("none")) {
+            findMyClass(buildName, roomNum);
+        }
     }
 
     @Override
@@ -175,6 +177,7 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
                 == PackageManager.PERMISSION_GRANTED)
         {
             Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+            Log.i("!!!!!!!!!", location.toString());
             LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(latLng);
@@ -186,9 +189,6 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
             String url = getDirectionsUrl(latLng, getClosestEntrance(marker, latLng));
             DownloadTask downloadTask = new DownloadTask();
             downloadTask.execute(url);
-            if(!buildName.equals("none")) {
-                findMyClass(buildName, roomNum);
-            }
         }
     }
 
@@ -514,12 +514,16 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
     }
     public void findMyClass(String buildingName, String roomNumber)
     {
+        Log.i("!!!!!!!!!", "Made it to FindMyClass");
         for (int i = 0; i < buildings.size(); i++) {
-            if ((buildingName).equals(buildings.get(i).getTitle())) {
-                last=buildings.get(i);
+            /**
+            if ((buildingName).equals(buildings.get(i).getTag())) {
+                //createPath(buildings.get(i));
+            } **/
+            if (buildings.get(i).getTag().toString().equals(buildingName.trim())) {
+                last = buildings.get(i);
                 onMarkerClick(buildings.get(i));
             }
-
         }
     }
 

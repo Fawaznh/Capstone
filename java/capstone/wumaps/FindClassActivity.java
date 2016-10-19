@@ -391,11 +391,11 @@ public class FindClassActivity extends AppCompatActivity {
                         String roomNumberToSend="none";
                         if (item.getItemId() != -1) {
                             for (int i = 0; i < myCourses.size(); i++) {
-                                StringTokenizer tokens = new StringTokenizer((String)item.getTitle(), " , ");
+                                StringTokenizer tokens = new StringTokenizer((String)item.getTitle(), ",");
 
-                                String first = tokens.nextToken();
-                                String second = tokens.nextToken();
-                                String third = tokens.nextToken();
+                                String first = tokens.nextToken().trim();
+                                String second = tokens.nextToken().trim();
+                                String third = tokens.nextToken().trim();
 
 
 
@@ -407,6 +407,7 @@ public class FindClassActivity extends AppCompatActivity {
                                                 for (int j = 0; i < course.getSections().size(); i++) {
                                                     if ((course.getSections().get(j).days+" "+ course.getSections().get(j).startTime).equals(third)) {
                                                         buildNameToSend=course.getSections().get(i).bldg;
+                                                        Log.i("!!!!!!!!!!!", buildNameToSend);
                                                         roomNumberToSend=course.getSections().get(i).room;
                                                     }
                                                 }
