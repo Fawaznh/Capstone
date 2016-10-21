@@ -109,9 +109,7 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
         mMap.setIndoorEnabled(false);
         mMap.getUiSettings().setMapToolbarEnabled(false);
         populate();
-        if(!buildName.equals("none")) {
-            findMyClass(buildName, roomNum);
-        }
+
     }
 
     @Override
@@ -119,7 +117,8 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
     {
         LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(campus, 0));
-
+        if(!buildName.equals("none"))
+            findMyClass(buildName, roomNum);
     }
 
     @Override

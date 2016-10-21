@@ -69,13 +69,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         this.selectBuildingButton = (Button) findViewById(R.id.selectBuildingButton);
         this.selectBuildingButton.setOnClickListener(new MyListener());
-        //this.displayBuildingsTextView = (TextView) findViewById(R.id.displayBuildingTextView);
         populateBuildings();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
