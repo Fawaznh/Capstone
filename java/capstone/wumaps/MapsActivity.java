@@ -22,12 +22,16 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -50,11 +54,13 @@ import org.w3c.dom.*;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        GoogleMap.OnMarkerClickListener{
+        GoogleMap.OnMarkerClickListener,
+        LocationListener {
 
     private GoogleMap mMap;
     private Marker last;
     private GoogleApiClient mGoogleApiClient;
+    private CameraPosition pos;
     public static final String TAG = MapsActivity.class.getSimpleName();
     private Marker mCurrLocationMarker;
     private ArrayList<Marker> buildings = new ArrayList<>();
@@ -63,6 +69,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Button selectBuildingButton;
     private String selection;
     Polyline line;
+    private boolean following;
+    private LocationRequest mLocationRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -82,6 +90,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .addApi(LocationServices.API)
                 .build();
         mGoogleApiClient.connect();
+
+        mLocationRequest = LocationRequest.create()
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setInterval(5 * 1000)
+                .setFastestInterval(1 * 1000);
+
     }
 
     @Override
@@ -104,6 +118,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setIndoorEnabled(false);
         mMap.getUiSettings().setMapToolbarEnabled(false);
         populate();
+
     }
 
     @Override
@@ -111,6 +126,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(campus, 0));
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED)
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
     }
 
     @Override
@@ -125,7 +144,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         super.onPause();
         if (mGoogleApiClient.isConnected())
+        {
+            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
             mGoogleApiClient.disconnect();
+        }
         if(line != null)
             line.remove();
         if(mCurrLocationMarker != null)
@@ -154,6 +176,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if(mCurrLocationMarker != null)
                 mCurrLocationMarker.remove();
             createPath(marker);
+            following = true;
             return true;
         }
         last = marker;
@@ -169,13 +192,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-            MarkerOptions markerOptions = new MarkerOptions();
-            markerOptions.position(latLng);
-            markerOptions.title("Current Position");
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-            mCurrLocationMarker = mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
-            //String url = getDirectionsUrl(latLng, getClosestEntrance(marker, latLng));
             String url = getDirectionsUrl(latLng, getClosestEntrance(marker, latLng));
             DownloadTask downloadTask = new DownloadTask();
             downloadTask.execute(url);
@@ -308,6 +325,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             urlConnection.disconnect();
         }
         return data;
+    }
+
+    @Override
+    public void onLocationChanged(Location location)
+    {
+        if(following)
+        {
+            pos = new CameraPosition.Builder()
+                    .target(new LatLng(location.getLatitude(), location.getLongitude()))
+                    .zoom(20)
+                    .tilt(75)
+                    .bearing(location.getBearing())
+                    .build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+        }
     }
 
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> >
