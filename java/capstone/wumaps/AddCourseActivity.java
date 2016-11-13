@@ -119,7 +119,6 @@ public class AddCourseActivity extends AppCompatActivity
         cancelBtn.setOnClickListener(btnListener);
 
 
-
         AdapterView.OnItemSelectedListener itemListener = new AdapterView.OnItemSelectedListener()
         {
             @Override
@@ -128,7 +127,6 @@ public class AddCourseActivity extends AppCompatActivity
 
                 if(parent.getId() == R.id.programSpinner)
                 {
-
                     String selectedProg = programsList.get(position);
                     selectedProgram = wuc.getDepartment(selectedProg);
 
@@ -203,7 +201,6 @@ public class AddCourseActivity extends AppCompatActivity
         {
             secSpinner.setEnabled(true);
         }
-
     }
 
     @Override
