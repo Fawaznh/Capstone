@@ -24,7 +24,6 @@ import java.util.ArrayList;
 
 public class MyCoursesActivity extends AppCompatActivity
 {
-
     private Button removeBtn,doneBtn,cancelBtn,addBtn;
     private ListView listView;
     private CourseViewAdapter courseViewAdapter;
@@ -120,12 +119,9 @@ public class MyCoursesActivity extends AppCompatActivity
             viewHolder.checkbox1.setChecked(mycourse.selected);
             viewHolder.checkbox1.setTag(mycourse);
 
-
-
             if(inEditMode)
             {
                 viewHolder.checkbox1.setVisibility(View.VISIBLE);
-
             }
             else
             {
@@ -176,7 +172,6 @@ public class MyCoursesActivity extends AppCompatActivity
 
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -201,9 +196,6 @@ public class MyCoursesActivity extends AppCompatActivity
         cancelBtn = (Button)findViewById(R.id.cancelBtn);
 
 
-
-
-
         courseViewAdapter = new CourseViewAdapter(this,android.R.layout.activity_list_item,myCourses);
         courseViewAdapter.notifyDataSetChanged();
 
@@ -220,9 +212,6 @@ public class MyCoursesActivity extends AppCompatActivity
         });
 
 
-
-
-
         View.OnClickListener remBtnListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -236,7 +225,6 @@ public class MyCoursesActivity extends AppCompatActivity
                         removeBtn.setVisibility(View.GONE);
                         doneBtn.setVisibility(View.VISIBLE);
                         cancelBtn.setVisibility(View.VISIBLE);
-
                     }
                 }
             }
@@ -315,8 +303,6 @@ public class MyCoursesActivity extends AppCompatActivity
         courseViewAdapter = new CourseViewAdapter(this,android.R.layout.activity_list_item,myCourses);
         listView.setAdapter(courseViewAdapter);
     }
-
-
 
     private void onCourseSelected(int position)
     {
