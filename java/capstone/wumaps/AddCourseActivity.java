@@ -42,7 +42,6 @@ public class AddCourseActivity extends AppCompatActivity
         public SpinnerAdapter(Activity context, ArrayList<String> list)
         {
             super(context, android.R.layout.simple_spinner_dropdown_item, list);
-
         }
         @Override
         public View getDropDownView(int position, View convertView, ViewGroup parent)
@@ -57,7 +56,6 @@ public class AddCourseActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addcourse);
 
@@ -66,10 +64,8 @@ public class AddCourseActivity extends AppCompatActivity
         myCourses= sharedPrefs.load();
 
 
-
         addBtn = (Button)findViewById(R.id.addBtn);
         cancelBtn = (Button)findViewById(R.id.cancelBtn2);
-
 
          progSpinner = (Spinner) findViewById(R.id.programSpinner);
          courseSpinner = (Spinner) findViewById(R.id.courseSpinner);
@@ -82,12 +78,9 @@ public class AddCourseActivity extends AppCompatActivity
         sectionList = new ArrayList<>();
         programsList.addAll(wuc.getDepList());
 
-
-
         customAdapter1 = new SpinnerAdapter(this, programsList);
         customAdapter2 = new SpinnerAdapter(this, courseList);
         customAdapter3 = new SpinnerAdapter(this, sectionList);
-
 
         View.OnClickListener btnListener = new View.OnClickListener()
         {
