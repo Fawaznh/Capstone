@@ -17,7 +17,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="WUMaps"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="WUMaps" >
@@ -43,7 +43,7 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
-           <!-- android:value="AIzaSyAmrVwO40t70TjVSKj51Z3VnNt71IDpGdw" /> -->
+        <!-- android:value="AIzaSyAmrVwO40t70TjVSKj51Z3VnNt71IDpGdw" /> -->
 
 
     </application>
