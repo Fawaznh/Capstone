@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             if(v.getId()==R.id.addClassButton) {
-                Intent intent = new Intent(v.getContext(), FindClassActivity.class);
+                Intent intent = new Intent(v.getContext(), MyCoursesActivity.class);
                 //EditText editText = (EditText) findViewById(R.id.edit_message);
                 //String message = editText.getText().toString();
                 //intent.putExtra(EXTRA_MESSAGE, message);

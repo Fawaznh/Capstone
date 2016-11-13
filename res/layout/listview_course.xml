@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:background="#666666">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/courseNumber"
+            android:layout_weight="1"
+            tools:text="CM111"
+            android:fontFamily="sans-serif"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:lines="2"
+            android:maxLines="10"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/courseName"
+            tools:text="Intro to structured"
+            android:textSize="18sp"
+            android:maxLines="1"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/courseLocation"
+            tools:text="MO152"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="11 AM - 12:30 PM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/courseTime"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:layout_marginTop="15dp">
+
+        <CheckBox
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:focusable="false"
+            android:buttonTint="#3b79ff"
+            android:textColorLink="?attr/actionMenuTextColor" />
+    </LinearLayout>
+
+</LinearLayout>
