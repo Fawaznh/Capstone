@@ -28,7 +28,6 @@ public class WUCourses
     {
         try
         {
-            // File  xmlFile = new File(filename);
             InputStream xmlFile = context.getAssets().open(filename);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -74,7 +73,6 @@ public class WUCourses
                         addSection(dep,newCourse,newSect);
 
                     }
-
                 }
 
             }
