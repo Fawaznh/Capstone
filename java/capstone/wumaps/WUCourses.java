@@ -10,25 +10,91 @@ import org.w3c.dom.NodeList;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-/**
- * Created by Dan on 10/11/2016.
- */
+
 public class WUCourses
 {
-    private HashMap<Department, ArrayList<WUCourse>> depMap = new HashMap<>();
 
-    public WUCourses(Context context,String filename)
+
+    private HashMap<String, HashMap<Department, ArrayList<Course>>> depMap = new HashMap<>();
+
+    public static class Section
     {
+        public String sect;
+        public String crn;
+        public String startTime,endTime;
+        public String days;
+        public String bldg;
+        public String room;
+
+        public Section(String sect, String crn, String startTime, String endTime,
+                       String days, String bldg, String room)
+        {
+            this.sect = sect;
+            this.crn = crn;
+            this.startTime = startTime;
+            this.endTime = endTime;
+            this.days = days;
+            this.bldg = bldg;
+            this.room = room;
+        }
+    }
+
+    public static class Course
+    {
+        public String name;
+        public String number;
+
+        private ArrayList<Section> sections = new ArrayList<Section>();
+        public Course(String name, String number)
+        {
+            this.name = name;
+            this.number = number;
+        }
+        public void addSection(Section section)
+        {
+            sections.add(section);
+        }
+
+        public String toString()
+        {
+            return name;
+        }
+
+        public ArrayList<Section> getSections()
+        {
+            return sections;
+        }
+    }
+
+    public static class Department
+    {
+        public String name;
+        public String abbr;
+        public Department(String name, String abbr)
+        {
+            this.name = name;
+            this.abbr = abbr;
+        }
+
+        @Override
+        public String toString()
+        {
+            return name;
+        }
+    }
+
+    public WUCourses(Context context, String filename)
+    {
+        depMap = new HashMap<String, HashMap<Department, ArrayList<Course>>>();
+
         try
         {
-            // File  xmlFile = new File(filename);
             InputStream xmlFile = context.getAssets().open(filename);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -56,7 +122,7 @@ public class WUCourses
                     String cName = eCourse.getAttribute("name");
                     String cNum = eCourse.getAttribute("number");
 
-                    WUCourse newCourse = new WUCourse(cName,cNum);
+                    Course newCourse = new Course(cName,cNum);
                     // add course to list
                     addCourse(dep, newCourse);
 
@@ -74,9 +140,7 @@ public class WUCourses
                         addSection(dep,newCourse,newSect);
 
                     }
-
                 }
-
             }
         }
         catch (Exception ex)
@@ -88,75 +152,73 @@ public class WUCourses
 
     private void addDepartment(Department dep)
     {
-        if(!depMap.containsKey(dep))
+        if(!depMap.containsKey(dep.name))
         {
-            depMap.put(dep, new ArrayList<WUCourse>());
+            HashMap<Department, ArrayList<Course>> newDep = new HashMap<Department, ArrayList<Course>>();
+            newDep.put(dep,new ArrayList<Course>());
+            depMap.put(dep.name, newDep);
         }
 
     }
 
-    private void addCourse(Department dep,WUCourse course)
+    private void addCourse(Department dep,Course course)
     {
-        if(depMap.containsKey(dep))
+        if(depMap.containsKey(dep.name))
         {
-            depMap.get(dep).add(course);
+            depMap.get(dep.name).get(dep).add(course);
         }
+
     }
 
-    private void addSection(Department dep,WUCourse course,Section section)
+    private void addSection(Department dep, Course course, Section section)
     {
-        WUCourse cour = getCourseByName(dep,course.toString());
+        Course cour = getCourseByName(dep,course.toString());
         if(cour != null)
             cour.addSection(section);
     }
-    public List<Department> getDepList()
+
+
+    public List<String> getDepList()
     {
-        List<Department> dList = new ArrayList<Department>(depMap.keySet());
 
-        //sort the list by name
-        Collections.sort(dList, new Comparator<Department>() {
-            public int compare(Department o1, Department o2) {
-                return o1.abbr.compareTo(o2.abbr);
-            }
-        });
-
+        List<String> dList = new ArrayList<String>(depMap.keySet());
+        Collections.sort(dList);
         return dList;
     }
 
-    public ArrayList<WUCourse> getCourses(Department dep)
+
+    public ArrayList<Course> getCourses(Department dep)
     {
-        return depMap.get(dep);
+        HashMap<Department,ArrayList<Course>> tempDep = depMap.get(dep.name);
+        return tempDep.entrySet().iterator().next().getValue();
     }
 
-    public WUCourse getCourseByName(Department dep, String cName)
+    public Department getDepartment(String depName)
     {
-        ArrayList<WUCourse> cours = depMap.get(dep);
-        WUCourse ret = null;
-        for (int i = 0;i<cours.size();i++)
-        {
-            if(cName.equalsIgnoreCase(cours.get(i).name) )
-            {
-                ret = cours.get(i);
-                break;
-            }
-        }
-
-        return ret;
+        HashMap<Department,ArrayList<Course>> tempDep = depMap.get(depName);
+        return tempDep.entrySet().iterator().next().getKey();
     }
 
-    public WUCourse getCourseByNumber(Department dep, String number)
+
+    public Course getCourseByName(Department dep, String cName)
     {
-        ArrayList<WUCourse> cours = depMap.get(dep);
-        WUCourse ret = null;
-        for (int i = 0;i<cours.size();i++)
+        for(Course course: getCourses(dep))
         {
-            if(number.equalsIgnoreCase(cours.get(i).number) )
-            {
-                ret = cours.get(i);
-                break;
-            }
+            if(cName.equalsIgnoreCase(course.name))
+                return course;
         }
-        return ret;
+        return null;
+    }
+
+
+    public Course getCourseByNumber(Department dep, String number)
+    {
+        for(Course course: getCourses(dep))
+        {
+            if(number.equalsIgnoreCase(course.number))
+                return course;
+        }
+        return null;
     }
 
 }

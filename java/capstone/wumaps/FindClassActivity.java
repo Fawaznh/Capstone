@@ -43,7 +43,7 @@ public class FindClassActivity extends AppCompatActivity {
     private SharedPreferences prefs;
 
 
-    private WUCourses wuc;
+    private WUCourses2 wuc;
 
     class MyListener implements View.OnClickListener {
 
@@ -141,7 +141,7 @@ public class FindClassActivity extends AppCompatActivity {
         itemsSelectedArray=new String[3];
         myCourses=new ArrayList<>();
         Log.d("WUCourses", "Loading xml");
-        wuc = new WUCourses(this, "Fall16courses");
+        wuc = new WUCourses2(this, "Fall16courses");
         updateUI();
         degreeProgramSelectionPopup();
 
