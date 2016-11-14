@@ -1,0 +1,2736 @@
+<?xml version="1.0"?>
+<washburn>
+<department name="ACCOUNTING" abbr="AC">
+	<course name="Financial Accounting" number="224">
+		<section>A|10034|9:00am|10:50am|MWF|HC|303</section>
+		<section>B|10039|11:00am|12:15pm|TR|HC|107</section>
+		<section>C|12021|11:00am|11:50am|MWF|HC|204</section>
+		<section>EA|10040|7:00pm|8:15pm|TR|HC|203</section>
+	</course>
+	<course name="Managerial Accounting" number="225">
+		<section>A|10041|9:00am|10:50am|MWF|HC|303</section>
+		<section>B|11042|11:00am|12:15pm|TR|HC|208</section>
+		<section>EA|10042|5:30pm|6:45pm|MW|HC|204</section>
+	</course>
+	<course name="Int Financial Acc I" number="321">
+		<section>EA|10043|5:30pm|6:45pm|MW|HC|303</section>
+	</course>
+	<course name="Int Financial Acc II" number="322">
+		<section>A|10044|11:00am|12:15pm|TR|HC|021</section>
+	</course>
+	<course name="Cost Accounting" number="325">
+		<section>EA|10045|7:00pm|8:15pm|MW|HC|103</section>
+	</course>
+	<course name="Accounting Information Systems" number="330">
+		<section>A|10048|9:30am|10:45am|TR|HC|108</section>
+	</course>
+	<course name="Fed Income Taxation-Individual" number="423">
+		<section>EA|10053|5:30pm|6:45pm|TR|HC|203</section>
+	</course>
+	<course name="Auditing" number="425">
+		<section>A|10054|9:30am|10:45am|TR|HC|208</section>
+	</course>
+	<course name="Gov &amp; Inst Accounting" number="427">
+		<section>A|12034|4:00pm|5:15pm|TR|HC|104</section>
+	</course>
+	<course name="Govt/Not for Profit Accounting" number="628">
+		<section>GA|12035|4:00pm|5:15pm|TR|HC|104</section>
+	</course>
+	<course name="Accounting Research Seminar" number="629">
+		<section>GEA|11266|7:00pm|8:15pm|MW|HC|210</section>
+	</course>
+	<course name="Adv Accounting Info Systems" number="630">
+		<section>GEA|11267|5:30pm|6:45pm|MW|HC|108</section>
+	</course>
+	<course name="Accounting Theory and Ethics" number="639">
+		<section>GA|11268|4:00pm|5:15pm|MW|HC|205</section>
+	</course>
+	<course name="Management Accounting Analysis" number="654">
+		<section>GEA|12689|5:30pm|8:15pm|T|HC|006</section>
+	</course>
+</department>
+
+<department name="ALLIED HEALTH" abbr="AL">
+	<course name="Foundations of Healthcare" number="101">
+		<section>MA|10608|1:00pm|2:15pm|TR|BE|211</section>
+		<section>MB|11199|9:30am|10:45am|TR|BE|211</section>
+	</course>
+	<course name="Human Disease" number="320">
+		<section>MA|10027|11:00am|11:50am|MWF|PC|221</section>
+	</course>
+	<course name="OTAs-Psychosocial Disorders" number="165">
+		<section>MA|10821|3:00pm|4:45pm|T|PC|150</section>
+	</course>
+	<course name="Occup Therapy Interventions II" number="166">
+		<section>MA|10765|1:00pm|2:45pm|TR|PC|150</section>
+	</course>
+	<course name="Found of Occup Therapy III" number="167">
+		<section>MA|10766|9:00am|11:45am|TR|PC|150</section>
+	</course>
+	<course name="Musculoskeletal Assess-PTA lab" number="171">
+		<section>AA|10559|10:00am|10:50am|MWF|PC|104</section>
+	</course>
+	<course name="Musculoskeletal Assess-PTA" number="171">
+		<section>MA|10600|9:00am|9:50am|MWF|PC|104</section>
+	</course>
+	<course name="Therapeutic Modalities PT lab" number="261">
+		<section>AA|10558|2:00pm|2:50pm|MWF|PC|104</section>
+	</course>
+	<course name="Therapeutic Modalities PT" number="261">
+		<section>MA|10557|1:00pm|1:50pm|MWF|PC|104</section>
+	</course>
+	<course name="Physical Therapy Issues" number="273">
+		<section>MA|10528||||PC|104</section>
+	</course>
+	<course name="Radiogr. Proc. &amp; Pat. Care II" number="121">
+		<section>MA|10239|1:00pm|2:15pm|M|BE|114</section>
+	</course>
+	<course name="Procedures Lab II" number="121">
+		<section>A|10352|2:20pm|3:20pm|M|BE|114</section>
+		<section>B|12373|12:00pm|12:50pm|W|BE|114</section>
+		<section>C|12374|1:00pm|1:50pm|W|BE|114</section>
+		<section>D|12375|2:00pm|3:00pm|W|BE|114</section>
+	</course>
+	<course name="Radiogr. Exposure II" number="131">
+		<section>MA|10243|11:00am|12:30pm|M|BE|114</section>
+	</course>
+	<course name="Exposure Lab II" number="131">
+		<section>A|10353|9:00am|9:50am|M|BE|114</section>
+		<section>B|12376|10:00am|10:50am|M|BE|114</section>
+		<section>C|12377|9:00am|9:50am|W|BE|114</section>
+		<section>D|12378|10:00am|10:50am|W|BE|114</section>
+	</course>
+	<course name="Advanced Radiographic Imaging" number="321">
+		<section>MA|11214|9:00am|11:00am|T|BE|114</section>
+	</course>
+	<course name="Resp. Therapy Clinical I" number="187">
+		<section>XA|10562|||TR|BE|111</section>
+	</course>
+	<course name="Resp Therapy Clinical IV" number="295">
+		<section>XA|10294|||MWF|BE|111</section>
+	</course>
+	<course name="Resp Therapy Clin Top III" number="296">
+		<section>MA|10295|11:00am|12:15pm|TR|BE|111</section>
+	</course>
+</department>
+
+<department name="ANTHROPOLOGY" abbr="AN">
+	<course name="Cultural Anthropology" number="112">
+		<section>A|10052|9:00am|9:50am|MWF|HC|118</section>
+		<section>B|10046|12:00pm|12:50pm|MWF|HC|204</section>
+		<section>C|10047|1:00pm|1:50pm|MWF|HC|204</section>
+		<section>D|10049|9:30am|10:45am|TR|GC|033</section>
+		<section>E|10050|11:00am|12:15pm|TR|GC|033</section>
+		<section>F|10051|5:30pm|8:00pm|T|HC|118</section>
+		<section>G|10824|5:30pm|8:00pm|M|HC|203</section>
+		<section>H|12599|4:00pm|5:15pm|MW|HC|103</section>
+	</course>
+	<course name="Introduction to Archaeology" number="114">
+		<section>A|10932|10:00am|10:50am|MWF|HC|308</section>
+		<section>B|11946|11:00am|11:50am|MWF|HC|308</section>
+	</course>
+	<course name="Physical Anthropology" number="116">
+		<section>A|12609|8:00am|8:50am|MWF|KBI|182A</section>
+		<section>B|12612|9:00am|9:50am|MWF|KBI|182A</section>
+	</course>
+	<course name="Intro to Forensic Science" number="118">
+		<section>A|12615|1:00pm|2:15pm|TR|KBI|182A</section>
+	</course>
+	<course name="Culture and Human Sexuality" number="302">
+		<section>A|11028|2:30pm|3:45pm|TR|HC|021</section>
+	</course>
+	<course name="Human Prehistory" number="303">
+		<section>A|12622|11:00am|11:50am|MWF|KBI|182A</section>
+	</course>
+	<course name="Forensic Anthropology" number="316">
+		<section>A|10551|2:30pm|3:45pm|TR|KBI|182A</section>
+	</course>
+	<course name="North American Archaeology" number="318">
+		<section>A|12623|11:00am|12:15pm|TR|GC|131</section>
+	</course>
+	<course name="Hist &amp; Theory of Anthropology" number="324">
+		<section>A|10580|5:30pm|8:00pm|M|HC|208</section>
+	</course>
+	<course name="Anthropology of the Caribbean" number="325">
+		<section>A|12624|1:00pm|2:15pm|TR|HC|021</section>
+	</course>
+	<course name="Lab Methods in Archaeology" number="371">
+		<section>A|12625|4:00pm|6:30pm|T|KBI|182A</section>
+	</course>
+</department>
+
+<department name="ART" abbr="AR">
+	<course name="Survey of Art History I" number="101">
+		<section>A|10059|4:00pm|5:15pm|TR|GC|118</section>
+	</course>
+	<course name="Survey of Art History II" number="102">
+		<section>A|10060|9:30am|10:45am|TR|GC|118</section>
+		<section>B|10570|11:00am|12:15pm|TR|GC|118</section>
+	</course>
+	<course name="Introduction to Art" number="103">
+		<section>A|10062|2:30pm|3:45pm|TR|GC|118</section>
+	</course>
+	<course name="Design I:2-D" number="120">
+		<section>A|10414|9:00am|11:45am|MW|AB|118</section>
+		<section>B|10065|4:00pm|6:45pm|MW|AB|118</section>
+	</course>
+	<course name="Design II: 3-D" number="121">
+		<section>A|10424|1:00pm|3:45pm|TR|AB|118</section>
+	</course>
+	<course name="Basic Photo Imaging" number="131">
+		<section>A|10537|9:00am|11:45am|M|AB|211</section>
+	</course>
+	<course name="Drawing I" number="140">
+		<section>A|10068|1:00pm|3:45pm|TR|AB|202</section>
+		<section>B|10485|9:30am|12:15pm|TR|AB|202</section>
+	</course>
+	<course name="Drawing II" number="141">
+		<section>A|10069|1:00pm|3:45pm|MW|AB|202</section>
+		<section>B|10070|4:00pm|6:45pm|MW|AB|202</section>
+	</course>
+	<course name="Introduction to Printmaking" number="219">
+		<section>A|10450|9:30am|12:15pm|TR|AB|212</section>
+	</course>
+	<course name="Darkroom Photography I" number="220">
+		<section>A|10071|1:00pm|3:45pm|TR|AB|216</section>
+	</course>
+	<course name="Digital Painting and Drawing" number="221">
+		<section>A|11210|1:00pm|3:45pm|MW|AB|211</section>
+	</course>
+	<course name="Graph Design I" number="223">
+		<section>A|10571|9:30am|12:15pm|TR|AB|211</section>
+	</course>
+	<course name="Ceramics I" number="260">
+		<section>A|10073|4:00pm|6:45pm|TR|AB|120</section>
+	</course>
+	<course name="Psyc Theories &amp; Art Therapy" number="299">
+		<section>A|11492|5:30pm|8:15pm|T|AB|118</section>
+	</course>
+	<course name="Art Theory Past and Present" number="300">
+		<section>A|12406|1:00pm|2:15pm|TR|GC|118</section>
+	</course>
+	<course name="Museum Studies" number="313">
+		<section>A|12537|11:00am|12:15pm|TR|GC|020</section>
+	</course>
+	<course name="Graphic Design II" number="322">
+		<section>A|12418|4:00pm|6:15pm|MW|AB|211</section>
+	</course>
+	<course name="Adv Oil Paint - The Figure" number="340">
+		<section>A|10920|9:00am|11:45am|MW|AB|205</section>
+	</course>
+	<course name="Chinese Painting" number="345">
+		<section>A|12420|9:30am|12:15pm|TR|AB|112</section>
+	</course>
+	<course name="Experimental Photography" number="355">
+		<section>A|12422|1:00pm|3:45pm|MW|AB|216</section>
+	</course>
+	<course name="Ceramics II" number="360">
+		<section>A|10296|1:00pm|3:45pm|MW|AB|120</section>
+	</course>
+	<course name="Ceramic Glaze/Surface Explor." number="361">
+		<section>A|12538|1:00pm|3:45pm|TR|AB|120</section>
+	</course>
+	<course name="Over 60 - Ceramics Workshop" number="361">
+		<section>B|12541|1:00pm|3:45pm|TR|AB|120</section>
+	</course>
+	<course name="Advanced Sculpture" number="364">
+		<section>A|12536|9:00am|11:45am|MW|AB|125</section>
+	</course>
+	<course name="Elementary Art Education" number="380">
+		<section>A|12502|1:00pm|3:45pm|TR|AB|112</section>
+	</course>
+	<course name="Psyc Theories &amp; Art Therapy" number="399">
+		<section>A|11026|5:30pm|8:15pm|T|AB|118</section>
+	</course>
+	<course name="Senior Exhibition" number="400">
+		<section>A|10297|11:00am|11:50am|F|AB|118</section>
+	</course>
+	<course name="Internship" number="401">
+		<section>XA|10876|10:00am|10:50am|F|AB|118</section>
+	</course>
+	<course name="Art Forum" number="402">
+		<section>A|12549|4:00pm|5:45pm|M|AB|112</section>
+	</course>
+	<course name="Workshop in Art Media" number="403">
+		<section>A|10805|1:00pm|3:45pm|W|AB|112</section>
+	</course>
+	<course name="BFA Professional Practice" number="404">
+		<section>A|11215|4:00pm|5:15pm|TR|AB|118</section>
+	</course>
+	<course name="21st Century Art Practice" number="407">
+		<section>A|11209|1:00pm|3:45pm|M|AB|118</section>
+	</course>
+	<course name="Advanced Relief Printing" number="419">
+		<section>A|12543|1:00pm|3:45pm|TR|AB|212</section>
+	</course>
+	<course name="Adv. Digital Painting/Drawing" number="421">
+		<section>A|11211|1:00pm|3:45pm|MW|AB|211</section>
+	</course>
+	<course name="Web Design" number="429">
+		<section>A|12551|5:30pm|8:15pm|TR|AB|211</section>
+	</course>
+	<course name="Advanced Chinese Painting" number="445">
+		<section>A|12499|9:30am|12:15pm|TR|AB|112</section>
+	</course>
+	<course name="Experimental Photography II" number="455">
+		<section>A|12500|1:00pm|3:45pm|MW|AB|216</section>
+	</course>
+</department>
+
+<department name="ARMY ROTC" abbr="ARMY">
+	<course name="Intro to Military Science II" number="102">
+		<section>A|11784|9:00am|9:50am|W|HC|109</section>
+	</course>
+	<course name="Army ROTC Lab" number="102">
+		<section>XA|11785|3:00pm|5:30pm|R|HC|109</section>
+	</course>
+	<course name="Basic Military Science II" number="202">
+		<section>A|11786|10:00am|10:50am|W|HC|109</section>
+	</course>
+	<course name="Army ROTC Lab" number="202">
+		<section>XA|11787|3:00pm|5:30pm|R|HC|109</section>
+	</course>
+	<course name="Theory &amp; Dyn of Tac Oper II" number="302">
+		<section>A|11788||||HC|109</section>
+	</course>
+	<course name="Army ROTC Lab" number="302">
+		<section>XA|11789|3:00pm|5:30pm|R|HC|109</section>
+	</course>
+	<course name="The Military Profession" number="402">
+		<section>A|11790||||HC|109</section>
+	</course>
+	<course name="Army ROTC Lab" number="402">
+		<section>XA|11791|3:00pm|5:30pm|R|HC|109</section>
+	</course>
+</department>
+
+<department name="ASTRONOMY" abbr="AS">
+	<course name="Intro to Astronomy/Cosmology" number="101">
+		<section>A|10003|9:30am|10:45am|TR|ST|138</section>
+	</course>
+	<course name="Intro to Astmy-Solar System" number="102">
+		<section>A|10038|11:00am|11:50am|MWF|CA|300</section>
+		<section>B|10628|7:00pm|8:15pm|MW|ST|316</section>
+	</course>
+</department>
+
+<department name="APPLIED STUDIES" abbr="AU">
+	<course name="Proseminar" number="495">
+		<section>A|11792|12:00pm|12:50pm|F|BE|305</section>
+	</course>
+</department>
+
+<department name="BIOLOGY" abbr="BI">
+	<course name="Intro to Biology/Gen Ed Emph" number="100">
+		<section>A|10181|8:00am|8:50am|MWF|MO|154</section>
+		<section>B|10179|9:00am|9:50am|MWF|MO|154</section>
+		<section>C|10180|10:00am|10:50am|MWF|ST|105</section>
+		<section>D|10182|12:00pm|12:50pm|MWF|ST|316</section>
+		<section>E|10183|11:00am|12:15pm|TR|ST|138</section>
+		<section>F|11937|1:00pm|2:15pm|TR|ST|007</section>
+	</course>
+	<course name="Intro to Biology/Health Emph" number="100">
+		<section>G|10631|8:00am|8:50am|MWF|ST|316</section>
+		<section>H|10360|9:00am|9:50am|MWF|ST|105</section>
+		<section>I|10425|9:00am|9:50am|MWF|MO|155</section>
+		<section>J|11936|10:00am|10:50am|MWF|ST|316</section>
+		<section>K|11938|11:00am|11:50am|MWF|ST|007</section>
+		<section>L|12635|1:00pm|1:50pm|MWF|ST|105</section>
+		<section>M|12636|7:00pm|8:15pm|MW|ST|138</section>
+	</course>
+	<course name="Intro Biology Lab" number="101">
+		<section>A|10184|2:00pm|4:50pm|M|ST|128</section>
+		<section>B|10185|5:30pm|8:20pm|M|ST|128</section>
+		<section>C|10186|9:00am|11:50am|T|ST|128</section>
+		<section>D|10536|2:00pm|4:50pm|T|ST|128</section>
+		<section>E|10187|5:30pm|8:20pm|T|ST|128</section>
+		<section>F|10361|9:00am|11:50am|W|ST|128</section>
+		<section>G|10632|2:00pm|4:50pm|W|ST|128</section>
+		<section>H|10633|9:00am|11:50am|R|ST|128</section>
+		<section>I|12638|2:00pm|4:50pm|R|ST|128</section>
+	</course>
+	<course name="General Cellular Biology" number="102">
+		<section>A|10176|9:00am|9:50am|MTWF|ST|007</section>
+	</course>
+	<course name="General Cellular Biology Lab" number="102">
+		<section>L1|10178|9:00am|11:50am|R|ST|130</section>
+		<section>L2|10177|2:00pm|4:50pm|R|ST|130</section>
+	</course>
+	<course name="General Organismal Biology" number="103">
+		<section>A|11505|8:00am|8:50am|MWRF|ST|007</section>
+	</course>
+	<course name="General Organismal Biology Lab" number="103">
+		<section>L1|11512|9:00am|11:50am|T|ST|022</section>
+		<section>L2|11513|2:00pm|4:50pm|T|ST|022</section>
+	</course>
+	<course name="Evolution" number="150">
+		<section>A|12590|1:00pm|1:50pm|MWF|ST|311</section>
+	</course>
+	<course name="Sexually Transmitted Disease" number="155">
+		<section>A|11939|12:00pm|12:50pm|MW|ST|105</section>
+	</course>
+	<course name="Biology of Behavior" number="202">
+		<section>A|11502|11:00am|11:50am|MWF|CA|200</section>
+	</course>
+	<course name="Human Impact on Environment" number="203">
+		<section>A|10495|1:00pm|2:15pm|MW|ST|316</section>
+		<section>B|12637|4:00pm|5:15pm|MW|ST|138</section>
+	</course>
+	<course name="Introductory Microbiology" number="206">
+		<section>A|10634|11:00am|11:50am|MWF|ST|316</section>
+	</course>
+	<course name="Introductory Microbiology Lab" number="206">
+		<section>L1|10635|9:00am|11:50am|T|ST|124</section>
+		<section>L2|10636|2:00pm|4:50pm|T|ST|124</section>
+	</course>
+	<course name="Intro to Human Physiology" number="230">
+		<section>A|10825|11:00am|11:50am|MWF|ST|105</section>
+	</course>
+	<course name="Introduction to Biotechnology" number="234">
+		<section>A|12591|11:00am|11:50am|MWF|CA|203</section>
+	</course>
+	<course name="Intro to Human Anatomy" number="250">
+		<section>A|10362|8:30pm|9:45pm|MW|ST|138</section>
+	</course>
+	<course name="Human Physiology" number="255">
+		<section>A|10188|9:00am|9:50am|MWF|ST|138</section>
+		<section>B|10364|11:00am|11:50am|MWF|ST|138</section>
+	</course>
+	<course name="Human Physiology Lab" number="255">
+		<section>L1|10191|9:00am|11:50am|T|ST|016</section>
+		<section>L2|10190|2:00pm|4:50pm|W|ST|016</section>
+		<section>L3|10365|9:00am|11:50am|R|ST|016</section>
+		<section>L4|10189|2:00pm|4:50pm|R|ST|016</section>
+	</course>
+	<course name="Human Anatomy" number="275">
+		<section>A|10192|8:00am|8:50am|MW|HC|208</section>
+	</course>
+	<course name="Human Anatomy Lab" number="275">
+		<section>AL1|10193|11:00am|12:50pm|MW|ST|018</section>
+		<section>AL2|10555|1:00pm|2:50pm|MW|ST|018</section>
+		<section>AL3|12639|3:00pm|4:50pm|MW|ST|018</section>
+	</course>
+	<course name="Human Anatomy" number="275">
+		<section>B|10194|10:00am|10:50am|MW|ST|007</section>
+	</course>
+	<course name="Human Anatomy Lab" number="275">
+		<section>BL1|10195|1:00pm|2:50pm|TR|ST|018</section>
+		<section>BL2|10637|3:00pm|4:50pm|TR|ST|018</section>
+	</course>
+	<course name="General Microbiology" number="301">
+		<section>A|10196|11:00am|11:50am|MWF|BE|207</section>
+	</course>
+	<course name="General Microbiology Lab" number="301">
+		<section>L1|10197|9:00am|11:50am|R|ST|124</section>
+	</course>
+	<course name="Parasitology" number="305">
+		<section>A|12604|9:00am|9:50am|MWF|MO|153</section>
+	</course>
+	<course name="Parasitology Lab" number="305">
+		<section>L1|12607|9:00am|11:50am|R|ST|022</section>
+	</course>
+	<course name="Ecology" number="310">
+		<section>A|10496|10:00am|10:50am|MWF|ST|311</section>
+	</course>
+	<course name="Ecology Lab" number="310">
+		<section>L1|10497|2:00pm|4:50pm|R|ST|022</section>
+	</course>
+	<course name="General Genetics" number="333">
+		<section>A|10198|10:00am|10:50am|MWF|CA|203</section>
+	</course>
+	<course name="General Genetics Lab" number="333">
+		<section>L1|10199|10:00am|12:50pm|T|ST|110</section>
+	</course>
+	<course name="Molecular Biology Laboratory" number="354">
+		<section>A|10638|2:00pm|2:50pm|M|KBI|200</section>
+	</course>
+	<course name="Immunology" number="362">
+		<section>A|10200|1:00pm|1:50pm|MWF|ST|007</section>
+	</course>
+	<course name="ST:Biology of Vision" number="380">
+		<section>A|11509|11:00am|11:50am|MWF|ST|022</section>
+	</course>
+	<course name="Biology Seminar" number="390">
+		<section>A|10201|12:00pm|12:50pm|M|ST|007</section>
+		<section>B|10462|12:00pm|12:50pm|T|ST|007</section>
+		<section>C|10540|12:00pm|12:50pm|W|ST|007</section>
+	</course>
+</department>
+
+<department name="BUSINESS" abbr="BU">
+	<course name="Intro to Business" number="101">
+		<section>A|10946|8:00am|8:50am|MWF|HC|203</section>
+		<section>B|11519|10:00am|10:50am|MWF|HC|208</section>
+	</course>
+	<course name="Mgmt Info Systems" number="250">
+		<section>A|10055|8:00am|9:15am|TR|HC|108</section>
+		<section>B|10056|11:00am|12:15pm|TR|HC|108</section>
+		<section>C|10057|1:00pm|2:15pm|MW|HC|108</section>
+		<section>EA|10058|5:30pm|6:45pm|TR|HC|108</section>
+	</course>
+	<course name="Business Plan Development" number="260">
+		<section>A|10061|9:30am|10:45am|TR|HC|210</section>
+	</course>
+	<course name="Contemp Information Systems" number="305">
+		<section>A|12032|4:00pm|5:15pm|MW|HC|104</section>
+	</course>
+	<course name="Legal Env of Business" number="315">
+		<section>A|10063|8:00am|9:15am|TR|HC|217</section>
+		<section>B|10064|11:00am|11:50am|MWF|HC|118</section>
+		<section>EA|10066|7:00pm|8:15pm|TR|HC|008</section>
+	</course>
+	<course name="Organization &amp; Management" number="342">
+		<section>A|10067|10:00am|10:50am|MWF|HC|118</section>
+		<section>B|12028|1:00pm|2:15pm|MW|HC|104</section>
+		<section>EA|10072|7:00pm|8:15pm|TR|HC|303</section>
+	</course>
+	<course name="Human Resources Management" number="345">
+		<section>A|10459|9:00am|9:50am|MWF|HC|104</section>
+	</course>
+	<course name="Organizational Behavior" number="346">
+		<section>EA|10408|5:30pm|6:45pm|TR|HC|303</section>
+	</course>
+	<course name="Prod &amp; Oper Mgmt" number="347">
+		<section>A|10079|9:00am|9:50am|MWF|HC|103</section>
+		<section>B|12023|10:00am|10:50am|MWF|HC|103</section>
+		<section>EA|10080|7:00pm|8:15pm|MW|HC|108</section>
+	</course>
+	<course name="International Business" number="355">
+		<section>A|11273|9:30am|10:45am|TR|HC|107</section>
+		<section>EA|10531|5:30pm|6:45pm|MW|HC|304</section>
+	</course>
+	<course name="Principles of Marketing" number="360">
+		<section>A|10081|11:00am|12:15pm|TR|HC|103</section>
+		<section>B|10082|10:00am|10:50am|MWF|HC|104</section>
+		<section>EA|10083|7:00pm|8:15pm|MW|HC|303</section>
+	</course>
+	<course name="Marketing Research" number="362">
+		<section>A|10084|9:00am|9:50am|MWF|HC|203</section>
+	</course>
+	<course name="Consumer Behavior" number="364">
+		<section>A|10085|4:00pm|5:15pm|TR|HC|103</section>
+	</course>
+	<course name="International Marketing" number="368">
+		<section>A|10877|9:30am|10:45am|TR|HC|104</section>
+	</course>
+	<course name="Entrepreneurial Marketing" number="369">
+		<section>EA|11522|5:30pm|6:45pm|TR|HC|021</section>
+	</course>
+	<course name="Entrepreneurship Clinic" number="370">
+		<section>A|12033|2:30pm|3:45pm|TR|HC|206</section>
+	</course>
+	<course name="Princ of Risk &amp; Insurance" number="374">
+		<section>EA|10532|5:30pm|6:45pm|MW|HC|103</section>
+	</course>
+	<course name="Business Finance" number="381">
+		<section>A|10086|11:00am|11:50am|MWF|HC|107</section>
+		<section>EA|10087|5:30pm|6:45pm|TR|HC|204</section>
+	</course>
+	<course name="Principles of Real Estate" number="390">
+		<section>EA|10460|7:00pm|8:15pm|TR|HC|210</section>
+	</course>
+	<course name="Legal Business Associations" number="417">
+		<section>A|10088|8:00am|8:50am|MWF|HC|104</section>
+	</course>
+	<course name="Strategic Management" number="449">
+		<section>A|10089|11:00am|12:15pm|TR|HC|104</section>
+		<section>EA|10090|7:00pm|8:15pm|TR|HC|021</section>
+	</course>
+	<course name="Multinational Enterprise Pract" number="457">
+		<section>A|11529|11:00am|11:50am|MWF|HC|104</section>
+	</course>
+	<course name="Marketing Management" number="471">
+		<section>A|10091|8:00am|9:15am|TR|HC|104</section>
+	</course>
+	<course name="Investments" number="483">
+		<section>A|10092|2:30pm|3:45pm|MW|HC|104</section>
+	</course>
+	<course name="Applied Portfolio Management" number="484">
+		<section>EA|10591|5:30pm|8:15pm|M|HC|104</section>
+	</course>
+	<course name="Survey of Finance" number="526">
+		<section>GEA|12690|5:30pm|8:15pm|M|GC|323</section>
+	</course>
+	<course name="Marketing Concepts" number="527">
+		<section>GEA|12692|5:30pm|8:15pm|T|HC|304</section>
+	</course>
+	<course name="Human Behavior in Orgs" number="529">
+		<section>GEA|12693|5:30pm|8:15pm|R|HC|006</section>
+	</course>
+	<course name="Financial Strategies" number="655">
+		<section>GEA|12694|5:30pm|8:15pm|W|HC|008</section>
+	</course>
+	<course name="Strategic Marketing Management" number="657">
+		<section>GEA|12695|5:30pm|8:15pm|M|HC|006</section>
+	</course>
+	<course name="Managerial Skills/Prof Exper" number="658">
+		<section>GEA|12696|5:30pm|8:15pm|T|HC|307</section>
+	</course>
+	<course name="Strategic Analysis" number="659">
+		<section>GEA|12697|5:30pm|8:15pm|W|HC|104</section>
+	</course>
+	<course name="Venture Creation" number="683">
+		<section>GEA|12698|5:30pm|8:15pm|R|HC|217</section>
+	</course>
+	<course name="Business Intelligence Systems" number="685">
+		<section>GEA|12699|5:30pm|8:15pm|T|HC|217</section>
+	</course>
+	<course name="Special Topics/Business" number="698">
+		<section>GEA|12709|5:30pm|8:15pm|M|HC|104</section>
+	</course>
+</department>
+
+<department name="CHEMISTRY" abbr="CH">
+	<course name="Science Success Strategies" number="100">
+		<section>A|10589|3:00pm|3:50pm|WF|ST|311</section>
+	</course>
+	<course name="Intro Forensic Chemistry" number="103">
+		<section>A|10206|9:00am|9:50am|MWF|ST|316</section>
+		<section>B|10205|9:30am|10:45am|TR|ST|316</section>
+	</course>
+	<course name="General, Organic &amp; Bio Chem" number="121">
+		<section>A|10173|1:00pm|1:50pm|MWF|ST|138</section>
+	</course>
+	<course name="Gen, Org &amp; Bio Chem Recitation" number="121">
+		<section>AR|10175|12:00pm|12:50pm|R|ST|311</section>
+		<section>BR|10384|1:00pm|1:50pm|R|ST|311</section>
+	</course>
+	<course name="Gen, Org &amp; Bio Chem Lab" number="121">
+		<section>L1|10174|9:00am|11:59am|T|ST|134</section>
+		<section>L2|10385|1:00pm|3:59pm|T|ST|134</section>
+	</course>
+	<course name="Fundamentals of Chemistry II" number="152">
+		<section>A|10498|12:00pm|12:50pm|MWF|HC|100</section>
+	</course>
+	<course name="Fund of Chem II - Recitation" number="152">
+		<section>AR1|10006|2:00pm|2:50pm|M|ST|311</section>
+		<section>AR2|10606|4:00pm|4:50pm|M|ST|311</section>
+		<section>AR3|11853|12:00pm|12:50pm|T|ST|311</section>
+		<section>AR4|11855|1:00pm|1:50pm|T|ST|311</section>
+	</course>
+	<course name="Fund Chem II Lab" number="152">
+		<section>L1|10004|2:00pm|5:00pm|W|ST|134</section>
+		<section>L2|10005|9:30am|12:29pm|R|ST|134</section>
+		<section>L3|10203|1:30pm|4:29pm|R|ST|134</section>
+		<section>L4|10931|5:00pm|7:59pm|R|ST|134</section>
+	</course>
+	<course name="Forensic Chemistry Laboratory" number="203">
+		<section>A|12512|1:00pm|5:00pm|T|KBI|200</section>
+	</course>
+	<course name="Organic Chemistry II" number="341">
+		<section>A|10207|8:00am|8:50am|MWF|ST|138</section>
+	</course>
+	<course name="Organic Chem Lab II Lecture" number="343">
+		<section>A|10208|1:00pm|1:50pm|T|ST|138</section>
+	</course>
+	<course name="Organic Chem Lab II" number="343">
+		<section>L1|10209|8:00am|10:59am|R|ST|108</section>
+		<section>L2|10210|1:00pm|3:59pm|R|ST|108</section>
+		<section>L3|10447|4:30pm|7:30pm|R|ST|108</section>
+	</course>
+	<course name="Instrumental Analysis" number="346">
+		<section>A|12513|9:00am|12:59pm|R|ST|106</section>
+	</course>
+	<course name="Biochemistry II" number="352">
+		<section>A|12514|5:30pm|6:20pm|MWF|ST|311</section>
+	</course>
+	<course name="Biochemistry Laboratory II-Lec" number="353">
+		<section>A|12515|5:30pm|6:20pm|T|ST|106</section>
+	</course>
+	<course name="Biochemistry Laboratory II" number="353">
+		<section>AL|12516|5:30pm|8:30pm|R|ST|106</section>
+	</course>
+	<course name="Spectroscopy" number="362">
+		<section>A|12517|9:00am|9:50am|WF|ST|311</section>
+	</course>
+	<course name="Inorganic Chemistry" number="386">
+		<section>A|11805|12:00pm|12:50pm|MWF|ST|311</section>
+	</course>
+	<course name="Chemistry Seminar" number="391">
+		<section>A|10212|2:00pm|2:50pm|F|ST|138</section>
+	</course>
+</department>
+
+<department name="CRIMINAL JUSTICE" abbr="CJ">
+	<course name="Crime &amp; Justice in America" number="100">
+		<section>A|10236|9:30am|10:45am|TR|HC|103</section>
+		<section>B|10240|9:00am|9:50am|MWF|BE|211</section>
+	</course>
+	<course name="Intro to Law Enforcement" number="110">
+		<section>A|10513|10:00am|10:50am|MWF|BE|211</section>
+		<section>B|10245|11:00am|12:15pm|TR|BE|211</section>
+	</course>
+	<course name="Intro Forensic Science" number="115">
+		<section>A|12452|9:30am|10:45am|TR|BE|210</section>
+	</course>
+	<course name="Crim Just Comm" number="220">
+		<section>A|10345|11:00am|11:50am|MWF|BE|211</section>
+	</course>
+	<course name="Princ of Investigation" number="230">
+		<section>A|10347|2:30pm|3:45pm|TR|BE|211</section>
+	</course>
+	<course name="ST: Digital Forensics I" number="290">
+		<section>A|11898|11:00am|11:50am|MWF|MO|051</section>
+	</course>
+	<course name="Diversity In American Culture" number="303">
+		<section>A|11013|5:30pm|8:00pm|T|BE|211</section>
+	</course>
+	<course name="Police Problems &amp; Practices" number="310">
+		<section>A|10593|11:00am|12:15pm|TR|BE|301</section>
+	</course>
+	<course name="Juvenile Justice" number="318">
+		<section>A|11809|1:00pm|2:15pm|TR|HC|103</section>
+	</course>
+	<course name="Serial Killers" number="323">
+		<section>WA|12468|6:00pm|10:00pm|F|HC|103</section>
+	</course>
+	<course name="Applied Criminology" number="325">
+		<section>A|11217|2:30pm|3:45pm|TR|HC|217</section>
+	</course>
+	<course name="Capital Punishment" number="342">
+		<section>WA|12443|6:00pm|10:00pm|F|BE|207</section>
+	</course>
+	<course name="Firearms" number="352">
+		<section>WA|12445|6:00pm|10:00pm|F|BE|211</section>
+		<section>WB|12446|6:00pm|10:00pm|F|BE|305</section>
+	</course>
+	<course name="ST:Human Trafficking &amp; Mod Sla" number="390">
+		<section>A|10801|1:00pm|3:45pm|W|GC|323</section>
+	</course>
+	<course name="ST: Adv Bloodstain Pattern" number="390">
+		<section>WA|12419|6:00pm|10:00pm|F|KBI|182A</section>
+	</course>
+	<course name="Special Topics: Forensic Photo" number="390">
+		<section>WB|12444|6:00pm|10:00pm|F|KBI|182A</section>
+	</course>
+	<course name="Criminal Justice Research Meth" number="400">
+		<section>A|12417|1:00pm|1:50pm|MWF|BE|211</section>
+	</course>
+	<course name="Criminal Proc &amp; Evidence" number="410">
+		<section>A|10394|1:00pm|2:15pm|TR|BE|210</section>
+	</course>
+	<course name="Forensic Sci in Crim Just" number="415">
+		<section>A|12426|11:00am|12:15pm|TR|BE|210</section>
+	</course>
+	<course name="Forensic Sci Crim Justice Lab" number="416">
+		<section>B|12427|1:00pm|3:00pm|W|KBI|182A</section>
+	</course>
+</department>
+
+<department name="CLINICAL LABORATORY SCIENCES" abbr="CL">
+	<course name="CLS Theory, App, Correlation" number="412">
+		<section>XA|12391|12:30pm|3:30pm|F|BE|302</section>
+	</course>
+</department>
+
+<department name="COMPUTER INFORMATION SCIENCE" abbr="CM">
+	<course name="Basic Computer Concepts &amp; Apps" number="100">
+		<section>A|12555|1:00pm|2:15pm|TR|MO|054</section>
+	</course>
+	<course name="Computer Concepts/Applications" number="101">
+		<section>A|12620|1:00pm|2:15pm|MW|MO|054</section>
+		<section>B|10007|2:30pm|3:45pm|MW|MO|054</section>
+	</course>
+	<course name="Intro to Computer Science" number="105">
+		<section>A|11902|11:00am|12:15pm|TR|MO|054</section>
+	</course>
+	<course name="Intro to Structured Prog." number="111">
+		<section>A|10435|9:30am|10:45am|TR|ST|311</section>
+	</course>
+	<course name="Intro to Structured Prog. Lab" number="111">
+		<section>CA|11055|1:00pm|2:50pm|T|MO|051</section>
+		<section>CB|12563|1:00pm|2:50pm|R|MO|051</section>
+	</course>
+	<course name="Digital Forensics I" number="203">
+		<section>A|11924|11:00am|11:50am|MWF|MO|051</section>
+	</course>
+	<course name="Comp. Org./Assembler Lang." number="231">
+		<section>A|10008|1:00pm|2:15pm|MW|MO|202</section>
+	</course>
+	<course name="Contemp. Prog. Methods" number="245">
+		<section>A|10436|9:30am|10:45am|TR|MO|054</section>
+	</course>
+	<course name="Data Struc. &amp; Algo. Analysis" number="307">
+		<section>A|10009|4:00pm|5:15pm|MW|ST|105</section>
+	</course>
+	<course name="Web Development II" number="330">
+		<section>A|12561|2:30pm|3:45pm|TR|MO|054</section>
+	</course>
+	<course name="Database Management Systems" number="336">
+		<section>A|10010|9:30am|10:45am|TR|MO|051</section>
+	</course>
+	<course name="Networked Systems II" number="361">
+		<section>A|10011|2:30pm|3:45pm|MW|MO|051</section>
+		<section>B|11905|4:00pm|5:15pm|MW|MO|051</section>
+	</course>
+	<course name="ST: Dec Sup Sys/VBA/Excel" number="390">
+		<section>A|10492|8:00am|9:15am|TR|MO|054</section>
+	</course>
+	<course name="CIS Capstone Project" number="467">
+		<section>A|10012|1:00pm|1:37pm|MW|ST|302</section>
+	</course>
+	<course name="CIS Senior Seminar" number="468">
+		<section>A|10013|1:38pm|2:15pm|MW|ST|302</section>
+	</course>
+</department>
+
+<department name="COMMUNICATION" abbr="CN">
+	<course name="Prin &amp; Prac of Hum Comm" number="101">
+		<section>A|10014|9:30am|10:45am|TR|MO|150</section>
+		<section>B|10016|11:00am|12:15pm|TR|MO|150</section>
+	</course>
+	<course name="Public Speaking" number="150">
+		<section>A|10923|10:00am|10:50am|MWF|MO|356</section>
+		<section>B|10799|2:30pm|3:45pm|TR|MO|353</section>
+		<section>C|12207|11:00am|11:50am|MWF|MO|356</section>
+		<section>E|10017|2:30pm|3:45pm|MW|MO|202</section>
+		<section>F|10403|5:30pm|8:00pm|M|MO|239</section>
+		<section>G|12330|8:00am|9:15am|TR|MO|153</section>
+		<section>H|12498|5:30pm|6:45pm|TR|MO|153</section>
+	</course>
+	<course name="Organizational Communication" number="308">
+		<section>A|12479|1:00pm|2:15pm|MW|LLC2|162</section>
+	</course>
+	<course name="Forensics" number="343">
+		<section>A|10587|1:00pm|3:00pm|MW|MO|150</section>
+	</course>
+	<course name="ST: Ethics in Death &amp; Dying" number="395">
+		<section>B|11961|9:30am|10:45am|TR|GC|231</section>
+	</course>
+	<course name="ST: Environmental Comm" number="395">
+		<section>C|12482|11:00am|12:15pm|TR|MO|153</section>
+	</course>
+	<course name="ST: Global Communication" number="395">
+		<section>D|12494|8:00am|9:15am|TR|GC|231</section>
+	</course>
+</department>
+
+<department name="EDUCATIONAL ADMINISTRATION" abbr="EA">
+	<course name="Bas Concepts Ed Admin" number="681">
+		<section>GA|12347|5:30pm|8:30pm|M|CA|304</section>
+	</course>
+	<course name="Human Resources Management" number="696">
+		<section>GA|12350|5:30pm|8:30pm|W|CA|304</section>
+	</course>
+</department>
+
+<department name="ECONOMICS" abbr="EC">
+	<course name="Principles of Microeconomics" number="200">
+		<section>A|12025|8:00am|8:50am|MWF|HC|107</section>
+		<section>B|10095|9:30am|10:45am|TR|HC|204</section>
+		<section>C|12700|1:00pm|2:15pm|MW|HC|021</section>
+		<section>EA|10096|7:00pm|8:15pm|MW|HC|021</section>
+	</course>
+	<course name="Principles of Macroeconomics" number="201">
+		<section>A|10097|11:00am|11:50am|MWF|HC|208</section>
+		<section>B|10098|11:00am|12:15pm|TR|HC|308</section>
+		<section>EA|10099|7:00pm|8:15pm|TR|HC|103</section>
+	</course>
+	<course name="Stats for Bus &amp; Econ" number="211">
+		<section>A|10100|11:00am|12:15pm|TR|HC|118</section>
+		<section>B|10101|9:30am|10:45am|TR|HC|118</section>
+		<section>EA|10102|7:00pm|8:15pm|MW|HC|207</section>
+	</course>
+	<course name="Macroeconomic Theory" number="301">
+		<section>EA|12701|5:30pm|6:45pm|TR|HC|103</section>
+	</course>
+	<course name="Labor Economics" number="341">
+		<section>EA|10103|5:30pm|6:45pm|MW|HC|021</section>
+	</course>
+	<course name="International Economics" number="410">
+		<section>A|12027|8:00am|9:15am|TR|HC|204</section>
+	</course>
+	<course name="Managerial Economics" number="652">
+		<section>GEA|12702|5:30pm|8:15pm|R|HC|207</section>
+	</course>
+</department>
+
+<department name="EDUCATION" abbr="ED">
+	<course name="EPIC Experience I" number="150">
+		<section>A|10140|12:00pm|1:00pm|W|CA|200</section>
+		<section>B|10141|5:00pm|5:50pm|T|CA|200</section>
+	</course>
+	<course name="Becoming an Ed Profsn" number="225">
+		<section>A|10375|9:30am|10:45am|TR|CA|203</section>
+		<section>B|10500|1:00pm|2:15pm|TR|CA|300</section>
+	</course>
+	<course name="Practcm Infants &amp; Toddlers Ed" number="245">
+		<section>XA|11186|8:00am|11:30am|TR|CA|207</section>
+	</course>
+	<course name="Educational Psychology" number="285">
+		<section>A|11774|9:30am|10:45am|TR|CA|200</section>
+		<section>B|11775|5:30pm|8:30pm|W|CA|203</section>
+	</course>
+	<course name="Integrat Tech into Curriculum" number="300">
+		<section>A|10376|9:00am|10:15am|MW|CA|108</section>
+		<section>B|10377|5:30pm|8:30pm|T|CA|108</section>
+	</course>
+	<course name="Teaching Except Lrnrs-ECE/ELEM" number="302">
+		<section>A|10144|9:30am|10:45am|TR|CA|300</section>
+	</course>
+	<course name="Teaching Except Lrnrs-MS/SEC" number="302">
+		<section>B|10145|9:30am|10:45am|TR|CA|304</section>
+	</course>
+	<course name="Teaching Math In Elem Sch" number="310">
+		<section>A|10146|12:30pm|2:30pm|TRF|CA|304</section>
+	</course>
+	<course name="Teaching Sci In Elem Sch" number="315">
+		<section>A|10147|12:30pm|2:30pm|MW|CA|304</section>
+	</course>
+	<course name="Math/Science Practicum" number="317">
+		<section>XA|10148|2:31pm|3:30pm|MTWRF|CA|304</section>
+		<section>XB|10149|2:31pm|3:30pm|MTWRF|CA|304</section>
+		<section>XC|10150|2:31pm|3:30pm|MTWRF|CA|304</section>
+	</course>
+	<course name="Teaching Reading in Elem Sch" number="320">
+		<section>A|10152|8:30am|9:30am|MTWRF|CA|306</section>
+	</course>
+	<course name="Tchng Lang Arts &amp; Childrn Lit" number="325">
+		<section>A|10153|9:31am|10:30am|MTWRF|CA|306</section>
+	</course>
+	<course name="Literacy Practicum" number="327">
+		<section>XA|10154|10:31am|11:30am|MTWRF|CA|306</section>
+		<section>XB|10155|10:31am|11:30am|MTWRF|CA|306</section>
+		<section>XC|11017|10:31am|11:30am|MTWRF|CA|306</section>
+	</course>
+	<course name="Tchng Soc Stud Thr Intg Curric" number="330">
+		<section>A|10156|12:30pm|2:00pm|TR|CA|200</section>
+	</course>
+	<course name="Cre Exp Early Child/Mid Sch" number="335">
+		<section>A|10157|2:01pm|4:30pm|T|CA|200</section>
+	</course>
+	<course name="Social Studies Practicum" number="337">
+		<section>XA|10158|2:01pm|4:30pm|R|CA|200</section>
+		<section>XB|10159|2:01pm|4:30pm|R|CA|200</section>
+		<section>XC|10893|2:01pm|4:30pm|R|CA|200</section>
+		<section>XD|10894|2:01pm|4:30pm|R|CA|200</section>
+		<section>XE|11188|2:01pm|4:30pm|R|CA|200</section>
+	</course>
+	<course name="Practcm Infants &amp; Toddlers Ed" number="345">
+		<section>XA|10161|8:00am|11:30am|TR|CA|207</section>
+	</course>
+	<course name="General Secondary Methods" number="350">
+		<section>A|11664|5:30pm|8:30pm|T|CA|207</section>
+	</course>
+	<course name="Fam, Sch &amp; Com Collab In ECE" number="376">
+		<section>A|10162|5:00pm|8:00pm|T|CA|203</section>
+	</course>
+	<course name="Understanding The School" number="400">
+		<section>A|12362|4:30pm|6:30pm|M|CA|200</section>
+	</course>
+	<course name="Tchng Struggling Lrnrs Sec P12" number="402">
+		<section>B|10420|4:00pm|5:45pm|M|CA|203</section>
+	</course>
+	<course name="Classroom Management" number="405">
+		<section>A|12364|4:30pm|6:30pm|W|CA|300</section>
+		<section>B|12365|9:30am|11:30am|S|CA|200</section>
+	</course>
+	<course name="Linguistics for ESOL Teachers" number="466">
+		<section>A|11796|5:00pm|8:00pm|W|CA|306</section>
+	</course>
+	<course name="ST: Sport Trad Lit HI &amp; CU EU" number="474">
+		<section>PA|12412|5:00pm|8:00pm|W|PC|220</section>
+	</course>
+	<course name="Curriculum Dev and Evaluation" number="668">
+		<section>GA|12351|4:00pm|5:15pm|TR|CA|306</section>
+	</course>
+	<course name="ST: Sport Trad Lit HI &amp; CU EU" number="674">
+		<section>GPA|12413|5:00pm|8:00pm|W|PC|220</section>
+	</course>
+	<course name="Issues in Ed Technology" number="685">
+		<section>GA|12354|5:00pm|8:00pm|M|CA|108</section>
+	</course>
+</department>
+
+<department name="ENGINEERING" abbr="EG">
+	<course name="Engineering Mech Dynamics" number="351">
+		<section>A|10111|11:00am|12:15pm|TR|ST|105</section>
+	</course>
+	<course name="Mech Of Materials" number="360">
+		<section>A|10392|9:30am|10:45am|TR|ST|105</section>
+	</course>
+</department>
+
+<department name="ENGLISH" abbr="EN">
+	<course name="Developmental English" number="100">
+		<section>A|10517|11:00am|11:50am|MWF|MO|239</section>
+		<section>B|11436|12:00pm|12:50pm|MWF|MO|052</section>
+	</course>
+	<course name="Freshman Composition" number="101">
+		<section>A|11814|8:00am|8:50am|MWF|MO|052</section>
+		<section>B|10355|9:00am|9:50am|MWF|MO|052</section>
+		<section>C|10028|9:30am|10:45am|TR|MO|238</section>
+		<section>D|10033|9:30am|10:45am|TR|MO|137</section>
+		<section>E|11204|10:00am|10:50am|MWF|MO|052</section>
+		<section>F|10035|10:00am|10:50am|MWF|MO|239</section>
+		<section>G|10036|11:00am|12:15pm|TR|MO|238</section>
+		<section>H|10037|11:00am|11:50am|MWF|MO|052</section>
+		<section>I|10902|12:00pm|12:50pm|MWF|MO|239</section>
+		<section>J|11815|1:00pm|1:50pm|MWF|MO|239</section>
+	</course>
+	<course name="Freshman  Composition" number="101">
+		<section>K|10074|1:00pm|2:15pm|TR|MO|353</section>
+	</course>
+	<course name="Freshman Composition" number="101">
+		<section>L|10075|2:00pm|2:50pm|MWF|MO|137</section>
+		<section>M|11435|2:30pm|3:45pm|TR|MO|137</section>
+	</course>
+	<course name="Freshman  Composition" number="101">
+		<section>N|10076|5:30pm|8:00pm|W|MO|239</section>
+	</course>
+	<course name="Mystery Literature" number="116">
+		<section>A|11862|12:00pm|12:50pm|MWF|MO|238</section>
+	</course>
+	<course name="Understanding Short Fiction" number="131">
+		<section>A|12519|9:00am|9:50am|MWF|MO|239</section>
+	</course>
+	<course name="Stories Around The World" number="133">
+		<section>A|11205|1:00pm|1:50pm|MWF|MO|137</section>
+	</course>
+	<course name="Digital Storytelling-KS-HisLit" number="138">
+		<section>B|12532|1:00pm|2:15pm|TR|MA|206B</section>
+	</course>
+	<course name="Shakespeare In Action" number="145">
+		<section>A|12521|2:30pm|3:45pm|MW|MO|239</section>
+	</course>
+	<course name="Science Fiction" number="177">
+		<section>A|10077|9:00am|9:50am|MWF|MO|238</section>
+	</course>
+	<course name="Film Appr:Fantasy" number="190">
+		<section>A|10905|5:30pm|8:00pm|T|MO|238</section>
+	</course>
+	<course name="Folk and Fairy Tales" number="192">
+		<section>A|10609|1:00pm|3:40pm|R|MO|238</section>
+	</course>
+	<course name="Worlds of Oz--Lit &amp; Film" number="192">
+		<section>C|12520|1:00pm|3:40pm|W|MO|052</section>
+	</course>
+	<course name="Beginning Poetry Writing" number="206">
+		<section>A|10578|10:00am|10:50am|MWF|MO|238</section>
+	</course>
+	<course name="Beginning Non-Fiction Writing" number="207">
+		<section>A|11869|11:00am|11:50am|MWF|MO|138</section>
+	</course>
+	<course name="Business &amp; Technical Writing" number="208">
+		<section>A|10610|9:30am|10:45am|TR|MO|053</section>
+		<section>B|10078|11:00am|12:15pm|TR|MO|053</section>
+	</course>
+	<course name="Beginning Fiction Writing" number="209">
+		<section>A|11818|9:30am|10:45am|TR|MO|138</section>
+	</course>
+	<course name="Mythologies In Literature" number="210">
+		<section>A|10907|11:00am|12:15pm|TR|MO|052</section>
+	</course>
+	<course name="Adv Comp-TEACHING EMPHASIS" number="300">
+		<section>A|10518|11:00am|12:15pm|TR|MO|138</section>
+		<section>B|10167|5:30pm|8:00pm|W|MO|238</section>
+	</course>
+	<course name="Advanced Composition" number="300">
+		<section>C|10172|8:00am|8:50am|MWF|MO|138</section>
+		<section>D|12039|8:00am|9:15am|TR|MO|138</section>
+		<section>E|10168|9:00am|9:50am|MWF|MO|137</section>
+		<section>F|10468|9:30am|10:45am|TR|MO|239</section>
+		<section>G|11840|10:00am|10:50am|MWF|MO|138</section>
+		<section>H|10169|9:00am|9:50am|MWF|MO|138</section>
+		<section>I|10170|11:00am|11:50am|MWF|MO|137</section>
+		<section>J|10171|11:00am|12:15pm|TR|MO|239</section>
+		<section>K|10645|1:00pm|2:15pm|MW|MO|238</section>
+		<section>L|10798|1:00pm|2:15pm|TR|MO|138</section>
+		<section>M|11206|2:30pm|3:45pm|MW|MO|238</section>
+		<section>N|11025|5:30pm|8:00pm|M|MO|137</section>
+		<section>O|12542|5:30pm|8:00pm|T|MO|138</section>
+	</course>
+	<course name="Literary Criticism and Theory" number="301">
+		<section>A|10431|11:00am|12:15pm|TR|MO|137</section>
+	</course>
+	<course name="Advanced Poetry Writing" number="306">
+		<section>A|10579|11:00am|11:50am|MWF|MO|238</section>
+	</course>
+	<course name="Advanced Nonfiction Writing" number="307">
+		<section>A|10581|12:00pm|12:50pm|MWF|MO|138</section>
+	</course>
+	<course name="English Grammar/Linguistics" number="310">
+		<section>A|10612|9:30am|10:45am|TR|MO|052</section>
+	</course>
+	<course name="Reading as Writers" number="315">
+		<section>A|10800|1:00pm|1:50pm|MWF|MO|138</section>
+	</course>
+	<course name="Teaching Young Adult Lit" number="320">
+		<section>A|10333|5:30pm|8:00pm|W|MO|138</section>
+	</course>
+	<course name="English Literature II" number="326">
+		<section>A|10519|5:30pm|8:00pm|T|MO|137</section>
+	</course>
+	<course name="American Lit II" number="331">
+		<section>A|10432|1:00pm|2:15pm|TR|MO|137</section>
+	</course>
+	<course name="Shakespeare" number="345">
+		<section>A|10430|2:30pm|3:45pm|TR|MO|239</section>
+	</course>
+	<course name="World Lit II" number="361">
+		<section>A|10334|10:00am|10:50am|MWF|MO|137</section>
+	</course>
+	<course name="Modern Novel" number="382">
+		<section>A|12550|2:30pm|3:45pm|TR|MO|052</section>
+	</course>
+	<course name="Aspects Of Film-Fantasy" number="390">
+		<section>A|11640|5:30pm|8:00pm|T|MO|238</section>
+	</course>
+	<course name="Spec Topic-Adv Playwriting" number="399">
+		<section>A|11866|1:00pm|3:45pm|R|GC|323</section>
+	</course>
+	<course name="Worlds of Oz--Lit &amp; Film" number="399">
+		<section>C|10903|1:00pm|3:40pm|W|MO|052</section>
+	</course>
+	<course name="Digital Storytelling-KS-HisLit" number="399">
+		<section>D|12533|1:00pm|2:15pm|TR|MA|206B</section>
+	</course>
+	<course name="Sr Seminar:Leonard Cohen" number="400">
+		<section>A|10356|1:00pm|2:15pm|TR|MO|052</section>
+	</course>
+</department>
+
+<department name="FOREIGN LANGUAGE" abbr="FL">
+	<course name="Beginning Latin II" number="102">
+		<section>C|10916|5:30pm|7:15pm|TR|MO|356</section>
+	</course>
+	<course name="Beg. Chinese II" number="102">
+		<section>B|10443|5:30pm|7:15pm|MW|MO|353</section>
+	</course>
+</department>
+
+<department name="FRENCH" abbr="FR">
+	<course name="Beginning French II" number="102">
+		<section>A|10104|12:00pm|12:50pm|MTWR|MO|356</section>
+		<section>B|10383|5:30pm|7:15pm|MW|MO|153</section>
+	</course>
+	<course name="Intermediate French II" number="202">
+		<section>A|10471|1:00pm|2:15pm|TR|MO|356</section>
+	</course>
+	<course name="French Composition" number="312">
+		<section>A|10625|1:00pm|1:50pm|MW|MO|356</section>
+	</course>
+	<course name="French Civilization" number="324">
+		<section>A|12580|2:30pm|3:45pm|TR|MO|356</section>
+	</course>
+</department>
+
+<department name="GERMAN" abbr="GE">
+	<course name="Beginning German II" number="102">
+		<section>A|10387|11:00am|11:50am|MTWR|MO|353</section>
+	</course>
+	<course name="Intermediate German II" number="202">
+		<section>A|10568|9:00am|9:50am|MWF|MO|356</section>
+	</course>
+	<course name="Contemporary Written German" number="312">
+		<section>A|12583|9:30am|10:45am|TR|MO|356</section>
+	</course>
+</department>
+
+<department name="GEOGRAPHY" abbr="GG">
+	<course name="Intro to Geography" number="101">
+		<section>A|10421|5:30pm|8:00pm|M|HC|307</section>
+	</course>
+	<course name="World Regional Geography" number="102">
+		<section>A|10020|9:30am|10:45am|TR|HC|307</section>
+		<section>B|10021|11:00am|12:15pm|TR|HC|307</section>
+	</course>
+	<course name="ST: Geography of Europe" number="300">
+		<section>A|12554|1:00pm|2:15pm|MW|HC|203</section>
+	</course>
+</department>
+
+<department name="GEOLOGY" abbr="GL">
+	<course name="Physical Geology" number="101">
+		<section>A|10109|9:00am|11:30am|S|ST|105</section>
+		<section>B|10410|9:30am|10:45am|TR|ST|118</section>
+		<section>C|10434|11:00am|12:15pm|TR|ST|118</section>
+	</course>
+	<course name="Historical Geology" number="103">
+		<section>A|10110|1:00pm|2:15pm|MW|ST|118</section>
+		<section>B|10629|2:30pm|3:45pm|MW|ST|118</section>
+	</course>
+</department>
+
+<department name="HISTORY" abbr="HI">
+	<course name="Survey-Early Wld Hist." number="100">
+		<section>A|10026|9:30am|10:45am|TR|HC|303</section>
+		<section>B|10415|11:00am|12:15pm|TR|HC|303</section>
+	</course>
+	<course name="Chngng Wld Hist: Trad &amp; Trans" number="101">
+		<section>A|10029|9:30am|10:45am|TR|HC|304</section>
+		<section>B|10480|11:00am|12:15pm|TR|HC|304</section>
+	</course>
+	<course name="Modern World History" number="102">
+		<section>A|10213|10:00am|10:50am|MWF|HC|304</section>
+		<section>B|10428|11:00am|11:50am|MWF|HC|304</section>
+	</course>
+	<course name="Intro World Music its History" number="105">
+		<section>A|11378|4:10pm|5:25pm|MW|GC|143</section>
+	</course>
+	<course name="US History through Civil War" number="111">
+		<section>A|10489|9:00am|9:50am|MWF|HC|307</section>
+		<section>B|10802|10:00am|10:50am|MWF|HC|307</section>
+		<section>C|10803|11:00am|11:50am|MWF|HC|303</section>
+	</course>
+	<course name="US History Since Civil War" number="112">
+		<section>A|10214|9:30am|10:45am|TR|HC|021</section>
+		<section>B|11230|1:00pm|2:15pm|TR|HC|203</section>
+		<section>C|10215|1:00pm|2:15pm|MW|HC|303</section>
+		<section>D|10538|11:00am|11:50am|MWF|HC|021</section>
+	</course>
+	<course name="Ancient Near East" number="300">
+		<section>A|10575|2:30pm|3:45pm|MW|HC|210</section>
+	</course>
+	<course name="Remembering Vietnam" number="300">
+		<section>B|10762|9:30am|10:45am|TR|HC|308</section>
+	</course>
+	<course name="Alexander Hamilton" number="300">
+		<section>C|10912|11:00am|11:50am|MWF|HC|307</section>
+	</course>
+	<course name="Digital Storytelling-KS-hislit" number="300">
+		<section>D|10913|1:00pm|2:15pm|TR|MA|206B</section>
+	</course>
+	<course name="Kansas History" number="322">
+		<section>A|10481|11:00am|12:15pm|TR|HC|006</section>
+	</course>
+	<course name="History of England" number="336">
+		<section>A|12474|1:00pm|2:15pm|MW|HC|217</section>
+	</course>
+	<course name="The European Reformation" number="343">
+		<section>A|12509|9:00am|9:50am|MWF|MA|105</section>
+	</course>
+	<course name="Film and History" number="383">
+		<section>A|12501|1:00pm|3:30pm|M|HC|006</section>
+	</course>
+	<course name="History Forum" number="395">
+		<section>A|10482|1:00pm|2:15pm|TR|HC|210</section>
+	</course>
+	<course name="Historical Methods &amp; Research" number="399">
+		<section>A|10219|12:00pm|12:50pm|MWF|HC|303</section>
+	</course>
+	<course name="Kansas History" number="622">
+		<section>GA|11947|11:00am|12:15pm|TR|HC|006</section>
+	</course>
+</department>
+
+<department name="HEALTH" abbr="HL">
+	<course name="Stress &amp; Weight Mgmt" number="207">
+		<section>A|12038|5:30pm|7:10pm|T|PC|225</section>
+	</course>
+</department>
+
+<department name="HONORS" abbr="HN">
+	<course name="SophHNSem-Critical Thinking" number="201">
+		<section>A|10829|1:00pm|2:15pm|TR|HC|217</section>
+	</course>
+	<course name="Dgtl Storytell - KS Lit &amp; Hist" number="201">
+		<section>B|10112|1:00pm|2:15pm|TR|MA|206B</section>
+	</course>
+	<course name="Ethics + Rspbilities of Ldrshp" number="201">
+		<section>C|10592|1:00pm|2:15pm|TR|HC|207</section>
+	</course>
+	<course name="Enjoyment of Music--Honors" number="201">
+		<section>D|10830|11:00am|12:15pm|TR|GC|220</section>
+	</course>
+	<course name="SophHNSem-Critical Thinking" number="202">
+		<section>A|10461|1:00pm|2:15pm|TR|HC|217</section>
+	</course>
+	<course name="Dgtl Storytlg-KS Lit &amp; Hist" number="202">
+		<section>B|10113|1:00pm|2:15pm|TR|MA|206B</section>
+	</course>
+	<course name="IntroductionToPovertyStudies" number="202">
+		<section>C|11076|3:15pm|4:30pm|MW|HC|217</section>
+	</course>
+	<course name="ST:Explore Concept of Ldrship" number="202">
+		<section>D|12687|9:30am|10:45am|TR|LLC2|162</section>
+	</course>
+	<course name="Alexander Hamilton" number="202">
+		<section>E|10955|11:00am|11:50am|MWF|HC|307</section>
+	</course>
+	<course name="SophHNSem-Critical Thinking" number="203">
+		<section>A|10954|1:00pm|2:15pm|TR|HC|217</section>
+	</course>
+	<course name="Advanced Mock Trial" number="392">
+		<section>B|10892|5:30pm|8:00pm|TR|MO|352</section>
+	</course>
+</department>
+
+<department name="HUMAN SERVICES" abbr="HS">
+	<course name="Human Development" number="131">
+		<section>A|10238|9:30am|10:45am|TR|BE|211</section>
+		<section>EA|10470|5:30pm|8:00pm|W|BE|211</section>
+	</course>
+	<course name="Internship I" number="280">
+		<section>XA|10597|12:00pm|12:50pm|W|BE|302</section>
+	</course>
+	<course name="Prevention and Social Change" number="300">
+		<section>A|12448|1:00pm|3:45pm|M|BE|207</section>
+	</course>
+	<course name="Case Management" number="304">
+		<section>A|12766|2:30pm|5:15pm|W|BE|211</section>
+	</course>
+	<course name="Subs.Abuse/Co-Occur Disordrs" number="312">
+		<section>EA|10611|5:30pm|8:00pm|M|BE|301</section>
+	</course>
+	<course name="Addictions Treatment" number="316">
+		<section>A|11871|1:00pm|3:45pm|R|BE|301</section>
+	</course>
+	<course name="Internship II" number="380">
+		<section>XA|10599|12:00pm|12:50pm|W|BE|302</section>
+	</course>
+	<course name="ST:Human Trafficking &amp; Mod Sla" number="390">
+		<section>A|10807|1:00pm|3:45pm|W|GC|323</section>
+	</course>
+	<course name="Methods Indiv Addiction Co'g" number="414">
+		<section>WA|12462|6:00pm|10:00pm|F|BE|305</section>
+	</course>
+	<course name="Legal Ethical Prof. Issues" number="446">
+		<section>A|12456|1:00pm|3:45pm|T|BE|301</section>
+	</course>
+	<course name="Morita Methods in Counseling" number="477">
+		<section>WA|12464|6:00pm|10:00pm|F|BE|210</section>
+	</course>
+	<course name="Human Services Internship IV" number="480">
+		<section>XA|11677|12:00pm|12:50pm|W|BE|302</section>
+	</course>
+	<course name="Internship III" number="481">
+		<section>XA|11012|12:00pm|12:50pm|W|BE|302</section>
+	</course>
+	<course name="Subs. Abuse/Co-Occur Disordrs" number="512">
+		<section>GEA|11015|5:30pm|8:00pm|M|BE|301</section>
+	</course>
+	<course name="Methods Indiv Addiction Co'g" number="514">
+		<section>GWA|12463|6:00pm|10:00pm|F|BE|305</section>
+	</course>
+	<course name="Addictions Treatment" number="516">
+		<section>GA|11874|1:00pm|3:45pm|R|BE|301</section>
+	</course>
+	<course name="Internship: Addiction Couns." number="580">
+		<section>GXA|11459|12:00pm|12:50pm|W|BE|302</section>
+	</course>
+	<course name="Morita Methods in Counseling" number="677">
+		<section>GWA|12465|6:00pm|10:00pm|F|BE|210</section>
+	</course>
+</department>
+
+<department name="INTENSIVE ENGLISH" abbr="IE">
+	<course name="Grammar Acad Purposes I" number="071">
+		<section>A|10933|1:00pm|2:45pm|MW|GC|112</section>
+	</course>
+	<course name="Rdng Comp Acad Purposes I" number="072">
+		<section>A|10337|3:30pm|5:15pm|TR|GC|112</section>
+	</course>
+	<course name="Spkng/Undrstndng Acad I" number="073">
+		<section>A|12721|3:30pm|5:15pm|MW|GC|231</section>
+	</course>
+	<course name="Writing for Acad Purposes I" number="074">
+		<section>A|11197|9:00am|10:45am|TR|GC|131</section>
+	</course>
+	<course name="Language in Context Seminar II" number="092">
+		<section>A|11053|1:00pm|2:45pm|F|GC|131</section>
+		<section>B|11526|1:00pm|2:45pm|F|GC|131</section>
+	</course>
+	<course name="Grammar Acad Purposes II" number="101">
+		<section>A|10338|1:00pm|2:45pm|MW|GC|131</section>
+	</course>
+	<course name="Rdng Comp Acad Purposes II" number="102">
+		<section>A|10339|1:00pm|2:45pm|TR|GC|112</section>
+	</course>
+	<course name="Spkng/Undrstndng Acad II" number="103">
+		<section>A|10340|3:30pm|5:15pm|MW|GC|231</section>
+	</course>
+	<course name="Writing for Acad Purposes II" number="104">
+		<section>A|11198|9:00am|10:45am|TR|GC|131</section>
+	</course>
+	<course name="Grammar Acad Purposes III" number="201">
+		<section>A|10341|9:00am|10:45am|MW|GC|323</section>
+		<section>B|11712|3:30pm|5:15pm|MW|GC|131</section>
+	</course>
+	<course name="Rdng Comp Acad Purposes III" number="202">
+		<section>A|10342|1:00pm|2:45pm|TR|GC|131</section>
+		<section>B|11428|3:30pm|5:15pm|TR|GC|131</section>
+	</course>
+	<course name="Spkng/Undrstndng Acad III" number="203">
+		<section>A|10343|3:30pm|5:15pm|MW|GC|112</section>
+		<section>EA|11196|6:30pm|8:15pm|MW|GC|131</section>
+	</course>
+	<course name="Writing for Acad Purposes III" number="204">
+		<section>A|10344|9:00am|10:45am|TR|GC|112</section>
+		<section>EA|11052|7:00pm|8:45pm|TR|GC|131</section>
+	</course>
+	<course name="Wrtng Acad Prpses III--GR only" number="294">
+		<section>A|10809|8:00am|9:45am|TR|LLC2|253</section>
+	</course>
+</department>
+
+<department name="INFORMATION LITERACY" abbr="IL">
+	<course name="Library Research Strategies" number="170">
+		<section>A|11991|10:00am|10:50am|F|MA|205</section>
+	</course>
+	<course name="Information Literacy Readings" number="398">
+		<section>A|12718|1:00pm|2:15pm|TR|MA|206B</section>
+	</course>
+	<course name="Information Literacy Research" number="399">
+		<section>A|12719|1:00pm|2:15pm|TR|MA|205</section>
+	</course>
+</department>
+
+<department name="INTERDISCIPLINARY STUDIES" abbr="IS">
+	<course name="Peer Educator Training" number="110">
+		<section>PEA|11128|3:00pm|3:50pm|R|MO|202</section>
+	</course>
+	<course name="Supplemental Instruction" number="110">
+		<section>SI|12703|3:00pm|3:50pm|T|MO|202</section>
+	</course>
+</department>
+
+<department name="INTERDISCIPLINARY STUDIES" abbr="IS">
+	<course name="Major &amp; Career Exploration" number="120">
+		<section>A|10646|10:00am|10:50am|MW|MA|205</section>
+		<section>B|11270|11:00am|11:50am|TR|MA|205</section>
+	</course>
+</department>
+
+<department name="JAPANESE" abbr="JP">
+	<course name="Beginning Japanese II" number="102">
+		<section>A|10444|3:00pm|4:45pm|MW|MO|352</section>
+	</course>
+	<course name="Intermediate Japanese II" number="202">
+		<section>A|10530|5:00pm|6:15pm|MW|MO|356</section>
+	</course>
+</department>
+
+<department name="KINESIOLOGY" abbr="KN">
+	<course name="Aerobics" number="104">
+		<section>A|11510|10:00am|10:50am|MW|PC|125</section>
+	</course>
+	<course name="Karate I" number="124">
+		<section>A|11481|10:00am|10:50am|TR|PC|125</section>
+	</course>
+	<course name="Swimming I" number="133">
+		<section>A|10771|2:45pm|3:35pm|TR|PC|126</section>
+	</course>
+	<course name="Swimming II" number="134">
+		<section>A|10772|2:45pm|3:35pm|TR|PC|126</section>
+	</course>
+	<course name="Tai Chi" number="139">
+		<section>A|10773|12:00pm|12:50pm|MW|PC|125</section>
+	</course>
+	<course name="Yoga" number="141">
+		<section>A|11216|12:30pm|1:20pm|TR|PC|125</section>
+		<section>B|11482|1:30pm|2:20pm|TR|PC|125</section>
+	</course>
+	<course name="Zumba" number="142">
+		<section>A|12414|11:00am|11:50am|MW|PC|125</section>
+	</course>
+	<course name="Kardio Kickbox" number="152">
+		<section>A|11228|8:00am|8:50am|TR|PC|125</section>
+	</course>
+	<course name="Self-Defense I" number="165">
+		<section>A|11229|9:00am|9:50am|TR|PC|125</section>
+		<section>WA|12587|5:00pm|10:00pm|F|PC|125</section>
+	</course>
+	<course name="Aqua Exercise I" number="170">
+		<section>A|10774|5:30pm|6:20pm|MW|PC|126</section>
+	</course>
+	<course name="ST: Pilates" number="190">
+		<section>A|11485|9:00am|9:50am|MW|PC|125</section>
+	</course>
+	<course name="ST: Water Volleyball" number="190">
+		<section>B|12505|11:00am|11:50am|MW|PC|126</section>
+	</course>
+	<course name="ST: Dancing with the Stars" number="190">
+		<section>C|12540|6:30pm|8:10pm|T|PC|125</section>
+	</course>
+	<course name="Marathon Training I" number="192">
+		<section>A|11940|7:30am|8:50am|TR|PC|224</section>
+	</course>
+	<course name="Marathon Training II" number="193">
+		<section>A|11941|7:30am|8:50am|TR|PC|100</section>
+	</course>
+	<course name="Coaching Princ. &amp; Philosophy" number="240">
+		<section>A|11222|12:00pm|12:50pm|MW|PC|224</section>
+	</course>
+	<course name="Wellness Concepts and Applic." number="248">
+		<section>A|11879|10:00am|10:50am|MWF|PC|224</section>
+		<section>B|11486|9:30am|10:45am|TR|PC|221</section>
+	</course>
+	<course name="Intro to Kinesiology" number="250">
+		<section>A|10775|11:00am|11:50am|MW|PC|224</section>
+	</course>
+	<course name="Prev &amp; Care of Ath Inj" number="257">
+		<section>A|10776|9:30am|10:45am|TR|PC|226</section>
+	</course>
+	<course name="First Aid" number="271">
+		<section>A|10778|1:00pm|2:40pm|T|PC|226A</section>
+	</course>
+	<course name="Clin Exp in Ath Trng-Basic Skl" number="292">
+		<section>A|10779|11:00am|11:50am|TR|PC|121</section>
+	</course>
+	<course name="Psych of Sport &amp; Phys Act" number="300">
+		<section>A|10780|1:00pm|2:15pm|TR|PC|224</section>
+	</course>
+	<course name="Adv Basketball Coaching Tech" number="302">
+		<section>A|10781|11:00am|11:50am|TR|PC|100</section>
+	</course>
+	<course name="Nutrition-Sports &amp; Fitness" number="308">
+		<section>A|10782|9:30am|10:45am|TR|PC|224</section>
+		<section>B|11488|11:00am|12:15pm|TR|PC|224</section>
+	</course>
+	<course name="ST: Sport Trad Lit HI &amp; CU EU" number="315">
+		<section>PA|12504|5:00pm|8:00pm|W|PC|220</section>
+	</course>
+	<course name="Motor Learning" number="320">
+		<section>A|10783|5:30pm|6:45pm|MW|PC|226</section>
+	</course>
+	<course name="Anatomical Kinesiology" number="321">
+		<section>A|10784|10:00am|10:50am|MWF|PC|221</section>
+		<section>B|10918|12:00pm|12:50pm|MWF|PC|221</section>
+	</course>
+	<course name="Physiology of Exercise" number="326">
+		<section>A|10785|9:00am|10:15am|MW|PC|226</section>
+		<section>B|10919|1:00pm|1:50pm|MWF|PC|226</section>
+	</course>
+	<course name="Microcomputer Apps Kinesiology" number="333">
+		<section>A|10786|9:00am|9:50am|MW|PC|211</section>
+		<section>B|10921|11:00am|11:50am|MW|PC|211</section>
+	</course>
+	<course name="Adapted Phys Ed" number="340">
+		<section>A|10787|9:30am|10:45am|TR|PC|121</section>
+	</course>
+	<course name="Phys Ed Activity Techniques IV" number="344">
+		<section>A|12507|11:00am|12:15pm|TR|PC|225</section>
+	</course>
+	<course name="Eval of Athletic Injuries" number="350">
+		<section>A|10788|9:30am|10:50am|MWF|PC|121</section>
+	</course>
+	<course name="Sports Perform Train &amp; Recond" number="357">
+		<section>A|10789|9:30am|10:45am|TR|PC|225</section>
+	</course>
+	<course name="Facility &amp; Event Management" number="370">
+		<section>A|10791|1:00pm|2:15pm|MW|PC|221</section>
+	</course>
+	<course name="Sec PE Methods Instruct Strat" number="375">
+		<section>XA|12508|11:00am|11:50am|MWF|PC|450</section>
+	</course>
+	<course name="Clin Exp in Ath Trning-Rehab" number="393">
+		<section>A|10792|8:00am|8:50am|MW|PC|121</section>
+	</course>
+	<course name="Planning &amp; Leading Exercise" number="400">
+		<section>A|10819|9:00am|9:50am|MW|PC|450</section>
+	</course>
+	<course name="Fitness Testing &amp; Ex Prescr" number="410">
+		<section>A|10793|11:00am|12:15pm|MW|PC|226</section>
+	</course>
+	<course name="Current Lit in Ex Physiology" number="411">
+		<section>A|11051|11:00am|12:15pm|TR|PC|221</section>
+	</course>
+	<course name="Synth/Applic in Kinesiology" number="476">
+		<section>A|12506|8:25am|9:15am|TR|PC|221</section>
+	</course>
+	<course name="Clin Exp In Ath Trning-Capston" number="493">
+		<section>A|10794|12:30pm|1:20pm|TR|PC|121</section>
+	</course>
+</department>
+
+<department name="LEADERSHIP" abbr="LE">
+	<course name="Explore Concept of Ldrship" number="100">
+		<section>A|10947|9:30am|10:45am|TR|LLC2|162</section>
+	</course>
+	<course name="Ethical Rspbilities of Ldrshp" number="200">
+		<section>A|11027|1:00pm|2:15pm|TR|HC|207</section>
+	</course>
+	<course name="Leadership Skills Dvlpmnt" number="300">
+		<section>A|11493|11:00am|12:15pm|TR|LLC2|253</section>
+	</course>
+	<course name="Ldrshp thru SOC Experience" number="399">
+		<section>B|12015|4:00pm|5:00pm|W|LLC2|162</section>
+	</course>
+</department>
+
+<department name="LEGAL STUDIES" abbr="LG">
+	<course name="Intro to Paralegal Studies" number="100">
+		<section>EA|10202|5:30pm|6:45pm|MW|HC|217</section>
+	</course>
+	<course name="Wills &amp; Estate Admin." number="220">
+		<section>A|11882|11:00am|11:50am|MWF|BE|305</section>
+	</course>
+	<course name="Legal Research I" number="250">
+		<section>A|10216|9:00am|9:50am|MWF|BE|212</section>
+	</course>
+	<course name="Interviewing &amp; Investigation" number="310">
+		<section>A|10904|9:30am|10:45am|TR|BE|301</section>
+	</course>
+	<course name="Criminal Law" number="345">
+		<section>A|11450|1:00pm|2:15pm|TR|HC|008</section>
+	</course>
+	<course name="ST: Capital Punishment" number="390">
+		<section>WA|12732|6:00pm|10:00pm|F|BE|207</section>
+	</course>
+	<course name="Litigation II" number="405">
+		<section>A|10476|11:00am|12:15pm|TR|BE|207</section>
+	</course>
+	<course name="Bankruptcy &amp; Collections" number="410">
+		<section>EA|11883|5:30pm|8:00pm|W|BE|301</section>
+	</course>
+</department>
+
+<department name="LIBERAL STUDIES" abbr="LS">
+	<course name="Ethics in Death &amp; Dying" number="601">
+		<section>GC|12733|9:30am|10:45am|TR|GC|231</section>
+	</course>
+</department>
+
+<department name="MATHEMATICS" abbr="MA">
+	<course name="Basic Algebra" number="103">
+		<section>A|10025|9:30am|10:45am|TR|MO|151</section>
+		<section>B|11922|11:00am|12:15pm|TR|MO|151</section>
+		<section>C|10935|5:30pm|6:45pm|TR|MO|152</section>
+	</course>
+	<course name="Intermediate Algebra" number="104">
+		<section>A|10031|8:00am|9:15am|TR|MO|152</section>
+		<section>B|10032|9:30am|10:45am|TR|MO|152</section>
+		<section>C|10483|1:00pm|2:15pm|MW|MO|152</section>
+		<section>D|10418|2:30pm|3:45pm|MW|MO|152</section>
+		<section>E|10419|4:00pm|5:15pm|TR|MO|253</section>
+		<section>F|10484|7:00pm|8:15pm|TR|MO|152</section>
+	</course>
+	<course name="Essential Mathematics" number="112">
+		<section>A|11223|2:00pm|3:15pm|TR|MO|155</section>
+		<section>B|11227|4:00pm|5:15pm|TR|MO|155</section>
+	</course>
+	<course name="College Algebra" number="116">
+		<section>A|10310|9:00am|9:50am|MWF|MO|253</section>
+		<section>B|11034|10:00am|10:50am|MWF|MO|253</section>
+		<section>C|11035|11:00am|11:50am|MTWRF|MO|253</section>
+		<section>D|10311|11:00am|11:50am|MWF|MO|151</section>
+		<section>E|11036|1:00pm|1:50pm|MWF|MO|151</section>
+		<section>F|11037|7:00pm|8:15pm|MW|MO|253</section>
+		<section>G|10312|9:30am|10:45am|TR|MO|155</section>
+		<section>H|10313|11:00am|12:15pm|TR|MO|155</section>
+	</course>
+	<course name="Trigonometry" number="117">
+		<section>A|10316|9:30am|10:45am|TR|MO|251</section>
+		<section>B|10315|11:00am|12:15pm|TR|MO|251</section>
+	</course>
+	<course name="Pre-Calculus" number="123">
+		<section>A|10416|10:00am|10:50am|MWF|MO|152</section>
+	</course>
+	<course name="Statistics" number="140">
+		<section>A|10317|11:00am|11:50am|MWF|MO|155</section>
+		<section>B|10318|9:30am|10:45am|TR|MO|154</section>
+		<section>C|10319|11:00am|12:15pm|TR|MO|154</section>
+		<section>D|10320|12:00pm|12:50pm|MWF|MO|154</section>
+		<section>E|10321|1:00pm|1:50pm|MWF|MO|154</section>
+	</course>
+	<course name="Applied Calculus I" number="141">
+		<section>A|10357|9:00am|9:50am|MWF|MO|151</section>
+		<section>B|10358|12:00pm|12:50pm|MWF|MO|151</section>
+		<section>C|10359|9:30am|10:45am|TR|MO|153</section>
+		<section>D|11925|5:30pm|6:45pm|TR|MO|155</section>
+	</course>
+	<course name="Calc &amp; Analytic Geometry I" number="151">
+		<section>A|10324|8:00am|8:50am|MTWRF|MO|155</section>
+	</course>
+	<course name="Calc &amp; Analytic Geometry II" number="152">
+		<section>A|10325|11:00am|11:50am|MTWRF|MO|152</section>
+	</course>
+	<course name="Discrete Math for Computing" number="206">
+		<section>A|10326|11:00am|12:15pm|TR|ST|316</section>
+	</course>
+	<course name="Discrete Mathematics" number="207">
+		<section>A|11927|1:00pm|2:15pm|TR|MO|152</section>
+	</course>
+	<course name="Math for Elem/MS Education I" number="228">
+		<section>A|10327|10:30am|11:45am|MWF|MO|251</section>
+	</course>
+	<course name="Math Representations Sec Math" number="230">
+		<section>A|12628|9:00am|9:50am|MWF|MO|251</section>
+	</course>
+	<course name="Differential Equations" number="241">
+		<section>A|10328|1:00pm|1:50pm|MWF|MO|155</section>
+	</course>
+	<course name="Calculus/Analytic Geometry III" number="253">
+		<section>A|11926|12:00pm|12:50pm|MWF|MO|153</section>
+	</course>
+	<course name="Linear Algebra" number="301">
+		<section>A|11928|11:00am|11:50am|MWF|MO|154</section>
+	</course>
+	<course name="Applied Statistics" number="343">
+		<section>A|10329|10:00am|10:50am|MWF|MO|155</section>
+	</course>
+	<course name="Mathematical Stats II" number="345">
+		<section>A|11929|11:00am|11:50am|MWF|MO|153</section>
+	</course>
+	<course name="Time Series Analysis" number="348">
+		<section>A|12631|1:30pm|2:45pm|MW|MO|253</section>
+	</course>
+	<course name="Modern Geometry" number="367">
+		<section>A|12633|1:00pm|2:15pm|MW|MO|251</section>
+	</course>
+	<course name="Actuarial Mathematics" number="385">
+		<section>A|12634|1:30pm|2:45pm|TR|MO|153</section>
+	</course>
+	<course name="Adv Problem Solving Techniques" number="390">
+		<section>A|11932|2:00pm|3:15pm|TR|MO|251</section>
+	</course>
+</department>
+
+<department name="MASS MEDIA" abbr="MM">
+	<course name="Intro to Mass Media" number="100">
+		<section>A|10116|1:00pm|2:15pm|MW|HC|207</section>
+		<section>B|10117|2:30pm|3:45pm|MW|HC|207</section>
+		<section>C|10118|9:00am|9:50am|MWF|HC|204</section>
+		<section>D|11810|11:00am|11:50am|MWF|HC|112</section>
+		<section>E|12553|5:30pm|8:00pm|M|HC|118</section>
+	</course>
+	<course name="Mass Media Boot Camp" number="199">
+		<section>A|10924|11:00am|12:50pm|W|HC|007</section>
+	</course>
+	<course name="Creative Media Writing" number="202">
+		<section>A|10119|11:00am|12:15pm|TR|HC|305</section>
+	</course>
+	<course name="Mass Media Law" number="300">
+		<section>A|10121|5:30pm|8:00pm|M|HC|107</section>
+	</course>
+	<course name="Digital Cinematography" number="312">
+		<section>A|11797|2:50pm|5:20pm|T|HC|305</section>
+	</course>
+	<course name="Visual Communication" number="321">
+		<section>A|10372|2:30pm|3:45pm|MW|HC|305</section>
+	</course>
+	<course name="Film Editing and Theory" number="350">
+		<section>A|12495|1:00pm|2:15pm|TR|HC|305</section>
+	</course>
+	<course name="ST: Interactive Storytelling" number="393">
+		<section>A|12049|4:10pm|5:25pm|MW|HC|207</section>
+	</course>
+	<course name="ST:Photo Journalism" number="393">
+		<section>B|11031|1:00pm|2:15pm|MW|MO|153</section>
+	</course>
+	<course name="ST: Murder, Mayhem and Media" number="393">
+		<section>C|11032|4:10pm|5:25pm|MW|HC|006</section>
+	</course>
+	<course name="ST: WU Writers Workshop" number="393">
+		<section>E|12734|5:00pm|8:00pm|F|HC|008</section>
+	</course>
+	<course name="ST:Set Design" number="393">
+		<section>L|11453|1:00pm|3:45pm|M|GC|020</section>
+	</course>
+	<course name="ST:Stage Makeup" number="393">
+		<section>M|11454|1:00pm|4:00pm|T|GC|031</section>
+	</course>
+	<course name="Media Literacy" number="400">
+		<section>A|11030|10:00am|10:50am|MWF|HC|217</section>
+	</course>
+	<course name="Journalism II" number="403">
+		<section>A|11798|5:30pm|8:00pm|T|HC|206</section>
+	</course>
+	<course name="Digital Filmmaking II" number="414">
+		<section>A|12496|2:50pm|5:20pm|R|HC|305</section>
+	</course>
+	<course name="Promotions Writing" number="415">
+		<section>A|12486|1:00pm|2:15pm|TR|HC|304</section>
+	</course>
+	<course name="Public Relations II" number="420">
+		<section>A|10122|11:00am|12:15pm|TR|HC|210</section>
+	</course>
+	<course name="Creative Media Practicum" number="431">
+		<section>A|11406|9:30am|10:45am|TR|HC|305</section>
+	</course>
+	<course name="Advertising II" number="432">
+		<section>A|10123|5:30pm|8:00pm|T|HC|305</section>
+	</course>
+	<course name="Career Dev Digital Portfolio" number="499">
+		<section>A|12497|11:00am|12:50pm|M|HC|217</section>
+	</course>
+</department>
+
+<department name="MILITARY AND STRATEGIC STUDIES" abbr="MS">
+	<course name="A Soldier's Story" number="210">
+		<section>A|12472|5:00pm|8:00pm|R|BE|211</section>
+	</course>
+	<course name="Hollywood Goes to War" number="336">
+		<section>A|12470|9:00am|10:15am|TR|BE|305</section>
+	</course>
+</department>
+
+<department name="MUSIC" abbr="MU">
+	<course name="Performance Class" number="070">
+		<section>A|10396|2:30pm|3:20pm|T|GC|213</section>
+	</course>
+	<course name="Enjoyment of Music" number="100">
+		<section>A|10221|9:30am|10:45am|TR|GC|143</section>
+		<section>B|10220|10:00am|10:50am|MWF|GC|143</section>
+		<section>C|10222|11:00am|11:50am|MWF|GC|143</section>
+		<section>D|10223|9:00am|9:50am|MWF|GC|143</section>
+	</course>
+	<course name="Enjoyment of Music-Honors" number="100">
+		<section>HN|12724|11:00am|12:15pm|TR|GC|220</section>
+	</course>
+	<course name="Jazz History" number="103">
+		<section>A|10224|1:00pm|2:15pm|MW|GC|218</section>
+	</course>
+	<course name="Movies &amp; Music" number="104">
+		<section>A|10225|4:10pm|6:40pm|T|GC|143</section>
+		<section>B|10226|7:00pm|9:30pm|T|GC|143</section>
+		<section>C|10227|4:10pm|6:40pm|R|GC|143</section>
+		<section>D|10397|7:00pm|9:30pm|R|GC|143</section>
+	</course>
+	<course name="Intro World Music its History" number="106">
+		<section>A|10552|4:10pm|5:25pm|MW|GC|143</section>
+	</course>
+	<course name="Piano for Beginners I" number="109">
+		<section>A|10228|4:10pm|5:25pm|MW|GC|235A</section>
+	</course>
+	<course name="Guitar for Beginners" number="111">
+		<section>A|10229|5:10pm|6:50pm|M|GC|134</section>
+	</course>
+	<course name="Group Piano II" number="134">
+		<section>A|11235|8:00am|8:50am|MWF|GC|235A</section>
+		<section>B|11236|9:30am|10:45am|TR|GC|235A</section>
+	</course>
+	<course name="Special Topics:  Piccolo" number="200">
+		<section>A|12476||||GC|222</section>
+	</course>
+	<course name="Improvisation" number="206">
+		<section>A|10454|8:00am|8:50am|MW|GC|218</section>
+	</course>
+	<course name="Brass Techniques" number="210">
+		<section>A|12407|3:30pm|4:45pm|TR|GC|140</section>
+	</course>
+	<course name="Group Piano IV" number="214">
+		<section>A|11461|10:00am|10:50am|MWF|GC|235A</section>
+	</course>
+	<course name="Theory &amp; Aural Comp I" number="215">
+		<section>A|11256|9:00am|9:50am|MWF|GC|220</section>
+	</course>
+	<course name="Vocal Diction for Singers" number="220">
+		<section>A|10284|9:30am|10:45am|TR|GC|218</section>
+	</course>
+	<course name="Wind Ensemble" number="226">
+		<section>A|10650|1:00pm|2:20pm|MWF|GC|134</section>
+	</course>
+	<course name="Instrumental Clinic" number="238">
+		<section>A|10285|8:30am|9:20am|TR|GC|143</section>
+	</course>
+	<course name="University Band" number="239">
+		<section>A|10652|7:15pm|9:15pm|M|GC|134</section>
+	</course>
+	<course name="Beginning Conducting" number="240">
+		<section>A|10286|4:10pm|5:25pm|MW|GC|140</section>
+	</course>
+	<course name="Jazz Ensemble II" number="245">
+		<section>A|10884|4:50pm|6:15pm|TR|GC|134</section>
+	</course>
+	<course name="Singers" number="247">
+		<section>A|10230|1:00pm|2:20pm|TR|GC|143</section>
+	</course>
+	<course name="Choir, Washburn" number="248">
+		<section>A|10231|12:00pm|12:50pm|MWF|GC|143</section>
+	</course>
+	<course name="Jazz Ensemble I" number="249">
+		<section>A|10232|11:00am|12:20pm|TR|GC|134</section>
+	</course>
+	<course name="Washburn Opera Studio" number="250">
+		<section>A|10448|2:30pm|4:00pm|MW|GC|140</section>
+	</course>
+	<course name="Orchestra" number="251">
+		<section>A|10233|1:00pm|2:20pm|TR|GC|140</section>
+	</course>
+	<course name="Orchestra, String" number="252">
+		<section>A|10452|2:30pm|4:00pm|MW|GC|134</section>
+	</course>
+	<course name="Piano Ensemble-Lower Division" number="254">
+		<section>A|11408|1:00pm|2:20pm|W|GC|229</section>
+	</course>
+	<course name="Small Ensembles - Strings" number="254">
+		<section>D|10506|1:00pm|3:00pm|F|GC|220</section>
+	</course>
+	<course name="Small Ensembles - Flute" number="254">
+		<section>E|10508|2:30pm|4:00pm|M|GC|218</section>
+	</course>
+	<course name="Small Ensembles - Hon Woodwind" number="254">
+		<section>F|10509|2:30pm|3:20pm|R|GC|229</section>
+	</course>
+	<course name="Small Ensembles - Saxophone" number="254">
+		<section>G|10511|6:00pm|9:00pm|W|GC|134</section>
+	</course>
+	<course name="Small Ensembles-Jazz Choir" number="254">
+		<section>H|11416|12:00pm|12:50pm|TR|GC|140</section>
+	</course>
+	<course name="Small Ensemble-Jazz Combo" number="254">
+		<section>I|11743|7:00pm|8:30pm|TR|GC|134</section>
+	</course>
+	<course name="Small Ensembles - Percussion" number="254">
+		<section>K|10549|12:00pm|12:50pm|MWF|GC|134</section>
+	</course>
+	<course name="Small Ensembles-Low Brass" number="254">
+		<section>L|11667|5:30pm|7:00pm|TR|GC|220</section>
+	</course>
+	<course name="Small Ensemble - Clarinet Ens" number="254">
+		<section>M|11745||||GC|329</section>
+	</course>
+	<course name="Bassoon" number="255">
+		<section>A|11038||||GC|319</section>
+	</course>
+	<course name="Cello" number="256">
+		<section>A|10253||||GC|331</section>
+	</course>
+	<course name="Clarinet" number="257">
+		<section>A|11048||||GC|329</section>
+	</course>
+	<course name="Euphonium" number="258">
+		<section>A|10254||||GC|313</section>
+	</course>
+	<course name="Flute" number="259">
+		<section>A|10255||||GC|222</section>
+	</course>
+	<course name="Guitar" number="260">
+		<section>A|11665||||GC|319</section>
+	</course>
+	<course name="Harp" number="261">
+		<section>A|11414||||GC|315</section>
+	</course>
+	<course name="Horn" number="263">
+		<section>A|11463||||GC|315</section>
+	</course>
+	<course name="Oboe" number="264">
+		<section>A|10641||||GC|311</section>
+	</course>
+	<course name="Organ" number="265">
+		<section>A|10256||||GC|319</section>
+	</course>
+	<course name="Percussion" number="266">
+		<section>A|10257||||GC|034</section>
+	</course>
+	<course name="Piano" number="267">
+		<section>A|10258||||GC|224</section>
+		<section>B|10259||||GC|311</section>
+	</course>
+	<course name="Saxophone" number="268">
+		<section>A|10260||||GC|034B</section>
+		<section>B|11911||||GC|312</section>
+	</course>
+	<course name="String Bass" number="269">
+		<section>A|10811||||GC|313</section>
+	</course>
+	<course name="Trombone" number="270">
+		<section>A|10261||||GC|313</section>
+	</course>
+	<course name="Trumpet" number="271">
+		<section>A|10262||||GC|314</section>
+	</course>
+	<course name="Tuba" number="272">
+		<section>A|10812||||GC|034B</section>
+	</course>
+	<course name="Viola" number="273">
+		<section>A|11039||||GC|317</section>
+	</course>
+	<course name="Violin" number="274">
+		<section>A|10263||||GC|317</section>
+	</course>
+	<course name="Voice" number="275">
+		<section>A|10264||||GC|212</section>
+		<section>B|10265||||GC|213</section>
+		<section>D|10266||||GC|214</section>
+		<section>E|10267||||GC|315</section>
+	</course>
+	<course name="Applied Jazz Lessons" number="276">
+		<section>A|10398||||GC|312</section>
+	</course>
+	<course name="Foundations of Music Ed." number="313">
+		<section>A|11040|8:00am|9:20am|MW|GC|134</section>
+	</course>
+	<course name="Theory &amp; Aural Comp. III" number="315">
+		<section>A|11464|9:00am|9:50am|MWF|GC|218</section>
+	</course>
+	<course name="Form and Analysis" number="320">
+		<section>A|11041|3:30pm|4:20pm|TR|GC|220</section>
+	</course>
+	<course name="Music History II" number="326">
+		<section>A|10411|10:00am|10:50am|MWF|GC|220</section>
+	</course>
+	<course name="ST: Harp Pedagogy and Literatu" number="400">
+		<section>A|12059||||GC|315</section>
+	</course>
+	<course name="ST:SpecialConducting-Instrumnt" number="400">
+		<section>B|11429||||GC|316</section>
+	</course>
+	<course name="Elem-Sec Music Ed Instrum Meth" number="418">
+		<section>A|10404|9:30am|10:45am|TR|GC|134</section>
+	</course>
+	<course name="Jazz Band Pedagogy" number="420">
+		<section>A|11465|11:00am|11:50am|MWF|GC|218</section>
+	</course>
+	<course name="Wind Ensemble" number="426">
+		<section>A|10651|1:00pm|2:20pm|MWF|GC|134</section>
+	</course>
+	<course name="University Band" number="439">
+		<section>A|10653|7:15pm|9:15pm|M|GC|140</section>
+	</course>
+	<course name="Adv. Instrumental Conducting" number="442">
+		<section>A|10287|8:30am|9:20am|TR|GC|143</section>
+	</course>
+	<course name="Composition" number="443">
+		<section>A|10649|4:50pm|6:15pm|T|GC|218</section>
+	</course>
+	<course name="Accompanying" number="444">
+		<section>A|10248||||GC|224</section>
+	</course>
+	<course name="Jazz Ensemble II" number="445">
+		<section>A|11415|4:50pm|6:15pm|TR|GC|134</section>
+	</course>
+	<course name="Singers" number="447">
+		<section>A|10249|1:00pm|2:20pm|TR|GC|143</section>
+	</course>
+	<course name="Choir, Washburn" number="448">
+		<section>A|10250|12:00pm|12:50pm|MWF|GC|143</section>
+	</course>
+	<course name="Jazz Ensemble I" number="449">
+		<section>A|10251|11:00am|12:20pm|TR|GC|134</section>
+	</course>
+	<course name="Washburn Opera Studio" number="450">
+		<section>A|10449|2:30pm|4:00pm|MW|GC|140</section>
+	</course>
+	<course name="Orchestra" number="451">
+		<section>A|10252|1:00pm|2:20pm|TR|GC|134</section>
+	</course>
+	<course name="Orchestra, String" number="452">
+		<section>A|10453|2:30pm|4:00pm|MW|GC|134</section>
+	</course>
+	<course name=" PianoEnsemble- Upper Division" number="454">
+		<section>A|11409|1:00pm|2:20pm|W|GC|229</section>
+	</course>
+	<course name="Small Ensembles - Strings" number="454">
+		<section>D|10507|1:00pm|3:00pm|F|GC|220</section>
+	</course>
+	<course name="Small Ensembles - Flute" number="454">
+		<section>E|11163|2:30pm|4:00pm|M|GC|218</section>
+	</course>
+	<course name="Small Ensembles - Hon Woodwind" number="454">
+		<section>F|10510|2:30pm|3:20pm|R|GC|229</section>
+	</course>
+	<course name=" Ensembles- Upper Division" number="454">
+		<section>G|12408|6:00pm|9:00pm|W|GC|134</section>
+		<section>H|12409|12:00pm|12:50pm|TR|GC|140</section>
+	</course>
+	<course name=" Small Ensemble - Jazz Combo" number="454">
+		<section>I|11744|7:00pm|8:30pm|TR|GC|134</section>
+	</course>
+	<course name="Small Ensembles - Percussion" number="454">
+		<section>K|10550|12:00pm|12:50pm|MWF|GC|134</section>
+	</course>
+	<course name=" Small Ensembles - Low Brass" number="454">
+		<section>L|11668|5:30pm|7:00pm|TR|GC|220</section>
+	</course>
+	<course name=" Small Ensemble - Clarinet Ens" number="454">
+		<section>M|11746||||GC|329</section>
+	</course>
+	<course name="Bassoon" number="455">
+		<section>A|11646||||GC|319</section>
+	</course>
+	<course name="Cello" number="456">
+		<section>A|10268||||GC|331</section>
+	</course>
+	<course name="Clarinet" number="457">
+		<section>A|10269||||GC|329</section>
+	</course>
+	<course name="Euphonium" number="458">
+		<section>A|10927||||GC|313</section>
+	</course>
+	<course name="Flute" number="459">
+		<section>A|10270||||GC|222</section>
+	</course>
+	<course name="Guitar" number="460">
+		<section>A|11666||||GC|319</section>
+	</course>
+	<course name="Harp" number="461">
+		<section>A|10271||||GC|315</section>
+	</course>
+	<course name="Horn" number="463">
+		<section>A|10272||||GC|315</section>
+	</course>
+	<course name="Oboe" number="464">
+		<section>A|11367||||GC|311</section>
+	</course>
+	<course name="Organ" number="465">
+		<section>A|10642||||GC|319</section>
+	</course>
+	<course name="Percussion" number="466">
+		<section>A|10273||||GC|034</section>
+	</course>
+	<course name="Piano" number="467">
+		<section>A|10274||||GC|224</section>
+		<section>B|10275||||GC|311</section>
+	</course>
+	<course name="Saxophone" number="468">
+		<section>A|10276||||GC|034B</section>
+		<section>B|11675||||GC|312</section>
+	</course>
+	<course name="String Bass" number="469">
+		<section>A|11405||||GC|313</section>
+	</course>
+	<course name="Trombone" number="470">
+		<section>A|10277||||GC|313</section>
+	</course>
+	<course name="Trumpet" number="471">
+		<section>A|10278||||GC|314</section>
+	</course>
+	<course name="Tuba" number="472">
+		<section>A|10279||||GC|034B</section>
+	</course>
+	<course name="Viola" number="473">
+		<section>A|10643||||GC|317</section>
+	</course>
+	<course name="Violin" number="474">
+		<section>A|10280||||GC|317</section>
+	</course>
+	<course name="Voice" number="475">
+		<section>A|10282||||GC|212</section>
+		<section>B|10283||||GC|213</section>
+		<section>D|10644||||GC|214</section>
+		<section>E|12410||||GC|315</section>
+	</course>
+	<course name="Applied Jazz Lessons" number="476">
+		<section>A|10399||||GC|312</section>
+	</course>
+</department>
+
+<department name="NURSING" abbr="NU">
+	<course name="Principles of Nutrition" number="220">
+		<section>A|10024|3:30pm|6:20pm|W|PC|204</section>
+		<section>B|10406|12:30pm|3:20pm|R|PC|204</section>
+	</course>
+	<course name="Health Assessment &amp; Promotion" number="306">
+		<section>A|11058|9:00am|11:50am|M|PC|220</section>
+		<section>CA|11065|3:00pm|4:50pm|M|PC|202</section>
+		<section>CB|11066|5:00pm|6:50pm|M|PC|202</section>
+		<section>CC|11070|8:00am|9:50am|T|PC|202</section>
+		<section>CD|11071|4:00pm|5:50pm|T|PC|202</section>
+		<section>CE|11072|6:00pm|7:50pm|T|PC|202</section>
+		<section>CF|11073|8:00am|9:50am|W|PC|202</section>
+		<section>CG|11074|3:00pm|4:50pm|W|PC|202</section>
+		<section>CH|12668|5:00pm|6:50pm|W|PC|202</section>
+	</course>
+	<course name="Fund. Nurs. Practice/Practicum" number="311">
+		<section>A|11059|1:00pm|2:50pm|M|PC|220</section>
+		<section>B|11089|1:00pm|2:50pm|M|PC|220</section>
+	</course>
+	<course name="Professional Transformation" number="318">
+		<section>A|11061|8:00am|8:50am|M|PC|220</section>
+	</course>
+	<course name="Pathophysiology I" number="320">
+		<section>A|12729|10:00am|12:50pm|T|HC|100</section>
+	</course>
+	<course name="Pharmacology I" number="322">
+		<section>A|12725|2:00pm|3:30pm|T|HC|100</section>
+	</course>
+	<course name="Pharmacology I with Lab" number="322">
+		<section>CA|12726|1:00pm|2:50pm|W|PC|204</section>
+		<section>CB|12727|10:00am|11:50am|W|PC|204</section>
+	</course>
+	<course name="Evidence-Based Nursing" number="328">
+		<section>A|11998|1:00pm|2:50pm|W|HC|100</section>
+		<section>AB|11999|1:00pm|2:50pm|W|HC|100</section>
+	</course>
+	<course name="Maternal/Women/Newborn Nursing" number="356">
+		<section>XA|12000|10:00am|11:50am|W|HC|100</section>
+	</course>
+	<course name="Nursing of Older Adults" number="386">
+		<section>XA|12002|8:00am|9:50am|W|HC|100</section>
+	</course>
+	<course name="Quality/Safety in Healthcare" number="462">
+		<section>A|11530|1:00pm|3:50pm|F|PC|220</section>
+	</course>
+	<course name="Clin. Prevent/Population Hlth" number="465">
+		<section>XA|12477|8:00am|11:50am|F|PC|220</section>
+	</course>
+	<course name="Pediatric Medical-Surg Nursing" number="468">
+		<section>XA|12677|8:00am|10:50am|M|PC|358A</section>
+	</course>
+	<course name="Capstone/Seminar" number="494">
+		<section>XA|11531|12:00pm|1:50pm|M|PC|358A</section>
+	</course>
+</department>
+
+<department name="PHILOSOPHY" abbr="PH">
+	<course name="Introduction to Philosophy" number="100">
+		<section>A|10381|9:30am|10:45am|TR|MO|136</section>
+		<section>B|10382|11:00am|12:15pm|TR|MO|136</section>
+	</course>
+	<course name="Ethics:Intro to Moral Problems" number="102">
+		<section>A|10124|10:00am|10:50am|MWF|GC|112</section>
+		<section>B|10616|11:00am|11:50am|MWF|GC|112</section>
+	</course>
+	<course name="Intro Logic Critical Thinking" number="104">
+		<section>A|10494|11:00am|12:15pm|TR|GC|323</section>
+	</course>
+	<course name="Philosophy of Love &amp; Sex" number="115">
+		<section>A|10125|9:00am|9:50am|MWF|GC|231</section>
+	</course>
+	<course name="Hist of Mod Western Phil" number="202">
+		<section>A|10386|1:00pm|2:15pm|MW|MO|352</section>
+	</course>
+	<course name="Symbolic Logic" number="220">
+		<section>A|10126|9:30am|10:45am|TR|MO|253</section>
+	</course>
+	<course name="Ethics in Death and Dying" number="300">
+		<section>A|11954|9:30am|10:45am|TR|GC|231</section>
+	</course>
+	<course name="Philosophy of Law" number="315">
+		<section>A|12510|1:00pm|2:15pm|MW|MO|136</section>
+	</course>
+	<course name="Philosophy of Mind" number="330">
+		<section>A|12511|1:00pm|2:15pm|TR|MO|136</section>
+	</course>
+</department>
+
+<department name="POLITICAL SCIENCE" abbr="PO">
+	<course name="Government of the US" number="106">
+		<section>A|11847|11:00am|11:50am|MWF|HC|203</section>
+		<section>B|10806|10:00am|10:50am|MWF|HC|204</section>
+		<section>C|10622|12:00pm|12:50pm|MWF|HC|203</section>
+		<section>E|12557|9:30am|10:45am|TR|HC|203</section>
+		<section>F|12558|11:00am|12:15pm|TR|HC|203</section>
+	</course>
+	<course name="Intro to Int'l Politics" number="225">
+		<section>A|10022|11:00am|12:15pm|TR|HC|204</section>
+	</course>
+	<course name="Intro to the Amer Legal Syst" number="255">
+		<section>A|11849|10:00am|10:50am|MWF|HC|203</section>
+	</course>
+	<course name="Federalism &amp; Public Policies" number="308">
+		<section>A|11852|9:00am|9:50am|MWF|HC|008</section>
+	</course>
+	<course name="Adv. International Relations" number="325">
+		<section>A|12657|11:00am|11:50am|MWF|HC|008</section>
+	</course>
+	<course name="ST:Religions and Politics" number="371">
+		<section>A|11476|9:30am|10:45am|TR|HC|006</section>
+	</course>
+	<course name="ST: Ireland and UK" number="372">
+		<section>A|12564|1:00pm|3:30pm|F|HC|006</section>
+	</course>
+	<course name="Senior Seminar" number="450">
+		<section>A|10369|5:30pm|8:00pm|W|HC|203</section>
+	</course>
+</department>
+
+<department name="PHYSICS" abbr="PS">
+	<course name="Intro to Physics" number="101">
+		<section>A|11471|5:30pm|6:45pm|TR|ST|316</section>
+	</course>
+	<course name="Meteorology" number="120">
+		<section>A|10427|9:30am|10:45am|TR|HC|008</section>
+		<section>B|10553|11:00am|12:15pm|TR|HC|008</section>
+	</course>
+	<course name="Phys Sci for Elem Ed" number="126">
+		<section>A|10429|12:30pm|1:45pm|MTWRF|ST|122</section>
+	</course>
+	<course name="College Physics II" number="262">
+		<section>A|10288|9:00am|9:50am|MTWF|BE|207</section>
+	</course>
+	<course name="College Physics II Lab" number="262">
+		<section>AL|10289|9:00am|11:50am|R|ST|122</section>
+		<section>BL|10290|2:00pm|4:50pm|R|ST|122</section>
+	</course>
+	<course name="Gen Physics I" number="281">
+		<section>A|10291|9:00am|9:50am|MWF|MO|152</section>
+	</course>
+	<course name="Gen Physics I Lab" number="281">
+		<section>AL|10292|9:00am|11:50am|T|ST|122</section>
+		<section>BL|10293|2:00pm|4:50pm|T|ST|122</section>
+	</course>
+	<course name="Relativity" number="310">
+		<section>A|12127|1:00pm|1:50pm|MW|ST|212</section>
+	</course>
+	<course name="Theoretical Mechanics I" number="335">
+		<section>A|12485|9:00am|9:50am|MWF|ST|122</section>
+	</course>
+	<course name="Modern Physics II" number="351">
+		<section>A|12483|11:00am|11:50am|MWF|ST|122</section>
+	</course>
+	<course name="Modern Physics Laboratory" number="352">
+		<section>AL|12484|2:00pm|4:50pm|W|ST|122</section>
+	</course>
+</department>
+
+<department name="PSYCHOLOGY" abbr="PY">
+	<course name="Basic Concepts in Psych - Mast" number="100">
+		<section>A|11437|9:00am|9:50am|MWF|HC|021</section>
+		<section>B|11438|10:00am|10:50am|MWF|HC|207</section>
+		<section>C|11439|11:00am|11:50am|MWF|HC|207</section>
+		<section>D|10936|1:00pm|2:15pm|TR|HC|303</section>
+		<section>E|10491|11:00am|12:15pm|TR|HC|207</section>
+	</course>
+	<course name="Psychological Statistics" number="151">
+		<section>A|11440|9:30am|10:45am|TR|HC|206</section>
+	</course>
+	<course name="Psych of Infancy &amp; Childhood" number="210">
+		<section>A|12578|5:30pm|6:45pm|TR|HC|008</section>
+	</course>
+	<course name="Adolescent Psychology" number="211">
+		<section>A|10621|11:00am|12:15pm|TR|HC|217</section>
+		<section>B|11242|9:30am|10:45am|TR|HC|217</section>
+	</course>
+	<course name="Abnormal Psychology" number="231">
+		<section>A|10127|8:00am|8:50am|MWF|HC|008</section>
+		<section>B|10128|1:00pm|2:15pm|MW|HC|103</section>
+	</course>
+	<course name="Psych Theories &amp; Art Therapy" number="295">
+		<section>A|11460|5:30pm|8:15pm|T|AB|118</section>
+	</course>
+	<course name="Cognition" number="306">
+		<section>A|11888|11:00am|11:50am|MWF|HC|103</section>
+	</course>
+	<course name="Physiological Psychology" number="307">
+		<section>A|11444|9:00am|9:50am|MWF|BE|210</section>
+	</course>
+	<course name="Internship" number="336">
+		<section>XA|10939|11:00am|11:50am|W|HC|206</section>
+	</course>
+	<course name="Childhood Psychopathology" number="338">
+		<section>A|12577|8:00am|8:50am|MWF|HC|103</section>
+	</course>
+	<course name="Intro to Clinical Psych" number="350">
+		<section>A|12579|8:00am|9:15am|TR|HC|008</section>
+	</course>
+	<course name="Psych of Marital &amp; Fam Proc" number="356">
+		<section>A|12582|9:30am|10:45am|TR|HC|207</section>
+	</course>
+	<course name="Adv Res Design/Scien Writing" number="386">
+		<section>A|12566|1:00pm|2:15pm|MW|HC|205</section>
+	</course>
+	<course name="Classroom to Career" number="395">
+		<section>A|11894|10:00am|10:50am|MWF|HC|021</section>
+	</course>
+	<course name="Advance Health Psychology" number="603">
+		<section>GA|12293|2:30pm|3:45pm|MW|HC|103</section>
+	</course>
+	<course name="Graduate Research Design" number="611">
+		<section>GA|12568|8:00am|8:50am|MWF|HC|205</section>
+	</course>
+	<course name="Psych Assessment of Adults" number="632">
+		<section>GA|12569|9:30am|12:15pm|T|HC|205</section>
+	</course>
+	<course name="Intro to Psychotherapy Techn" number="640">
+		<section>GA|12570|9:00am|11:45am|M|HC|205</section>
+	</course>
+	<course name="Psychotherapy Practicum I" number="641">
+		<section>GA|12572|9:00am|11:45am|W|HC|205</section>
+	</course>
+	<course name="Group Therapy Practicum" number="691">
+		<section>GA|12573|9:00am|11:45am|F|HC|205</section>
+	</course>
+	<course name="Child, Family and Marital Ther" number="700">
+		<section>GA|12585|9:30am|12:00pm|R|HC|205</section>
+	</course>
+	<course name="Child/Family/Marital Ther Prac" number="701">
+		<section>GA|12586|12:15pm|1:30pm|R|HC|206</section>
+	</course>
+	<course name="Internship" number="780">
+		<section>GXA|12574|1:30pm|4:00pm|R|HC|205</section>
+	</course>
+	<course name="Directed Rsh-Adult Asse. Pract" number="795">
+		<section>GP|12571|1:00pm|3:45pm|T|HC|205</section>
+	</course>
+</department>
+
+<department name="RELIGION" abbr="RG">
+	<course name="Intro to Religion" number="101">
+		<section>A|10130|9:00am|9:50am|MWF|MO|136</section>
+	</course>
+	<course name="World Religions" number="102">
+		<section>A|10131|11:00am|11:50am|MWF|MO|136</section>
+	</course>
+	<course name="Intro to the New Testament" number="106">
+		<section>A|10442|10:00am|10:50am|MWF|MO|136</section>
+	</course>
+	<course name="Jesus in the Gospels" number="303">
+		<section>A|12522|9:30am|10:45am|TR|MO|353</section>
+	</course>
+</department>
+
+<department name="SPECIAL EDUCATION" abbr="SE">
+	<course name="Excpts Early Childhood" number="460">
+		<section>A|11019|4:00pm|7:00pm|R|CA|300</section>
+	</course>
+	<course name="Problems Youth Disabilities" number="610">
+		<section>GA|12340|5:00pm|8:00pm|M|CA|300</section>
+	</course>
+	<course name="Assessment in Sp Ed (Pre-Elem)" number="660">
+		<section>GA|12352|5:00pm|8:00pm|T|CA|300</section>
+	</course>
+	<course name="Assessment in Sp Ed (Mid/Sec)" number="662">
+		<section>GA|12344|5:00pm|8:00pm|T|CA|300</section>
+	</course>
+</department>
+
+<department name="SOCIOLOGY" abbr="SO">
+	<course name="Introduction to Sociology" number="100">
+		<section>A|10132|9:00am|9:50am|MWF|LLC2|162</section>
+		<section>B|10133|10:00am|10:50am|MWF|LLC2|162</section>
+		<section>C|10134|11:00am|11:50am|MWF|LLC2|162</section>
+		<section>D|10136|12:00pm|12:50pm|MWF|LLC2|162</section>
+		<section>E|10135|1:00pm|2:15pm|MW|HC|304</section>
+		<section>F|10445|8:00am|9:15am|TR|HC|103</section>
+		<section>G|11483|5:30pm|8:00pm|W|HC|006</section>
+		<section>H|10930|5:30pm|8:00pm|M|HC|308</section>
+	</course>
+	<course name="American Social Problems" number="101">
+		<section>A|10137|9:30am|10:45am|TR|HC|112</section>
+		<section>B|10138|5:30pm|8:00pm|W|HC|307</section>
+	</course>
+	<course name="Culture &amp; Food" number="300">
+		<section>A|11469|1:00pm|2:15pm|TR|HC|204</section>
+	</course>
+	<course name="Culture &amp; Human Sexuality" number="302">
+		<section>A|11218|2:30pm|3:45pm|TR|HC|021</section>
+	</course>
+	<course name="Criminology" number="305">
+		<section>A|10446|4:00pm|6:30pm|T|HC|207</section>
+	</course>
+	<course name="Law and Society" number="306">
+		<section>WA|12754|6:00pm|10:00pm|F|HC|103</section>
+	</course>
+	<course name="Social Class in the U.S." number="310">
+		<section>A|12629|11:00am|12:15pm|TR|CA|203</section>
+	</course>
+	<course name="Juvenile Delinquency" number="311">
+		<section>A|12630|1:00pm|2:15pm|MW|HC|307</section>
+	</course>
+	<course name="Sociology of Sport" number="315">
+		<section>A|10139|11:00am|11:50am|MWF|HC|006</section>
+	</course>
+	<course name="Sociological Theory" number="360">
+		<section>A|10490|5:30pm|6:45pm|MW|HC|206</section>
+	</course>
+</department>
+
+<department name="SPANISH" abbr="SP">
+	<course name="Beginning Spanish II" number="102">
+		<section>A|10106|8:00am|8:50am|MTWR|MO|352</section>
+		<section>B|10107|9:00am|9:50am|MTWR|MO|352</section>
+		<section>C|10108|10:00am|10:50am|MTWF|MO|352</section>
+	</course>
+	<course name="Beg. Spanish II-Medical Emph." number="102">
+		<section>D|10388|11:00am|11:50am|MTWR|MO|352</section>
+	</course>
+	<course name="Beginning Spanish II" number="102">
+		<section>E|10567|5:30pm|7:15pm|MW|MO|352</section>
+		<section>F|10472|1:00pm|2:45pm|TR|MO|352</section>
+	</course>
+	<course name="Intermediate Spanish II" number="202">
+		<section>A|10473|9:00am|9:50am|MWF|MO|353</section>
+		<section>B|10474|12:00pm|12:50pm|MWF|MO|353</section>
+	</course>
+	<course name="Spanish Composition" number="312">
+		<section>A|10639|11:00am|11:50am|MW|GC|131</section>
+	</course>
+	<course name="Hispanic Culture thru Film" number="380">
+		<section>A|12576|1:00pm|3:30pm|M|HC|006</section>
+	</course>
+</department>
+
+<department name="SOCIAL WORK" abbr="SW">
+	<course name="Intro to Soc Wk &amp; Soc Welfare" number="100">
+		<section>A|10520|1:00pm|3:45pm|W|BE|301</section>
+	</course>
+	<course name="Gen Soc Wk Perspectives" number="250">
+		<section>A|10521|1:00pm|3:45pm|W|BE|210</section>
+	</course>
+	<course name="Macro Hum Beh &amp; Soc Envir" number="326">
+		<section>A|10768|1:00pm|3:45pm|R|BE|207</section>
+	</course>
+	<course name="Macro Social Work Practice II" number="353">
+		<section>A|10477|1:00pm|3:45pm|M|BE|210</section>
+		<section>EA|10478|5:30pm|8:00pm|W|BE|210</section>
+	</course>
+	<course name="BSW Seminar &amp; Practicum II" number="355">
+		<section>XA|10237|1:00pm|3:45pm|T|BE|305</section>
+		<section>XB|10244|1:00pm|3:45pm|T|GC|033</section>
+		<section>XEA|10569|5:30pm|8:00pm|T|BE|301</section>
+	</course>
+	<course name="Gen Qualitative Research" number="363">
+		<section>A|10617|1:00pm|3:45pm|R|HC|006</section>
+	</course>
+	<course name="ST: Social Work Policy Pract" number="390">
+		<section>B|12423|1:00pm|3:45pm|T|BE|207</section>
+	</course>
+	<course name="ST: Geriatric SW Practice" number="390">
+		<section>EA|12429|5:30pm|8:00pm|M|BE|207</section>
+	</course>
+	<course name="ST: Substance Abuse in SW Prac" number="390">
+		<section>EC|11263|5:30pm|8:00pm|R|BE|305</section>
+	</course>
+	<course name="Macro Hum Beh in Soc Envir" number="607">
+		<section>GA|11831|1:00pm|3:45pm|M|BE|301</section>
+	</course>
+	<course name="Qualitative Soc Work Rsrch" number="622">
+		<section>GA|11819|8:00am|10:50am|M|BE|305</section>
+	</course>
+	<course name="Pre-Generalist Practicum Wrksp" number="690">
+		<section>GWA|12411|8:30am|2:30pm|F|HC|112</section>
+	</course>
+	<course name="Generalist Practice Seminar I" number="692">
+		<section>GA|11821|1:00pm|3:45pm|M|BE|305</section>
+		<section>GEA|11822|5:30pm|8:00pm|M|BE|211</section>
+		<section>GEB|12421|5:30pm|8:00pm|R|BE|207</section>
+	</course>
+	<course name="Clin Soc Wk Pract w/ Indiv" number="705">
+		<section>GA|11823|1:00pm|3:45pm|W|HC|206</section>
+	</course>
+	<course name="Clin Soc Work Pract w/ Fam" number="706">
+		<section>GA|11824|8:00am|10:50am|W|BE|305</section>
+		<section>GB|11826|1:00pm|3:45pm|W|BE|305</section>
+	</course>
+	<course name="Clin Soc Work Pract w/ Groups" number="707">
+		<section>GEA|11827|5:30pm|8:00pm|W|BE|305</section>
+	</course>
+	<course name="ST: Social Work Policy Pract" number="780">
+		<section>GB|12425|1:00pm|3:45pm|T|BE|207</section>
+	</course>
+	<course name="ST: Substance Abuse in Clin SW" number="780">
+		<section>GEC|11813|5:30pm|8:00pm|R|BE|305</section>
+	</course>
+	<course name="Clin SW Pract Educ Environ" number="782">
+		<section>GEA|11828|5:30pm|8:00pm|T|BE|305</section>
+	</course>
+	<course name="Psychopharmacology" number="784">
+		<section>GA|11829|8:00am|10:50am|W|BE|301</section>
+	</course>
+	<course name="Geriatric Soc Work Clin Pract" number="787">
+		<section>GEA|12430|5:30pm|8:00pm|M|BE|207</section>
+	</course>
+</department>
+
+<department name="THEATRE" abbr="TH">
+	<course name="Drama Classics on Video" number="101">
+		<section>A|10522|1:00pm|3:45pm|M|GC|323</section>
+		<section>B|10523|1:00pm|3:45pm|T|GC|323</section>
+		<section>D|10583|5:30pm|8:15pm|W|GC|323</section>
+	</course>
+	<course name="Introduction to Theatre" number="102">
+		<section>A|10584|10:00am|10:50am|MWF|GC|118</section>
+		<section>B|10451|9:30am|10:45am|TR|GC|323</section>
+	</course>
+	<course name="Voice, Diction &amp; Interp" number="103">
+		<section>A|10586|9:00am|9:50am|MWF|GC|118</section>
+		<section>B|10524|11:00am|12:15pm|TR|GC|032</section>
+		<section>C|10525|5:30pm|8:00pm|M|GC|118</section>
+	</course>
+	<course name="Stage Makeup" number="199">
+		<section>C|11966|1:00pm|4:00pm|T|GC|031</section>
+	</course>
+	<course name="Acting I-TH Majors &amp; Minors" number="202">
+		<section>A|10815|9:00am|10:50am|MW|GC|032</section>
+	</course>
+	<course name="Acting I" number="202">
+		<section>B|11050|9:00am|10:50am|MW|GC|032</section>
+		<section>C|11985|9:00am|10:50am|TR|GC|032</section>
+	</course>
+	<course name="Acting I - HONORS" number="202">
+		<section>HNA|11264|9:00am|10:50am|MW|GC|032</section>
+		<section>HNB|11265|9:00am|10:50am|TR|GC|032</section>
+	</course>
+	<course name="Principles of Playwriting" number="208">
+		<section>A|11503|1:00pm|3:45pm|R|GC|323</section>
+	</course>
+	<course name="Drama Classics on Video" number="301">
+		<section>A|10526|1:00pm|3:45pm|M|GC|323</section>
+		<section>B|10527|1:00pm|3:45pm|T|GC|323</section>
+		<section>D|10588|5:30pm|8:15pm|W|GC|323</section>
+	</course>
+	<course name="Principles of Playwriting" number="308">
+		<section>A|11977|1:00pm|3:45pm|R|GC|323</section>
+	</course>
+	<course name="Set Design" number="315">
+		<section>A|12592|1:00pm|3:45pm|M|GC|020</section>
+	</course>
+	<course name="Washburn Opera Studio" number="399">
+		<section>C|11986|2:30pm|4:00pm|MW|GC|140</section>
+	</course>
+	<course name="Stage Makeup" number="399">
+		<section>D|11987|1:00pm|4:00pm|T|GC|031</section>
+	</course>
+	<course name="ST:Film Editing and Theory" number="399">
+		<section>F|11983|1:00pm|2:15pm|TR|HC|305</section>
+	</course>
+	<course name="ST: Digital Cinematography" number="399">
+		<section>G|11984|2:50pm|5:20pm|T|HC|305</section>
+	</course>
+	<course name="Advanced Playwriting" number="408">
+		<section>A|12626|1:00pm|3:45pm|R|GC|323</section>
+	</course>
+</department>
+
+<department name="WOMEN'S AND GENDER STUDIES" abbr="WG">
+	<course name="Hum Traffick Mod Day Slavery" number="390">
+		<section>A|12723|1:00pm|3:45pm|W|GC|323</section>
+	</course>
+	<course name="ST: UNCommission StatusofWomen" number="399">
+		<section>A|12147|1:00pm|3:45pm|R|LLC2|254</section>
+	</course>
+</department>
+
+<department name="WASHBURN UNIVERSITY" abbr="WU">
+	<course name="The Washburn Experience" number="101">
+		<section>A|10953|10:00am|10:50am|MWF|MO|202</section>
+		<section>B|11056|11:00am|12:15pm|TR|MO|202</section>
+		<section>C|11200|5:30pm|6:45pm|TR|MO|202</section>
+		<section>D|11202|9:00am|2:00pm|S|MA|205</section>
+		<section>E|12685|6:00pm|10:00pm|F|MA|205</section>
+	</course>
+	<course name="TheWashburnExp-AdultLearner" number="101">
+		<section>TB|11246|9:30am|10:45am|TR|MO|202</section>
+		<section>TC|11245|5:30pm|6:45pm|MW|MO|202</section>
+	</course>
+	<course name="The Washburn Exp-SpecialTopics" number="101">
+		<section>W|11491|11:00am|11:50am|MWF|MO|202</section>
+	</course>
+	<course name="The Washburn Experience" number="101">
+		<section>WA|11203|1:00pm|2:15pm|TR|MO|202</section>
+	</course>
+</department>
+
+<department name="ENGLISH" abbr="EN">
+	<course name="Digital Storytelling-KS-HisLit" number="138">
+		<section>B|12532|1:00pm|2:15pm|TR|MA|206B</section>
+	</course>
+	<course name="Worlds of Oz--Lit &amp; Film" number="192">
+		<section>C|12520|1:00pm|3:40pm|W|MO|052</section>
+	</course>
+	<course name="Worlds of Oz--Lit &amp; Film" number="399">
+		<section>C|10903|1:00pm|3:40pm|W|MO|052</section>
+	</course>
+</department>
+
+<department name="HISTORY" abbr="HI">
+	<course name="Kansas History" number="322">
+		<section>A|10481|11:00am|12:15pm|TR|HC|006</section>
+	</course>
+</department>
+
+<department name="ANTHROPOLOGY" abbr="AN">
+	<course name="Cultural Anthropology" number="112">
+		<section>A|10052|9:00am|9:50am|MWF|HC|118</section>
+	</course>
+	<course name="Introduction to Archaeology" number="114">
+		<section>A|10932|10:00am|10:50am|MWF|HC|308</section>
+	</course>
+	<course name="Anthropology of the Caribbean" number="325">
+		<section>A|12624|1:00pm|2:15pm|TR|HC|021</section>
+	</course>
+</department>
+
+<department name="HISTORY" abbr="HI">
+	<course name="Survey-Early Wld Hist." number="100">
+		<section>A|10026|9:30am|10:45am|TR|HC|303</section>
+	</course>
+	<course name="Chngng Wld Hist: Trad &amp; Trans" number="101">
+		<section>A|10029|9:30am|10:45am|TR|HC|304</section>
+	</course>
+	<course name="Modern World History" number="102">
+		<section>A|10213|10:00am|10:50am|MWF|HC|304</section>
+	</course>
+	<course name="Intro World Music its History" number="105">
+		<section>A|11378|4:10pm|5:25pm|MW|GC|143</section>
+	</course>
+</department>
+
+<department name="MUSIC" abbr="MU">
+	<course name="Intro World Music its History" number="106">
+		<section>A|10552|4:10pm|5:25pm|MW|GC|143</section>
+	</course>
+</department>
+
+<department name="SPANISH" abbr="SP">
+	<course name="Hispanic Culture thru Film" number="380">
+		<section>A|12576|1:00pm|3:30pm|M|HC|006</section>
+	</course>
+</department>
+
+<department name="BIOLOGY" abbr="BI">
+	<course name="Human Impact on Environment" number="203">
+		<section>A|10495|1:00pm|2:15pm|MW|ST|316</section>
+	</course>
+	<course name="Ecology" number="310">
+		<section>A|10496|10:00am|10:50am|MWF|ST|311</section>
+	</course>
+	<course name="Ecology Lab" number="310">
+		<section>L1|10497|2:00pm|4:50pm|R|ST|022</section>
+	</course>
+</department>
+
+<department name="ECONOMICS" abbr="EC">
+	<course name="Principles of Macroeconomics" number="201">
+		<section>A|10097|11:00am|11:50am|MWF|HC|208</section>
+	</course>
+</department>
+
+<department name="ENGLISH" abbr="EN">
+	<course name="Stories Around The World" number="133">
+		<section>A|11205|1:00pm|1:50pm|MWF|MO|137</section>
+	</course>
+</department>
+
+<department name="GEOGRAPHY" abbr="GG">
+	<course name="World Regional Geography" number="102">
+		<section>A|10020|9:30am|10:45am|TR|HC|307</section>
+	</course>
+</department>
+
+<department name="HUMAN SERVICES" abbr="HS">
+	<course name="ST:Human Trafficking &amp; Mod Sla" number="390">
+		<section>A|10807|1:00pm|3:45pm|W|GC|323</section>
+	</course>
+</department>
+
+<department name="PHILOSOPHY" abbr="PH">
+	<course name="Ethics:Intro to Moral Problems" number="102">
+		<section>A|10124|10:00am|10:50am|MWF|GC|112</section>
+	</course>
+</department>
+
+<department name="POLITICAL SCIENCE" abbr="PO">
+	<course name="Intro to Int'l Politics" number="225">
+		<section>A|10022|11:00am|12:15pm|TR|HC|204</section>
+	</course>
+</department>
+
+<department name="RELIGION" abbr="RG">
+	<course name="World Religions" number="102">
+		<section>A|10131|11:00am|11:50am|MWF|MO|136</section>
+	</course>
+</department>
+
+<department name="SOCIOLOGY" abbr="SO">
+	<course name="Law and Society" number="306">
+		<section>WA|12754|6:00pm|10:00pm|F|HC|103</section>
+	</course>
+	<course name="Social Class in the U.S." number="310">
+		<section>A|12629|11:00am|12:15pm|TR|CA|203</section>
+	</course>
+</department>
+
+<department name="SOCIAL WORK" abbr="SW">
+	<course name="Gen Soc Wk Perspectives" number="250">
+		<section>A|10521|1:00pm|3:45pm|W|BE|210</section>
+	</course>
+</department>
+
+<department name="ANTHROPOLOGY" abbr="AN">
+	<course name="Culture and Human Sexuality" number="302">
+		<section>A|11028|2:30pm|3:45pm|TR|HC|021</section>
+	</course>
+</department>
+
+<department name="SOCIOLOGY" abbr="SO">
+	<course name="Culture &amp; Human Sexuality" number="302">
+		<section>A|11218|2:30pm|3:45pm|TR|HC|021</section>
+	</course>
+</department>
+
+</washburn>
