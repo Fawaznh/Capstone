@@ -40,9 +40,19 @@
             android:label="EventsActivity" >
         </activity>
 
+        <activity
+            android:name=".MyCoursesActivity"
+            android:label="My Courses" >
+        </activity>
+
+        <activity
+            android:name=".AddCourseActivity"
+            android:label="Add New Class" >
+        </activity>
+
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value= "@string/google_maps_key" />
            <!-- android:value="AIzaSyAmrVwO40t70TjVSKj51Z3VnNt71IDpGdw" /> -->
 
 

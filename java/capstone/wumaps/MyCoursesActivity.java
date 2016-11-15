@@ -206,7 +206,7 @@ public class MyCoursesActivity extends AppCompatActivity
             {
                 if(doneBtn.getVisibility() == View.VISIBLE) return;
 
-                onCourseSelected(position);
+                onCourseSelected(position, view);
 
             }
         });
@@ -304,12 +304,14 @@ public class MyCoursesActivity extends AppCompatActivity
         listView.setAdapter(courseViewAdapter);
     }
 
-    private void onCourseSelected(int position)
+    private void onCourseSelected(int position, View view)
     {
         MyCourse myc = myCourses.get(position);
+        Intent intent = new Intent(view.getContext(), MapsActivity.class);
+        intent.putExtra("building", myc.bldg);
+        intent.putExtra("room", myc.room);
         Log.d("ItemClicked", "pos: "+position + " bldg: "+myc.bldg+ " room: "+myc.room);
-
-        //TODO  call MapsActivity and add marker
+        startActivity(intent);
 
     }
 

@@ -1,6 +1,5 @@
 package capstone.wumaps;
 
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -18,14 +17,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -47,7 +44,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
-import android.content.Context;
+
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
@@ -58,16 +55,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LocationListener {
 
     private GoogleMap mMap;
-    private Marker last;
+    private String last;
     private GoogleApiClient mGoogleApiClient;
     private CameraPosition pos;
     public static final String TAG = MapsActivity.class.getSimpleName();
-    private Marker mCurrLocationMarker;
-    private ArrayList<Marker> buildings = new ArrayList<>();
-    private HashMap<String, ArrayList<LatLng>> entrances;
-    private String[] myBuildings;
+    private HashMap<String, Building> buildings = new HashMap<>();
+    private HashMap<String, String> pointers = new HashMap<>();
     private Button selectBuildingButton;
-    private String selection;
     Polyline line;
     private boolean following;
     private LocationRequest mLocationRequest;
@@ -82,7 +76,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         this.selectBuildingButton = (Button) findViewById(R.id.selectBuildingButton);
         this.selectBuildingButton.setOnClickListener(new MyListener());
-        populateBuildings();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -95,14 +88,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setInterval(5 * 1000)
                 .setFastestInterval(1 * 1000);
-
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         //Initialize Google Play Services
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
@@ -116,9 +107,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.setOnMarkerClickListener(this);
         mMap.setIndoorEnabled(false);
+        mMap.setBuildingsEnabled(false);
         mMap.getUiSettings().setMapToolbarEnabled(false);
-        populate();
 
+        readFile();
     }
 
     @Override
@@ -130,6 +122,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED)
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+
+        Bundle extrasBundle= getIntent().getExtras();
+        if(extrasBundle != null)
+        {
+            String building = extrasBundle.getString("building");
+            Log.i("!!!!!!!", building);
+            if(building != null)
+                createPath(pointers.get(building));
+            //roomNum = extrasBundle.getString("roomNumber","none");
+        }
     }
 
     @Override
@@ -150,8 +152,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         if(line != null)
             line.remove();
-        if(mCurrLocationMarker != null)
-            mCurrLocationMarker.remove();
     }
 
     @Override
@@ -169,37 +169,41 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker)
     {
-        if(marker.equals(last))
+        if(marker.getTitle().equals(last))
         {
             if(line != null)
                 line.remove();
-            if(mCurrLocationMarker != null)
-                mCurrLocationMarker.remove();
-            createPath(marker);
-            following = true;
+            createPath(marker.getTitle());
             return true;
         }
-        last = marker;
+        last = marker.getTitle();
         marker.showInfoWindow();
         return true;
     }
 
-    private void createPath (Marker marker)
+    private void createPath (String building)
     {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED)
         {
+            following = true;
+            mMap.clear();
+            Building goal = buildings.get(building);
+            mMap.addMarker(new MarkerOptions()
+                    .position(goal.getLocation())
+                    .title(goal.getName())
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
             Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
-            String url = getDirectionsUrl(latLng, getClosestEntrance(marker, latLng));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
+            String url = getDirections(latLng, getClosestEntrance(goal, latLng));
             DownloadTask downloadTask = new DownloadTask();
             downloadTask.execute(url);
         }
     }
 
-    private String getDirectionsUrl(LatLng origin,LatLng dest)
+    private String getDirections(LatLng origin, LatLng dest)
     {
         // Origin of route
         String str_origin = "origin="+origin.latitude+","+origin.longitude;
@@ -222,14 +226,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return url;
     }
 
-    private void populate()
-    {
-        //Not sure if we need to hold this data in memory.  Easier, but also takes up a lot of space.
-        entrances = new HashMap<>();
-        buildings = new ArrayList<>();
-        readFile();
-    }
-
     private void readFile()
     {
         try
@@ -242,26 +238,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             NodeList places = doc.getElementsByTagName("building");
             for(int i = 0; i < places.getLength(); i++)
             {
+
                 Element building = (Element)places.item(i);
+                String name = building.getAttribute("name");
                 String abbr = building.getAttribute("abbr");
                 String temp1 = building.getAttribute("location");
                 String[] loc = temp1.split(",");
-                buildings.add(mMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(Double.parseDouble(loc[0]), Double.parseDouble(loc[1])))
-                        .title(building.getAttribute("name"))
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))));
-                buildings.get(i).setTag(abbr);
-                entrances.put(abbr, new ArrayList<LatLng>());
+                Building current = new Building(name,
+                                                abbr,
+                                                new LatLng(Double.parseDouble(loc[0]), Double.parseDouble(loc[1])));
+
+                buildings.put(name, current);
+                pointers.put(abbr, name);
+                if(building.getAttribute("default").equals("T"))
+                    mMap.addMarker(new MarkerOptions()
+                            .position(current.getLocation())
+                            .title(name)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
                 NodeList doors = building.getElementsByTagName("entrance");
                 for(int j = 0; j < doors.getLength(); j++)
                 {
                     Element door = (Element)doors.item(j);
                     String[] temp2 = door.getTextContent().split(",");
-                    entrances.get(abbr).add(new LatLng(Double.parseDouble(temp2[0]), Double.parseDouble(temp2[1])));
+                    current.addEntrance(new LatLng(Double.parseDouble(temp2[0]), Double.parseDouble(temp2[1])));
                 }
             }
-
+            Log.i("!!!!!", pointers.toString());
         }
         catch(Exception e)
         {
@@ -269,16 +272,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private LatLng getClosestEntrance(Marker marker, LatLng user)
+    private LatLng getClosestEntrance(Building building, LatLng user)
     {
-        LatLng val = entrances.get((String)marker.getTag()).get(0);
-        double distance = DistanceCalculator.calc(entrances.get((String)marker.getTag()).get(0), user);
-        for(int i = 1; i < entrances.get((String)marker.getTag()).size(); i++)
+        ArrayList<LatLng> entrances = building.getEntrances();
+        LatLng val = entrances.get(0);
+        double distance = DistanceCalculator.calc(entrances.get(0), user);
+        for(int i = 1; i < entrances.size(); i++)
         {
-            double check = DistanceCalculator.calc(entrances.get((String) marker.getTag()).get(i), user);
+            double check = DistanceCalculator.calc(entrances.get(i), user);
             if (check < distance)
             {
-                val = entrances.get((String) marker.getTag()).get(i);
+                val = entrances.get(i);
                 distance = check;
             }
         }
@@ -332,13 +336,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         if(following)
         {
-            pos = new CameraPosition.Builder()
-                    .target(new LatLng(location.getLatitude(), location.getLongitude()))
-                    .zoom(20)
-                    .tilt(75)
-                    .bearing(location.getBearing())
-                    .build();
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+            if(location.hasBearing())
+            {
+                pos = new CameraPosition.Builder()
+                        .target(new LatLng(location.getLatitude(), location.getLongitude()))
+                        .zoom(20)
+                        .tilt(75)
+                        .bearing(location.getBearing())
+                        .build();
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+            }
+            else
+            {
+                pos = new CameraPosition.Builder()
+                        .target(new LatLng(location.getLatitude(), location.getLongitude()))
+                        .zoom(20)
+                        .tilt(75)
+                        .build();
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+            }
         }
     }
 
@@ -559,64 +575,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
     private void doPopup(View v) {
         PopupMenu popupMenu = new PopupMenu(this,v);
-        for(int i=1;i<myBuildings.length;i++) {
-            popupMenu.getMenu().add(Menu.NONE, i, i, myBuildings[i]);
-        }
+        int i = 0;
+        for(String key : buildings.keySet())
+            popupMenu.getMenu().add(Menu.NONE, i, i++, key);
 
         popupMenu.setOnMenuItemClickListener(
-                new PopupMenu.OnMenuItemClickListener() {
+                new PopupMenu.OnMenuItemClickListener()
+                {
                     @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        if(item.getItemId()!=-1) {
-                            for (int i = 0; i < myBuildings.length; i++) {
-                                if (((String) item.getTitle()).equals(buildings.get(i).getTitle())) {
-                                    last=buildings.get(i);
-                                    onMarkerClick(buildings.get(i));
-                                }
-
-                            }
+                    public boolean onMenuItemClick(MenuItem item)
+                    {
+                        if(item.getItemId()!=-1)
+                        {
+                            for (String name : buildings.keySet())
+                                if (((String) item.getTitle()).equals(name))
+                                    createPath(name);
                             return true;
-                        }else{
-                            return false;
                         }
-
-
+                        else
+                            return false;
                     }
                 }
         );
-        //MenuInflater inflater = popupMenu.getMenuInflater();
-        //inflater.inflate(R.menu.my_popup_menu, popupMenu.getMenu());
         popupMenu.show();
-        //for(int i=0;i<buildings.length;i++)
-        //this.displayBuildingsTextView.append(this.buildings[i] + "\n");
-
-    }
-    private void populateBuildings() {
-        myBuildings = new String [25];
-        myBuildings[0] = "Alumni Center";
-        myBuildings[1] = "Art Building";
-        myBuildings[2] = "Bennett";
-        myBuildings[3] = "Benton";
-        myBuildings[4] = "Carnegie";
-        myBuildings[5] = "Carole Chapel";
-        myBuildings[6] = "Falley Field";
-        myBuildings[7] = "Food Court";
-        myBuildings[8] = "Garvey";
-        myBuildings[9] = "Henderson";
-        myBuildings[10] = "International House";
-        myBuildings[11] = "KBI Forensics";
-        myBuildings[12] = "Law School";
-        myBuildings[13] = "Living Learning Center";
-        myBuildings[14] = "Mabee Library";
-        myBuildings[15] = "Memorial Union";
-        myBuildings[16] = "Morgan";
-        myBuildings[17] = "Mulvane Art Museum";
-        myBuildings[18] = "Petro Allied Health";
-        myBuildings[19] = "Rec Center";
-        myBuildings[20] = "Stoffer";
-        myBuildings[21] = "Washburn Village";
-        myBuildings[22] = "White Concert Hall";
-        myBuildings[23] = "Whiting Stadium";
-        myBuildings[24] = "Yager Stadium";
     }
 }
