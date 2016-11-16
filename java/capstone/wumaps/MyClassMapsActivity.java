@@ -1,9 +1,14 @@
 package capstone.wumaps;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.app.ActionBar.LayoutParams;
 import android.location.Location;
 import android.Manifest;
 import android.os.AsyncTask;
@@ -17,7 +22,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -27,7 +34,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -43,7 +53,6 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
-import android.content.Context;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
@@ -59,9 +68,52 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
     private Marker mCurrLocationMarker;
     private ArrayList<Marker> buildings = new ArrayList<>();
     private HashMap<String, ArrayList<LatLng>> entrances;
+    private ArrayList<LatLng> rooms;
     Polyline line;
+    /*These are the building name and room # passed in the bundle from FindClassActivity*/
     private String buildName;
     private String roomNum;
+    /*The GroundOverlay is the actual thing that is put on the map. In order for it to be added, you need
+    * the information that goes along with it (GroundOverlayOptions). This includes the image file and the location. For some reason
+    * I made an array list of GroundOverlayOptions and then add those to an array list of actual overlays, because
+    * when you add them, they are put on the map. I'm sure there's a better way to do it, but it works. The reason
+    * why I keep them, is because I found out that in the case of the user hitting the back button and trying to
+    * select a different class, if the previous overlays aren't removed, it crashes. The dotOverlay, being used only once,
+    * obviously doesn't need to be an array, but it does need to be removed prior to its use.*/
+    private GroundOverlay dotOverlay;
+    private ArrayList<GroundOverlay> buildingOverlay = new ArrayList<>();
+    private ArrayList<GroundOverlay> startingBuildingOverlay = new ArrayList<>();
+    private ArrayList<GroundOverlayOptions> overlayOptionsList = new ArrayList<>();
+    private ArrayList<GroundOverlayOptions> startingOverlayOptionsList = new ArrayList<>();
+    /*These are the layouts that I put the buttons in. They are defined in the XML, but are empty so I
+    * can add buttons to them. I'm not sure if there needs to be two, though. Maybe we can reuse one, but
+    * I think I need two because there will always be two buildings*/
+    private LinearLayout startingBuildingLayout;
+    private LinearLayout endingBuildingLayout;
+    /*These are the rules for the buttons that I make when they are inside the layout. These buttons change the
+    *transparency of the overlays to show the user the floor they want.*/
+    private LinearLayout.LayoutParams params;
+
+
+
+    /*These are the bounds of where the images are overlayed in Google maps. There is a contains() method that we
+    *can use to see if the mMap.getCameraPosition().target is looking at the building to set the button layouts to
+    * VISIBLE or INVISIBLE depending*/
+    private static final LatLngBounds HENDERSONBOUNDS = new LatLngBounds(
+            new LatLng(39.033286, -95.703490),       // South west corner
+            new LatLng(39.033964, -95.702771));      // North east corner
+    private static final LatLngBounds STOFFERBOUNDS = new LatLngBounds(
+            new LatLng(39.035901, -95.699198),       // South west corner
+            new LatLng(39.036284, -95.698082));
+
+    /*The GroundOverlayOptions don't need to be defined here. We can put all of this in a thread to save memory.*/
+    private GroundOverlayOptions henderson1stFloor;
+    private GroundOverlayOptions henderson2ndFloor;
+    private GroundOverlayOptions stoffer1stFloor;
+    private GroundOverlayOptions stoffer2ndFloor;
+    private GroundOverlayOptions stoffer3rdFloor;
+    private GroundOverlayOptions roomLocationDot;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -87,6 +139,14 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
                 .build();
         mGoogleApiClient.connect();
 
+        endingBuildingLayout = (LinearLayout)findViewById(R.id.buttonLayout);
+
+        startingBuildingLayout = (LinearLayout)findViewById(R.id.startingButtonLayout);
+
+
+        params = new LinearLayout.LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+
     }
 
     @Override
@@ -110,6 +170,28 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
         mMap.getUiSettings().setMapToolbarEnabled(false);
         populate();
 
+        /*This definitely can be done in a thread.*/
+        henderson1stFloor = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.henderson1stfloor))
+                .positionFromBounds(HENDERSONBOUNDS);
+        henderson2ndFloor = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.henderson2ndfloor))
+                .positionFromBounds(HENDERSONBOUNDS);
+        stoffer1stFloor = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.stoffer1stfloor))
+                .positionFromBounds(STOFFERBOUNDS);
+        stoffer2ndFloor = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.stoffer2ndfloor))
+                .positionFromBounds(STOFFERBOUNDS);
+        stoffer3rdFloor = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.stoffer3rdfloor))
+                .positionFromBounds(STOFFERBOUNDS);
+
+
+        Log.d("What building", buildName);
+        Log.d("What Room",roomNum);
+
+
     }
 
     @Override
@@ -118,7 +200,7 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
         LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(campus, 0));
         if(!buildName.equals("none"))
-            findMyClass(buildName, roomNum);
+            findMyClass();
     }
 
     @Override
@@ -167,16 +249,18 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
         last = marker;
         marker.showInfoWindow();
         return true;
+
     }
 
     private void createPath (Marker marker)
     {
+
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED)
         {
             Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-            Log.i("!!!!!!!!!", location.toString());
+            //Log.i("!!!!!!!!!", location.toString());
             LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(latLng);
@@ -188,6 +272,8 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
             String url = getDirectionsUrl(latLng, getClosestEntrance(marker, latLng));
             DownloadTask downloadTask = new DownloadTask();
             downloadTask.execute(url);
+
+
         }
     }
 
@@ -219,6 +305,7 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
         //Not sure if we need to hold this data in memory.  Easier, but also takes up a lot of space.
         entrances = new HashMap<>();
         buildings = new ArrayList<>();
+        rooms = new ArrayList<>();
         readFile();
     }
 
@@ -243,6 +330,7 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
                         .title(building.getAttribute("name"))
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))));
                 buildings.get(i).setTag(abbr);
+
                 entrances.put(abbr, new ArrayList<LatLng>());
 
                 NodeList doors = building.getElementsByTagName("entrance");
@@ -397,6 +485,7 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
             catch(Exception e){
                 Log.d("Background Task", e.toString());
             }
+
             return data;
         }
 
@@ -414,6 +503,196 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
 
         }
     }
+    /*This is an idea I had for a background thread to check to see if the camera is looking at the
+    *buildings to show the buttons. It's obviously not right, but if we got it into a real background
+    *task, I think it would work.*/
+    private class MyCameraPosition extends Thread {
+        public void run() {
+
+            try {
+                while(!isInterrupted()) {
+                    sleep(300);
+                    if(HENDERSONBOUNDS.contains(mMap.getCameraPosition().target))
+                    {
+                        startingBuildingLayout.setVisibility(View.INVISIBLE);
+                        endingBuildingLayout.setVisibility(View.VISIBLE);
+
+                    }else if(STOFFERBOUNDS.contains(mMap.getCameraPosition().target))
+                    {
+                        startingBuildingLayout.setVisibility(View.VISIBLE);
+                        endingBuildingLayout.setVisibility(View.INVISIBLE);
+                    }else
+                    {
+                        startingBuildingLayout.setVisibility(View.INVISIBLE);
+                        endingBuildingLayout.setVisibility(View.INVISIBLE);
+                    }
+
+                }
+
+            }catch(InterruptedException ie)
+            {
+            }
+
+
+        }
+    }
+    public void findMyClass()
+    {
+        /*I have these loops there so things don't get screwed up when trying to go from class to class. If we made
+        * sure it was a new session every time, we wouldn't need these. I'm just making sure they are empty so we
+        * don't get a null pointer.*/
+        if(buildingOverlay.size()!=0)
+        {
+            for(int k=0;k<buildingOverlay.size();k++)
+            buildingOverlay.get(k).remove();
+        }
+        if(startingBuildingOverlay.size()!=0)
+        {
+            for(int n=0;n<startingBuildingOverlay.size();n++)
+                startingBuildingOverlay.get(n).remove();
+        }
+
+        for (int i = 0; i < buildings.size(); i++) {
+            /*This finds the building in the CampusLocations and matches it with the building name sent from the
+            * bundle in the FindClassActivity*/
+            if (buildings.get(i).getTag().toString().equals(buildName.trim())) {
+                /*We can use the createPath() method. I tried, but it crashed, so I left it like this.*/
+                last = buildings.get(i);
+                onMarkerClick(buildings.get(i));
+            }
+        }
+        /*This is just to force the stoffer overlay to happen. Realistically, we would check to see if the
+        * user's current location is within the STOFFERBOUNDS. We would just use if(STOFFERBOUNDS.contains(user'sLocation.getLatitude())
+         * && STOFFERBOUNDS.contains(user'sLocation.getLongitude()). Unless, of course, it recognizes LatLng objects. */
+        if(true)
+        {
+            startingOverlayOptionsList.add(stoffer1stFloor);
+            startingOverlayOptionsList.add(stoffer2ndFloor);
+            //startingOverlayOptionsList.add(stoffer3rdFloor);
+            startingOverlayIndoorMap(startingOverlayOptionsList);
+        }
+
+        /*I think this is relatively realistic. We would have to do this for every building and we could efficiently
+        * create the GroundOverlayOptions in a thread, but I think this is good enough.*/
+        if(buildName.equals("HC")) {
+            overlayOptionsList.add(henderson1stFloor);
+            overlayOptionsList.add(henderson2ndFloor);
+             /*Depending on the building name, theoretically, different GroundOverlayOptions objects would be sent.*/
+            overlayIndoorMap(overlayOptionsList);
+        }
+
+    }
+
+    private void overlayIndoorMap(ArrayList<GroundOverlayOptions> overlayOptions)
+    {
+        /*I have this hard coded for testing purposes, but I also started a RoomLocations XML that we could parse.
+        * We would need to check that the building is right, and then get the coordinates for the correct room.*/
+        LatLng ROOM104 = new LatLng(39.033681, -95.703065);
+
+        /*This adds the actual overlays to the map. This could be done in a thread, I think. This is probably what
+        * makes my stuff crash boom bang.*/
+        for(int k=0;k<overlayOptions.size();k++) {
+            buildingOverlay.add(mMap.addGroundOverlay(overlayOptions.get(k)));
+        }
+
+        /*This is hard coded for testing purposes. Really, all we would have to do is create the dot using the
+        * coordinates of the room based on the RoomLocation XML.*/
+        if(roomNum.equals("104"))
+        {
+
+            GroundOverlayOptions roomLocationDot = new GroundOverlayOptions()
+                    .image(BitmapDescriptorFactory.fromResource(R.drawable.roomdot))
+                    .position(ROOM104, 5f);
+
+            dotOverlay = mMap.addGroundOverlay(roomLocationDot);
+            /*Once  again, I remove the thing if it already exists for safety purposes. If this was set up properly,
+            * I wouldn't need it.*/
+        }else if(dotOverlay!=null)
+        {
+           dotOverlay.remove();
+        }
+        /*This loop just sets the proper floor of the room. It needs improving, but I did it this way to test.*/
+        for(int j=1;j<buildingOverlay.size();j++) {
+            if (roomNum.startsWith("1")) {
+                buildingOverlay.get(j).setTransparency(1f);
+            } else {
+                buildingOverlay.get(j).setTransparency(1f);
+            }
+        }
+        /*This creates the buttons for the floors. The more floors, the more buttons. However, I think my
+        * button layouts only look good up to 3 buttons. To fix this, I just need to increase the size of
+        * the overlay.*/
+        for(int i=1;i<buildingOverlay.size()+1;i++)
+        {
+
+            Button myButton = new Button(this);
+            myButton.setId(i - 0);
+            myButton.setText("Floor " + i);
+            myButton.setLayoutParams(params);
+            final int id_ = myButton.getId();
+            myButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    for (int i = 0; i < buildingOverlay.size(); i++) {
+                        if (i == id_ - 1) {
+                            buildingOverlay.get(id_ - 1).setTransparency(0f);
+                            /*Setting the dot transparency is important. If I don't, the dot appears on every
+                            * floor, and that's dumb. I what I was doing doesn't quite work.*/
+                            //dotOverlay.setTransparency(0f);
+                        } else {
+                            buildingOverlay.get(i).setTransparency(1f);
+                            //dotOverlay.setTransparency(1f);
+                        }
+                    }
+                }
+
+            });
+            /*Adding the button to the layout. I'm pretty sure this has to be done here. I mean, I think
+            * it's best to set the visibility of the layouts as opposed to adding the buttons when we need them.*/
+            endingBuildingLayout.addView(myButton);
+
+
+        }
+
+    }
+    private void startingOverlayIndoorMap(ArrayList<GroundOverlayOptions> overlayOptions)
+    {
+
+        /*Adding the stoffer overlay*/
+        for(int k=0;k<overlayOptions.size();k++) {
+            startingBuildingOverlay.add(mMap.addGroundOverlay(overlayOptions.get(k)));
+        }
+
+
+        /*Making buttons for stoffer overlay*/
+        for(int i=1;i<startingBuildingOverlay.size()+1;i++)
+        {
+            Button myButton = new Button(this);
+            myButton.setId(i - 0);
+            myButton.setText("Floor " + i);
+            myButton.setLayoutParams(params);
+            final int id_ = myButton.getId();
+            myButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    for (int i = 0; i < startingBuildingOverlay.size(); i++) {
+                        if (i == id_ - 1) {
+                            startingBuildingOverlay.get(id_ - 1).setTransparency(0f);
+                        } else {
+                            startingBuildingOverlay.get(i).setTransparency(1f);
+                        }
+                    }
+                }
+
+            });
+            startingBuildingLayout.addView(myButton);
+            //startingBuildingLayout.setVisibility(View.INVISIBLE);
+
+        }
+
+    }
+
+
 
     private class DirectionsJSONParser
     {
@@ -463,12 +742,10 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
                 }
 
             }
-            catch (JSONException e)
-            {
+            catch (JSONException e) {
                 e.printStackTrace();
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 e.printStackTrace();
             }
             return routes;
@@ -511,20 +788,9 @@ public class MyClassMapsActivity extends FragmentActivity implements OnMapReadyC
             return poly;
         }
     }
-    public void findMyClass(String buildingName, String roomNumber)
-    {
-        Log.i("!!!!!!!!!", "Made it to FindMyClass");
-        for (int i = 0; i < buildings.size(); i++) {
-            /**
-            if ((buildingName).equals(buildings.get(i).getTag())) {
-                //createPath(buildings.get(i));
-            } **/
-            if (buildings.get(i).getTag().toString().equals(buildingName.trim())) {
-                last = buildings.get(i);
-                onMarkerClick(buildings.get(i));
-            }
-        }
-    }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
