@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -29,6 +30,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -65,6 +68,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Polyline line;
     private boolean following;
     private LocationRequest mLocationRequest;
+
+    //Dan's variables
+    private GroundOverlay dotOverlay;
+    private ArrayList<GroundOverlay> buildingOverlay = new ArrayList<>();
+    private ArrayList<GroundOverlay> startingBuildingOverlay = new ArrayList<>();
+    private ArrayList<GroundOverlayOptions> overlayOptionsList = new ArrayList<>();
+    private ArrayList<GroundOverlayOptions> startingOverlayOptionsList = new ArrayList<>();
+
+    private LinearLayout startingBuildingLayout;
+    private LinearLayout endingBuildingLayout;
+    private LinearLayout.LayoutParams params;
+    private static final LatLngBounds HENDERSONBOUNDS = new LatLngBounds(
+            new LatLng(39.033286, -95.703490),       // South west corner
+            new LatLng(39.033964, -95.702771));      // North east corner
+    private static final LatLngBounds STOFFERBOUNDS = new LatLngBounds(
+            new LatLng(39.035901, -95.699198),       // South west corner
+            new LatLng(39.036284, -95.698082));
+
+    private GroundOverlayOptions henderson1stFloor;
+    private GroundOverlayOptions henderson2ndFloor;
+    private GroundOverlayOptions stoffer1stFloor;
+    private GroundOverlayOptions stoffer2ndFloor;
+    private GroundOverlayOptions stoffer3rdFloor;
+    private GroundOverlayOptions roomLocationDot;
+    //End Dan's variables
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
