@@ -1,9 +1,11 @@
 package capstone.wumaps;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.Manifest;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -12,12 +14,13 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -30,8 +33,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.GroundOverlay;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -68,6 +69,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Polyline line;
     private boolean following;
     private LocationRequest mLocationRequest;
+    private Toast toast;
+    private LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -114,13 +117,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setMapToolbarEnabled(false);
 
         readFile();
+        toast = Toast.makeText(getApplicationContext(), "             Click a marker for building name  \n" +
+                                                        " or press SELECT BUILDING below to search", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0 , 0);
+        toast.show();
     }
 
     @Override
     public void onConnected(@Nullable Bundle bundle)
     {
-        LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(campus, 0));
+        mMap.setLatLngBoundsForCameraTarget(campus);
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED)
@@ -181,15 +188,37 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         last = marker.getTitle();
         marker.showInfoWindow();
+        toast.setText("Click Marker again to route");
+        toast.show();
         return true;
     }
 
     private void createPath (String building)
     {
+        if (locationCheck())
+            makePath(building);
+        else
+        {
+            toast.setText("Unable to route.\nPlease enable location in your device settings");
+            toast.show();
+        }
+    }
+
+    private void makePath(String building)
+    {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED)
         {
+            Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+            if(!isContained(latLng))
+            {
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setText("Routing only available on Washburn campus");
+                toast.show();
+                return;
+            }
             following = true;
             mMap.clear();
             Building goal = buildings.get(building);
@@ -197,8 +226,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .position(goal.getLocation())
                     .title(goal.getName())
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-            Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
             String url = getDirections(latLng, getClosestEntrance(goal, latLng));
             DownloadTask downloadTask = new DownloadTask();
@@ -273,6 +300,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             Log.i(TAG, e.toString());
         }
+    }
+
+    private boolean locationCheck()
+    {
+        LocationManager lm = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+        boolean gps_enabled = false;
+        boolean net_enabled = false;
+
+        try
+        {
+            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        }
+        catch (Exception ex)
+        {
+            Log.e(TAG,"Exception gps_enabled");
+        }
+
+        try
+        {
+            net_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        }
+        catch (Exception ex)
+        {
+            Log.e(TAG,"Exception network_enabled");
+        }
+
+        return gps_enabled || net_enabled;
+    }
+
+    private boolean isContained(LatLng loc)
+    {
+        //if(campus.contains(loc))
+            return true;
+        //return false;
     }
 
     private LatLng getClosestEntrance(Building building, LatLng user)
@@ -361,21 +422,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> >
+    private class ParserTask extends AsyncTask<String, Integer, List<double[]> >
     {
 
         // Parsing the data in non-ui thread
         @Override
-        protected List<List<HashMap<String, String>>> doInBackground(String... jsonData)
+        protected List<double[]> doInBackground(String... jsonData)
         {
-
             JSONObject jObject;
-            List<List<HashMap<String, String>>> routes = null;
+            List<double[]> routes = null;
 
             try
             {
                 jObject = new JSONObject(jsonData[0]);
-                DirectionsJSONParser parser = new DirectionsJSONParser();
+                DirectionsParser parser = new DirectionsParser();
 
                 // Starts parsing data
                 routes = parser.parse(jObject);
@@ -389,27 +449,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Executes in UI thread, after the parsing process
         @Override
-        protected void onPostExecute(List<List<HashMap<String, String>>> result)
+        protected void onPostExecute(List<double[]> result)
         {
-            ArrayList<LatLng> points = null;
 
-            // Traversing through all the routes
-            //for(int i=0;i<result.size();i++){
-            points = new ArrayList<LatLng>();
-            PolylineOptions lineOptions = new PolylineOptions();
+            ArrayList<LatLng> points = new ArrayList<>();
 
-            // Fetching i-th route
-            List<HashMap<String, String>> path = result.get(0);
-
-            // Fetching all the points in i-th route
-            for(int j=0;j<path.size();j++)
+            for(int j = 0; j < result.size(); j++)
             {
-                HashMap<String,String> point = path.get(j);
-
-                double lat = Double.parseDouble(point.get("lat"));
-                double lng = Double.parseDouble(point.get("lng"));
-                LatLng position = new LatLng(lat, lng);
-
+                LatLng position = new LatLng(result.get(j)[0], result.get(j)[1]);
                 points.add(position);
             }
 
@@ -457,53 +504,36 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private class DirectionsJSONParser
+    private class DirectionsParser
     {
-
         /** Receives a JSONObject and returns a list of lists containing latitude and longitude */
-        public List<List<HashMap<String,String>>> parse(JSONObject jObject){
+        public List<double[]> parse(JSONObject jObject){
 
-            List<List<HashMap<String, String>>> routes = new ArrayList<List<HashMap<String,String>>>() ;
-            JSONArray jRoutes = null;
-            JSONArray jLegs = null;
-            JSONArray jSteps = null;
+            List<double[]> route = new ArrayList<>() ;
 
             try
             {
+                JSONArray jLegs = ((JSONObject)jObject.getJSONArray("routes").get(0)).getJSONArray("legs");
 
-                jRoutes = jObject.getJSONArray("routes");
-
-                /** Traversing all routes */
-                for(int i=0;i<jRoutes.length();i++)
+                /** Traversing all legs */
+                for(int j = 0; j < jLegs.length(); j++)
                 {
-                    jLegs = ( (JSONObject)jRoutes.get(i)).getJSONArray("legs");
-                    List path = new ArrayList<HashMap<String, String>>();
+                    JSONArray jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
 
-                    /** Traversing all legs */
-                    for(int j=0;j<jLegs.length();j++)
+                    /** Traversing all steps */
+                    for(int k=0; k<jSteps.length(); k++)
                     {
-                        jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+                        String polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
+                        List<LatLng> list = decodePoly(polyline);
 
-                        /** Traversing all steps */
-                        for(int k=0;k<jSteps.length();k++)
+                        /** Traversing all points */
+                        for(int l = 0; l < list.size(); l++)
                         {
-                            String polyline = "";
-                            polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
-                            List<LatLng> list = decodePoly(polyline);
-
-                            /** Traversing all points */
-                            for(int l=0;l<list.size();l++)
-                            {
-                                HashMap<String, String> hm = new HashMap<String, String>();
-                                hm.put("lat", Double.toString(((LatLng)list.get(l)).latitude) );
-                                hm.put("lng", Double.toString(((LatLng)list.get(l)).longitude) );
-                                path.add(hm);
-                            }
+                            double[] vals = {list.get(l).latitude, list.get(l).longitude};
+                            route.add(vals);
                         }
-                        routes.add(path);
                     }
                 }
-
             }
             catch (JSONException e)
             {
@@ -513,7 +543,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                 e.printStackTrace();
             }
-            return routes;
+            return route;
         }
 
         private List<LatLng> decodePoly(String encoded)
@@ -526,29 +556,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             while (index < len)
             {
                 int b, shift = 0, result = 0;
+
                 do
                 {
                     b = encoded.charAt(index++) - 63;
                     result |= (b & 0x1f) << shift;
                     shift += 5;
+                    //Log.i("!!!!!", String.valueOf(b));
                 } while (b >= 0x20);
-                int dlat = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
-                lat += dlat;
+                //Log.i("!!!!!", "Lat done");
+                lat += ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
 
                 shift = 0;
                 result = 0;
+
                 do
                 {
                     b = encoded.charAt(index++) - 63;
                     result |= (b & 0x1f) << shift;
                     shift += 5;
+                    Log.i("!!!!!", String.valueOf(b));
                 } while (b >= 0x20);
-                int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
-                lng += dlng;
-
-                LatLng p = new LatLng((((double) lat / 1E5)),
-                        (((double) lng / 1E5)));
-                poly.add(p);
+                //Log.i("!!!!!", "Lng done");
+                lng += ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
+                poly.add(new LatLng((((double) lat / 1E5)), (((double) lng / 1E5))));
             }
             return poly;
         }
