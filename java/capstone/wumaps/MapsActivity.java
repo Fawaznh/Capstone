@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -33,6 +34,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -59,17 +62,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LocationListener {
 
     private GoogleMap mMap;
-    private String last;
-    private GoogleApiClient mGoogleApiClient;
     private CameraPosition pos;
+    private String last;
+    private int index =  0;
+    private int check;
+    private GoogleApiClient mGoogleApiClient;
     public static final String TAG = MapsActivity.class.getSimpleName();
-    private HashMap<String, Building> buildings = new HashMap<>();
+    private TreeMap<String, Building> buildings = new TreeMap<>();
     private HashMap<String, String> pointers = new HashMap<>();
+    private GroundOverlayOptions dotOverlay;
+    private GroundOverlay dot;
+    private ArrayList<GroundOverlay> buildingOverlay = new ArrayList<>();
+    private ArrayList<GroundOverlayOptions> overlayOptionsList = new ArrayList<>();
     private Button selectBuildingButton;
-    Polyline line;
+    private Button upButton;
+    private Button downButton;
+    private Polyline line;
     private boolean following;
+    private String building;
+    private int roomNum = 999;
     private LocationRequest mLocationRequest;
     private Toast toast;
+    private Building goal;
+    private LatLngBounds arrival;
     private LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
 
     @Override
@@ -80,8 +95,47 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        this.selectBuildingButton = (Button) findViewById(R.id.selectBuildingButton);
-        this.selectBuildingButton.setOnClickListener(new MyListener());
+        selectBuildingButton = (Button) findViewById(R.id.selectBuildingButton);
+        selectBuildingButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                doPopup(v);
+            }
+        });
+
+        upButton = (Button) findViewById(R.id.UpButton);
+        upButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                downButton.setVisibility(View.VISIBLE);
+                adjustButtons(1);
+                if(index == goal.getFloors() - 1)
+                    upButton.setVisibility(View.INVISIBLE);
+                else
+                    upButton.setText("Floor" + (index + 2));
+                downButton.setText("Floor" + index );
+
+            }
+        });
+        upButton.setVisibility(View.INVISIBLE);
+
+        downButton = (Button) findViewById(R.id.DownButton);
+        downButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                upButton.setVisibility(View.VISIBLE);
+                adjustButtons(-1);
+                if(index == 0)
+                    downButton.setVisibility(View.INVISIBLE);
+                else
+                    downButton.setText("Floor" + (index));
+                upButton.setText("Floor" + (index + 2));
+            }
+        });
+        downButton.setVisibility(View.INVISIBLE);
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -92,15 +146,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mLocationRequest = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setInterval(5 * 1000)
+                .setInterval(3 * 1000)
                 .setFastestInterval(1 * 1000);
+
+        Bundle extrasBundle= getIntent().getExtras();
+        if(extrasBundle != null)
+        {
+            building = extrasBundle.getString("building");
+            roomNum = Integer.parseInt(extrasBundle.getString("room"));
+        }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
         mMap = googleMap;
-        //Initialize Google Play Services
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
             if (ContextCompat.checkSelfPermission(this,
@@ -115,12 +175,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setIndoorEnabled(false);
         mMap.setBuildingsEnabled(false);
         mMap.getUiSettings().setMapToolbarEnabled(false);
-
-        readFile();
-        toast = Toast.makeText(getApplicationContext(), "             Click a marker for building name  \n" +
-                                                        " or press SELECT BUILDING below to search", Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0 , 0);
-        toast.show();
     }
 
     @Override
@@ -133,14 +187,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 == PackageManager.PERMISSION_GRANTED)
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
 
-        Bundle extrasBundle= getIntent().getExtras();
-        if(extrasBundle != null)
+        readFile();
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener()
         {
-            String building = extrasBundle.getString("building");
-            Log.i("!!!!!!!", building);
-            if(building != null)
-                createPath(pointers.get(building));
-            //roomNum = extrasBundle.getString("roomNumber","none");
+            @Override
+            public void onMapClick(LatLng latLng)
+            {
+                //Log.i("!!!!!", "<room  num= \"" + count++ + "\">" + latLng.latitude + ", " + latLng.longitude + "</room>");
+                if(arrival != null)
+                    if(arrival.contains(latLng))
+                        showBuilding();
+            }
+        });
+
+        if(building != null)
+        {
+            goal = buildings.get(pointers.get(building));
+            setUpMap();
+            new OverlayTask().execute();
+        }
+        else
+        {
+            toast = Toast.makeText(getApplicationContext(), "             Click a marker for building name  \n" +
+                    " or press SELECT BUILDING below to search", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0 , 0);
+            toast.show();
         }
     }
 
@@ -183,7 +255,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             if(line != null)
                 line.remove();
-            createPath(marker.getTitle());
+            goal = buildings.get(marker.getTitle());
+            roomNum = 999;
+            setUpMap();
+            new OverlayTask().execute();
             return true;
         }
         last = marker.getTitle();
@@ -193,10 +268,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return true;
     }
 
-    private void createPath (String building)
+    private void setUpMap()
+    {
+        mMap.clear();
+        cleanUpOverlays();
+        upButton.setVisibility(View.INVISIBLE);
+        downButton.setVisibility(View.INVISIBLE);
+        createPath();
+    }
+
+    private void createPath()
     {
         if (locationCheck())
-            makePath(building);
+            makePath();
         else
         {
             toast.setText("Unable to route.\nPlease enable location in your device settings");
@@ -204,7 +288,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private void makePath(String building)
+    private void makePath()
     {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -220,13 +304,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return;
             }
             following = true;
-            mMap.clear();
-            Building goal = buildings.get(building);
-            mMap.addMarker(new MarkerOptions()
-                    .position(goal.getLocation())
-                    .title(goal.getName())
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
+            /**
+            pos = new CameraPosition.Builder()
+                    .target(latLng)
+                    .zoom(20)
+                    .tilt(75)
+                    .build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+             **/
             String url = getDirections(latLng, getClosestEntrance(goal, latLng));
             DownloadTask downloadTask = new DownloadTask();
             downloadTask.execute(url);
@@ -268,11 +353,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             NodeList places = doc.getElementsByTagName("building");
             for(int i = 0; i < places.getLength(); i++)
             {
-
-                Element building = (Element)places.item(i);
-                String name = building.getAttribute("name");
-                String abbr = building.getAttribute("abbr");
-                String temp1 = building.getAttribute("location");
+                Element nextBuilding = (Element)places.item(i);
+                String name = nextBuilding.getAttribute("name");
+                String abbr = nextBuilding.getAttribute("abbr");
+                String temp1 = nextBuilding.getAttribute("location");
                 String[] loc = temp1.split(",");
                 Building current = new Building(name,
                                                 abbr,
@@ -280,25 +364,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 buildings.put(name, current);
                 pointers.put(abbr, name);
-                if(building.getAttribute("default").equals("T"))
+
+                String sw = nextBuilding.getElementsByTagName("SWBounds").item(0).getTextContent();
+                String ne = nextBuilding.getElementsByTagName("NEBounds").item(0).getTextContent();
+                current.setBounds(sw, ne);
+
+                NodeList doors = nextBuilding.getElementsByTagName("entrance");
+                for(int k = 0; k < doors.getLength(); k++)
+                {
+                    Element door = (Element)doors.item(k);
+                    String[] temp2 = door.getTextContent().split(",");
+                    current.addEntrance(new LatLng(Double.parseDouble(temp2[0]), Double.parseDouble(temp2[1])));
+                }
+
+                if(nextBuilding.getAttribute("default").equals("T"))
                     mMap.addMarker(new MarkerOptions()
                             .position(current.getLocation())
                             .title(name)
                             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
-                NodeList doors = building.getElementsByTagName("entrance");
-                for(int j = 0; j < doors.getLength(); j++)
-                {
-                    Element door = (Element)doors.item(j);
-                    String[] temp2 = door.getTextContent().split(",");
-                    current.addEntrance(new LatLng(Double.parseDouble(temp2[0]), Double.parseDouble(temp2[1])));
-                }
+                NodeList floors = nextBuilding.getElementsByTagName("floor");
+                buildings.get(current.getName()).setFloors(floors.getLength());
             }
-            Log.i("!!!!!", pointers.toString());
         }
         catch(Exception e)
         {
-            Log.i(TAG, e.toString());
+            Log.i("!!!!!", e.toString());
         }
     }
 
@@ -350,6 +441,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 distance = check;
             }
         }
+        arrival = new LatLngBounds(new LatLng(val.latitude - .0001, val.longitude - .0001),
+                                   new LatLng(val.latitude + .0001, val.longitude + .0001) );
         return val;
     }
 
@@ -400,24 +493,203 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         if(following)
         {
-            if(location.hasBearing())
+            check++;
+            if(check % 3 == 0)
             {
-                pos = new CameraPosition.Builder()
-                        .target(new LatLng(location.getLatitude(), location.getLongitude()))
-                        .zoom(20)
-                        .tilt(75)
-                        .bearing(location.getBearing())
-                        .build();
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+                /**
+                if (location.hasBearing())
+                {
+                    pos = new CameraPosition.Builder()
+                            .target(new LatLng(location.getLatitude(), location.getLongitude()))
+                            .zoom(20)
+                            .tilt(75)
+                            .bearing(location.getBearing())
+                            .build();
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+                }
+                else
+                {
+                    pos = new CameraPosition.Builder()
+                            .target(new LatLng(location.getLatitude(), location.getLongitude()))
+                            .zoom(20)
+                            .tilt(75)
+                            .build();
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+                } **/
+                check = 0;
             }
-            else
+            if(arrival != null)
+                if(arrival.contains(new LatLng(location.getLatitude(), location.getLongitude())))
+                {
+
+                    showBuilding();
+                }
+        }
+    }
+
+    private void showBuilding()
+    {
+        overlayIndoorMap();
+        if(dotOverlay != null)
+        {
+            dot = mMap.addGroundOverlay(dotOverlay);
+            if((roomNum / 100) != 1)
+                dot.setVisible(false);
+        }
+        if(goal.getBounds() != null)
+        mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(goal.getBounds(), 0));
+        upButton.setVisibility(View.VISIBLE);
+        downButton.setVisibility(View.INVISIBLE);
+        following = false;
+    }
+
+    private void doPopup(View v) {
+        PopupMenu popupMenu = new PopupMenu(this,v);
+        int i = 0;
+        for(String key : buildings.keySet())
+            popupMenu.getMenu().add(Menu.NONE, i, i++, key);
+
+        popupMenu.setOnMenuItemClickListener(
+                new PopupMenu.OnMenuItemClickListener()
+                {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item)
+                    {
+                        if(item.getItemId()!=-1)
+                        {
+                            for (String name : buildings.keySet())
+                                if ((item.getTitle()).equals(name))
+                                {
+                                    roomNum = 999;
+                                    goal = buildings.get(name);
+                                    setUpMap();
+                                    new OverlayTask().execute();
+                                }
+                            return true;
+                        }
+                        else
+                            return false;
+                    }
+                }
+        );
+        popupMenu.show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void overlayIndoorMap()
+    {
+        for(int i = 0; i < overlayOptionsList.size(); i++)
+        {
+            buildingOverlay.add(mMap.addGroundOverlay(overlayOptionsList.get(i)));
+            buildingOverlay.get(i).setVisible(false);
+        }
+        buildingOverlay.get(0).setVisible(true);
+    }
+
+    private void cleanUpOverlays()
+    {
+        buildingOverlay.clear();
+        overlayOptionsList.clear();
+        dotOverlay = null;
+        dot = null;
+    }
+
+    private void adjustButtons(int direction)
+    {
+        if(dot != null)
+            dot.setVisible(false);
+        index += direction;
+        if(index == -1 || index == goal.getFloors())
+        {
+            index -= direction;
+            return;
+        }
+
+        buildingOverlay.get(index - direction).setVisible(false);
+        buildingOverlay.get(index).setVisible(true);
+        if(index == (roomNum / 100) - 1)
+            if(dot != null)
+                dot.setVisible(true);
+    }
+
+    private class OverlayTask extends AsyncTask<Void, Void, Void>
+    {
+        @Override
+        protected Void doInBackground(Void... params)
+        {
+            findMyClass();
+            return null;
+        }
+
+        private void getRoom()
+        {
+            try
             {
-                pos = new CameraPosition.Builder()
-                        .target(new LatLng(location.getLatitude(), location.getLongitude()))
-                        .zoom(20)
-                        .tilt(75)
-                        .build();
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
+                InputStream xmlFile = getApplicationContext().getAssets().open("CampusLocations");
+                DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+                DocumentBuilder db = dbf.newDocumentBuilder();
+                Document doc = db.parse(xmlFile);
+                NodeList places = doc.getElementsByTagName("building");
+                for(int i = 0; i < places.getLength(); i++)
+                {
+                    Element next = (Element)places.item(i);
+                    String name = next.getAttribute("name");
+                    if(name.equals(goal.getName()))
+                    {
+                        NodeList rooms =  ((Element)(next.getElementsByTagName("floor")
+                                                         .item((roomNum / 100) - 1)))
+                                                         .getElementsByTagName("room");
+                        for(int k = 0; k < rooms.getLength(); k++)
+                        {
+                            Element room = (Element)rooms.item(k);
+                            int num = Integer.parseInt(room.getAttribute("num"));
+                            if (num == roomNum)
+                            {
+                                String temp1 = room.getTextContent();
+                                String[] loc = temp1.split(",");
+                                dotOverlay = new GroundOverlayOptions()
+                                        .image(BitmapDescriptorFactory.fromResource(R.drawable.roomdot))
+                                        .position(new LatLng(Double.parseDouble(loc[0]), Double.parseDouble(loc[1])), 5f);
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Log.i("!!ERROR", e.toString());
+            }
+        }
+
+        private void findMyClass()
+        {
+            LatLngBounds bounds = goal.getBounds();
+            if(goal.getFloors() > 1)
+            {
+                for (int i = 1; i < goal.getFloors() + 1; i++)
+                {
+                    String fileName = goal.getName() + i + ".gif";
+                    overlayOptionsList.add(new GroundOverlayOptions()
+                            .image(BitmapDescriptorFactory.fromAsset(fileName))
+                            .positionFromBounds(bounds)
+                            .transparency(0f));
+                }
+                if(roomNum != 999)
+                    getRoom();
             }
         }
     }
@@ -470,7 +742,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private class DownloadTask extends AsyncTask<String, Void, String>
     {
 
-        // Downloading data in non-ui thread
         @Override
         protected String doInBackground(String... url)
         {
@@ -489,18 +760,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return data;
         }
 
-        // Executes in UI thread, after the execution of
-        // doInBackground()
         @Override
         protected void onPostExecute(String result)
         {
             super.onPostExecute(result);
-
             ParserTask parserTask = new ParserTask();
-
-            // Invokes the thread for parsing the JSON data
             parserTask.execute(result);
-
         }
     }
 
@@ -575,7 +840,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     b = encoded.charAt(index++) - 63;
                     result |= (b & 0x1f) << shift;
                     shift += 5;
-                    Log.i("!!!!!", String.valueOf(b));
+                    //Log.i("!!!!!", String.valueOf(b));
                 } while (b >= 0x20);
                 //Log.i("!!!!!", "Lng done");
                 lng += ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
@@ -583,54 +848,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             return poly;
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-    class MyListener implements View.OnClickListener {
-
-        public void onClick(View v) {
-
-
-            doPopup(v);
-        }
-    }
-    private void doPopup(View v) {
-        PopupMenu popupMenu = new PopupMenu(this,v);
-        int i = 0;
-        for(String key : buildings.keySet())
-            popupMenu.getMenu().add(Menu.NONE, i, i++, key);
-
-        popupMenu.setOnMenuItemClickListener(
-                new PopupMenu.OnMenuItemClickListener()
-                {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item)
-                    {
-                        if(item.getItemId()!=-1)
-                        {
-                            for (String name : buildings.keySet())
-                                if (((String) item.getTitle()).equals(name))
-                                    createPath(name);
-                            return true;
-                        }
-                        else
-                            return false;
-                    }
-                }
-        );
-        popupMenu.show();
     }
 }

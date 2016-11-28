@@ -2,43 +2,143 @@
 <buildings>
     <building name = "Mabee Library" abbr = "MA" location = "39.033747,-95.702322" default = "T">
         <entrance h = "T">39.033924,-95.702263</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Rec Center" abbr = "SR" location = "39.032313,-95.700788" default = "T">
         <entrance h = "T">39.032431,-95.700976</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Art Building" abbr = "AB" location = "39.032402,-95.701571" default = "T">
         <entrance h = "T">39.032295,-95.701399</entrance>
         <entrance h = "T">39.032498,-95.701690</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "KBI Forensics" abbr = "KBI" location = "39.032410,-95.697564" default = "T">
         <entrance h = "T">39.032698, -95.697610</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Falley Field" abbr = "FF" location = "39.031114,-95.703242" default = "F">
         <entrance h = "T">39.031483,-95.703706</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
     </building>
     <building name = "Washburn Village" abbr = "WV" location = "39.031129,-95.704874" default = "F">
         <entrance h = "T">39.031632,-95.704309</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Petro Allied Health" abbr = "PC" location = "39.033646,-95.699049" default = "T">
         <entrance h = "T">39.033410,-95.698595</entrance>
         <entrance h = "T">39.033978,-95.698511</entrance>
         <entrance h = "F">39.034003,-95.699480</entrance>
         <entrance h = "T">39.033380,-95.699462</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Stoffer" abbr = "ST" location = "39.035968,-95.698603" default = "T">
         <entrance h = "T">39.035904,-95.699010</entrance>
         <entrance h = "F">39.036117,-95.699229</entrance>
         <entrance h = "T">39.036176,-95.698544</entrance>
         <entrance h = "T">39.035984,-95.698131</entrance>
+        <NEBounds> 39.036284, -95.698082 </NEBounds>
+        <SWBounds> 39.035901, -95.699198 </SWBounds>
+        <floor num = "1">
+            <room  num= "100">39.0359787316516, -95.69900080561638</room>
+            <room  num= "101">39.03594748053163, -95.69909770041703</room>
+            <room  num= "102">39.036062849180865, -95.69906417280437</room>
+            <room  num= "103">39.03594826180983, -95.69885428994894</room>
+            <room  num= "104">39.035926125591715, -95.69884557276964</room>
+            <room  num= "105">39.03595216820052, -95.69876477122307</room>
+            <room  num= "106">39.03606206790397, -95.6988351792097</room>
+            <room  num= "107">39.03595841842521, -95.69866854697466</room>
+            <room  num= "108">39.03605685939106, -95.69864273071288</room>
+            <room  num= "109">39.03596571035332, -95.69856829941273</room>
+            <room  num= "110">39.03603967129581, -95.69834735244514</room>
+            <room  num= "111">39.03595503288691, -95.69843988865614</room>
+            <room  num= "112">39.03603758789003, -95.6982444226742</room>
+            <room  num= "113">39.03595373075673, -95.6983507052064</room>
+            <room  num= "114">39.03599409678054, -95.69816395640373</room>
+            <room  num= "115">39.035958157999175, -95.69825984537601</room>
+            <room  num= "116">39.03607691216359, -95.69815926253796</room>
+            <room  num= "117">39.036069880672585, -95.69816093891858</room>
+            <room  num= "118">39.03616311297812, -95.69816831499338</room>
+            <room  num= "119">39.03609722535596, -95.69825414568184</room>
+            <room  num= "120">39.03616024830015, -95.6982521340251</room>
+            <room  num= "121">39.03615608149566, -95.69833159446716</room>
+            <room  num= "122">39.036096964930444, -95.69830879569055</room>
+            <room  num= "123">39.03609488152637, -95.69831147789955</room>
+            <room  num= "124">39.036180301043345, -95.69842983037233</room>
+            <room  num= "128">39.036195926553575, -95.69866854697466</room>
+            <room  num= "130">39.036200093355745, -95.69879058748485</room>
+            <room  num= "131">39.036087329186046, -95.69874331355093</room>
+            <room  num= "132">39.036144622782054, -95.69879159331322</room>
+            <room  num= "134">39.03619254102667, -95.69891463965178</room>
+            <room  num= "136">39.03620868738439, -95.69900818169117</room>
+            <room  num= "138">39.03618368657088, -95.69909233599901</room>
+        </floor>
+        <floor num = "2">
+            <room  num= "201">39.03596883546513, -95.69867257028818</room>
+            <room  num= "202">39.036026910434494, -95.69874666631222</room>
+            <room  num= "203">39.035946959679514, -95.69878589361906</room>
+            <room  num= "204">39.03602378532525, -95.6986977159977</room>
+            <room  num= "205">39.0359513869224, -95.6985941156745</room>
+            <room  num= "206">39.03600295126007, -95.69868564605713</room>
+            <room  num= "207">39.03595763714714, -95.69852907210588</room>
+            <room  num= "208">39.036020660215854, -95.69863937795162</room>
+            <room  num= "209">39.03595659544305, -95.69843284785748</room>
+            <room  num= "210">39.036034462781274, -95.69852706044911</room>
+            <room  num= "211">39.0359513869224, -95.69828297942875</room>
+            <room  num= "212">39.03604019214723, -95.6984204426408</room>
+            <room  num= "214">39.03603706703858, -95.6983781978488</room>
+            <room  num= "216">39.03603993172151, -95.69828297942875</room>
+            <room  num= "218">39.036028212563295, -95.6982035189867</room>
+            <room  num= "220">39.036008159776955, -95.69815356284379</room>
+        </floor>
+        <floor num = "3">
+            <room  num= "301">39.03594904308797, -95.69881204515697</room>
+            <room  num= "302">39.03601753510633, -95.69884926080704</room>
+            <room  num= "303">39.03597170015083, -95.69876912981273</room>
+            <room  num= "304">39.036027952137545, -95.69874901324509</room>
+            <room  num= "305">39.03596935631706, -95.69867927581073</room>
+            <room  num= "306">39.036026910434494, -95.69870073348284</room>
+            <room  num= "307">39.03594930351402, -95.6985491886735</room>
+            <room  num= "308">39.03600972233194, -95.69868866354227</room>
+            <room  num= "309">39.03594904308797, -95.69842681288719</room>
+            <room  num= "310">39.036024566602556, -95.69864541292192</room>
+            <room  num= "311">39.035954251608814, -95.69832187145948</room>
+            <room  num= "312">39.03602951469208, -95.69856964051723</room>
+            <room  num= "313">39.03596128311135, -95.69824676960707</room>
+            <room  num= "314">39.03603836916721, -95.69842513650654</room>
+            <room  num= "316">39.036034462781274, -95.69833058863878</room>
+            <room  num= "318">39.03601414957088, -95.69822732359171</room>
+            <room  num= "320">39.03605451556014, -95.69821156561375</room>
+            <room  num= "321">39.036010764035254, -95.69815993309021</room>
+        </floor>
     </building>
     <building name = "Carnegie" abbr = "CA" location = "39.035052,-95.699930" default = "T">
         <entrance h = "F">39.035140, -95.699922</entrance>
         <entrance h = "T">39.034978, -95.699759</entrance>
         <entrance h = "F">39.034982, -95.700058</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Bennett" abbr = "BT" location = "39.035756,-95.699699" default = "T">
         <entrance h = "T">39.035845,-95.700016</entrance>
         <entrance h = "T">39.035845,-95.699370</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Morgan" abbr = "MO" location = "39.035828,-95.701297" default = "T">
         <entrance h = "T">39.035843, -95.700710</entrance>
@@ -47,30 +147,88 @@
         <entrance h = "F">39.035509,-95.701556</entrance>
         <entrance h = "T">39.035824, -95.701627</entrance>
         <entrance h = "T">39.036050, -95.701156</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Garvey" abbr = "GC" location = "39.036123,-95.702446" default = "T">
         <entrance h = "T">39.035944,-95.702179</entrance>
         <entrance h = "F">39.035857,-95.702761</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Memorial Union" abbr = "UN" location = "39.035041,-95.702324" default = "F">
         <entrance h = "F">39.035506,-95.702301</entrance>
         <entrance h = "T">39.035440,-95.702149</entrance>
         <entrance h = "T">39.035134,-95.702095</entrance>
         <entrance h = "F">39.034805, -95.702487</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Law School" abbr = "LA" location = "39.035390,-95.705430" default = "F">
         <entrance h = "F">39.035745,-95.705369</entrance>
         <entrance h = "T">39.035453,-95.705090</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Food Court" abbr = "SC" location = "39.035258,-95.702774" default = "F">
         <entrance h = "T">39.035407,-95.703028</entrance>
         <entrance h = "F">39.035240,-95.702976</entrance>
         <entrance h = "F">39.035406,-95.702743</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Henderson" abbr = "HC" location = "39.033575,-95.703169" default = "T">
         <entrance h = "T">39.033802,-95.702949</entrance>
         <entrance h = "T">39.033747, -95.703383</entrance>
         <entrance h = "F">39.033439,-95.703451</entrance>
+        <NEBounds> 39.033964, -95.702771 </NEBounds>
+        <SWBounds> 39.033286, -95.703490 </SWBounds>
+        <floor num = "1">
+            <room  num= "100">39.03381013155628, -95.70313207805157</room>
+            <room  num= "101">39.03377367079608, -95.70323903113605</room>
+            <room  num= "102">39.03378356729, -95.7030361890793</room>
+            <room  num= "103">39.033696842704124, -95.70320650935172</room>
+            <room  num= "104">39.03368902967312, -95.70306167006493</room>
+            <room  num= "107">39.03350151667041, -95.70321556180716</room>
+            <room  num= "108">39.03350568363141, -95.70304825901985</room>
+            <room  num= "109">39.033434324389994, -95.70322997868061</room>
+            <room  num= "110">39.03343198047208, -95.70302277803421</room>
+            <room  num= "111">39.03352026799307, -95.70334263145922</room>
+            <room  num= "112">39.03340046779041, -95.70313677191736</room>
+            <room  num= "113">39.03360334670999, -95.70331513881683</room>
+            <room  num= "114">39.033694759229256, -95.70288062095642</room>
+            <room  num= "118">39.03352938321755, -95.7028628513217</room>
+        </floor>
+        <floor num = "2">
+            <room  num= "200">39.033597096277006, -95.70315051823853</room>
+            <room  num= "203">39.033641370165405, -95.70320080965756</room>
+            <room  num= "204">39.03364527668366, -95.70305664092302</room>
+            <room  num= "205">39.03359371062558, -95.70326250046492</room>
+            <room  num= "206">39.033596575407564, -95.70299562066792</room>
+            <room  num= "207">39.03354292583463, -95.70321187376976</room>
+            <room  num= "208">39.03352912278257, -95.70303585380316</room>
+            <room  num= "210">39.03376247213027, -95.70289235562086</room>
+            <room  num= "211">39.03372705308243, -95.70337213575841</room>
+            <room  num= "212">39.03371194789489, -95.70291716605426</room>
+            <room  num= "213">39.03355568714451, -95.7033506780863</room>
+            <room  num= "214">39.033668455354075, -95.70291314274073</room>
+            <room  num= "215">39.033520528428056, -95.70335537195204</room>
+            <room  num= "216">39.03360959714244, -95.70287257432938</room>
+            <room  num= "217">39.03344734615476, -95.70337615907192</room>
+            <room  num= "218">39.03346792053818, -95.70290576666594</room>
+            <room  num= "219">39.03342807394205, -95.70327892899515</room>
+            <room  num= "220">39.03342963655409, -95.70298422127962</room>
+            <room  num= "221">39.03342599045928, -95.70324774831533</room>
+            <room  num= "222">39.03342599045928, -95.70302076637743</room>
+            <room  num= "223">39.03342729263602, -95.70319343358278</room>
+            <room  num= "224">39.03342729263602, -95.70306804031134</room>
+            <room  num= "225">39.033436668307836, -95.70312034338713</room>
+        </floor>
     </building>
     <building name = "Benton" abbr = "BE" location = "39.034282,-95.703344" default = "T">
         <entrance h = "F">39.034199,-95.703197</entrance>
@@ -78,34 +236,61 @@
         <entrance h = "F">39.034404, -95.703587</entrance>
         <entrance h = "T">39.034322, -95.703035</entrance>
         <entrance h = "T">39.034325, -95.703619</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Living Learning Center" abbr = "LLC" location = "39.035273,-95.703514" default = "F">
         <entrance h = "T">39.035231,-95.703554</entrance>
         <entrance h = "T">39.035167,-95.703318</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Mulvane Art Museum" abbr = "MU" location = "39.036045,-95.702911" default = "F">
         <entrance h = "T">39.035983, -95.703011</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "White Concert Hall" abbr = "WC" location = "39.036491,-95.702810" default = "F">
         <entrance h = "T">39.036443, -95.703138</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Alumni Center" abbr = "BTAC" location = "39.036453,-95.703695" default = "F">
         <entrance h = "T">39.036441,-95.703494</entrance>
         <entrance h = "T">39.036270,-95.703666</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "International House" abbr = "IC" location = "39.034847,-95.702829" default = "F">
         <entrance h = "T">39.034766,-95.702814</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Carole Chapel" abbr = "CH" location = "39.034229,-95.702758" default = "F">
         <entrance h = "T">39.034214,-95.702657</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Yager Stadium" abbr = "YS" location = "39.033505,-95.700956" default = "F">
         <entrance h = "T">39.033538,-95.701718</entrance>
         <entrance h = "F">39.034364, -95.700406</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
     <building name = "Whiting FieldHouse" abbr = "WFH" location = "39.034350,-95.698945" default = "F">
         <entrance h = "T">39.034712,-95.698997</entrance>
         <entrance h = "F">39.034712,-95.698997</entrance>
         <entrance h = "F">39.034712,-95.698997</entrance>
+        <NEBounds> placeholder </NEBounds>
+        <SWBounds> placeholder </SWBounds>
+        <floor num = "999"></floor>
     </building>
 </buildings>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rooms>
+    <room number = "100" building = "HC" location = "39.033856, -95.703137">
+    </room>
+    <room number = "101" building = "HC" location = "39.033783, -95.703285">
+    </room>
+    <room number = "102" building = "HC" location = "39.033760, -95.703034">
+    </room>
+    <room number = "103" building = "HC" location = "39.033716, -95.703241">
+    </room>
+    <room number = "104" building = "HC" location = "39.033681, -95.703065">
+    </room>
+    <room number = "107" building = "HC" location = "39.033681, -95.703065">
+    </room>
+    <room number = "108" building = "HC" location = "39.033681, -95.703065">
+    </room>
+    <room number = "109" building = "HC" location = "39.033681, -95.703065">
+    </room>
+    <room number = "110" building = "HC" location = "39.033681, -95.703065">
+    </room>
+    <room number = "112" building = "HC" location = "39.033681, -95.703065">
+    </room>
+
+</rooms>

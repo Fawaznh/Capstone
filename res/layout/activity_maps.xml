@@ -16,16 +16,58 @@
         android:id="@+id/selectBuildingButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="100dp"
+            android:layout_height="250dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical"
+            android:id="@+id/buttonLayout"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/map"
+            android:layout_alignEnd="@+id/map">
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="100dp"
+            android:layout_height="250dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical"
+            android:id="@+id/startingButtonLayout"
+            android:layout_alignTop="@+id/buttonLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+        </LinearLayout>
+
         <TextView android:id="@+id/displayBuildingTextView"
-        android:layout_width="fill_parent"
-        android:textSize="15sp"
-        android:layout_height="fill_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
+            android:layout_width="fill_parent"
+            android:textSize="15sp"
+            android:layout_height="fill_parent"
+            android:textStyle="bold"
+            android:layout_alignTop="@+id/startingButtonLayout"
+            android:layout_alignEnd="@+id/selectBuildingButton"
+            android:layout_marginEnd="95dp"
+            android:layout_marginTop="185dp" />
+
+        <Button
+            android:text="Floor 1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DownButton"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/selectBuildingButton"
+            android:layout_marginEnd="10dp" />
+
+        <Button
+            android:text="Floor 2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UpButton"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/selectBuildingButton"
+            android:layout_marginStart="11dp" />
 
 </RelativeLayout>
 
