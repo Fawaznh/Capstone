@@ -24,10 +24,9 @@ import java.util.ArrayList;
 
 public class MyCoursesActivity extends AppCompatActivity
 {
-    private Button removeBtn,doneBtn,cancelBtn,addBtn;
+    private Button removeBtn,doneBtn,cancelBtn;
     private ListView listView;
     private CourseViewAdapter courseViewAdapter;
-    private ArrayList<MyCourse> values;
     private ArrayList<MyCourse> myCourses;
     private SharedPrefs sharedPrefs;
 
@@ -310,7 +309,7 @@ public class MyCoursesActivity extends AppCompatActivity
         Intent intent = new Intent(view.getContext(), MapsActivity.class);
         intent.putExtra("building", myc.bldg);
         intent.putExtra("room", myc.room);
-        Log.d("ItemClicked", "pos: "+position + " bldg: "+myc.bldg+ " room: "+myc.room);
+        //Log.d("ItemClicked", "pos: "+position + " bldg: "+myc.bldg+ " room: "+myc.room);
         startActivity(intent);
 
     }
