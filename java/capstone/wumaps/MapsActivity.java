@@ -64,8 +64,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private CameraPosition pos;
     private String last;
-    private int index =  0;
+    private int index;
     private int check;
+    private boolean handicapOnly;
     private GoogleApiClient mGoogleApiClient;
     public static final String TAG = MapsActivity.class.getSimpleName();
     private TreeMap<String, Building> buildings = new TreeMap<>();
@@ -85,7 +86,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Toast toast;
     private Building goal;
     private LatLngBounds arrival;
-    private LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
+    private final LatLngBounds campus = new LatLngBounds(new LatLng(39.029671, -95.706220), new LatLng(39.036934, -95.696822));
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -149,6 +150,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .setInterval(3 * 1000)
                 .setFastestInterval(1 * 1000);
 
+        handicapOnly = MainActivity.isHandicapEnabled();
         Bundle extrasBundle= getIntent().getExtras();
         if(extrasBundle != null)
         {
@@ -194,7 +196,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onMapClick(LatLng latLng)
             {
-                //Log.i("!!!!!", "<room  num= \"" + count++ + "\">" + latLng.latitude + ", " + latLng.longitude + "</room>");
                 if(arrival != null)
                     if(arrival.contains(latLng))
                         showBuilding();
@@ -373,6 +374,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 for(int k = 0; k < doors.getLength(); k++)
                 {
                     Element door = (Element)doors.item(k);
+                    if(handicapOnly)
+                    {
+                        handicapCheck(door, current);
+                        continue;
+                    }
                     String[] temp2 = door.getTextContent().split(",");
                     current.addEntrance(new LatLng(Double.parseDouble(temp2[0]), Double.parseDouble(temp2[1])));
                 }
@@ -389,7 +395,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         catch(Exception e)
         {
-            Log.i("!!!!!", e.toString());
+            Log.i(TAG, e.toString());
         }
     }
 
@@ -444,6 +450,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         arrival = new LatLngBounds(new LatLng(val.latitude - .0001, val.longitude - .0001),
                                    new LatLng(val.latitude + .0001, val.longitude + .0001) );
         return val;
+    }
+
+    private void handicapCheck(Element door, Building current)
+    {
+        if(door.getAttribute("h").equals("T"))
+        {
+            String[] temp2 = door.getTextContent().split(",");
+            current.addEntrance(new LatLng(Double.parseDouble(temp2[0]), Double.parseDouble(temp2[1])));
+        }
+
     }
 
     private String downloadUrl(String strUrl) throws IOException
@@ -827,9 +843,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     b = encoded.charAt(index++) - 63;
                     result |= (b & 0x1f) << shift;
                     shift += 5;
-                    //Log.i("!!!!!", String.valueOf(b));
+                    //Log.i(TAG, String.valueOf(b));
                 } while (b >= 0x20);
-                //Log.i("!!!!!", "Lat done");
+                //Log.i(TAG, "Lat done");
                 lat += ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
 
                 shift = 0;
@@ -840,9 +856,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     b = encoded.charAt(index++) - 63;
                     result |= (b & 0x1f) << shift;
                     shift += 5;
-                    //Log.i("!!!!!", String.valueOf(b));
+                    //Log.i(TAG, String.valueOf(b));
                 } while (b >= 0x20);
-                //Log.i("!!!!!", "Lng done");
+                //Log.i(TAG, "Lng done");
                 lng += ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
                 poly.add(new LatLng((((double) lat / 1E5)), (((double) lng / 1E5))));
             }
