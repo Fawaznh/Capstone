@@ -305,14 +305,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return;
             }
             following = true;
-            /**
+
             pos = new CameraPosition.Builder()
                     .target(latLng)
                     .zoom(20)
                     .tilt(75)
                     .build();
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
-             **/
+
             String url = getDirections(latLng, getClosestEntrance(goal, latLng));
             DownloadTask downloadTask = new DownloadTask();
             downloadTask.execute(url);
@@ -512,7 +512,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             check++;
             if(check % 3 == 0)
             {
-                /**
                 if (location.hasBearing())
                 {
                     pos = new CameraPosition.Builder()
@@ -531,7 +530,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             .tilt(75)
                             .build();
                     mMap.animateCamera(CameraUpdateFactory.newCameraPosition(pos));
-                } **/
+                }
                 check = 0;
             }
             if(arrival != null)
@@ -727,6 +726,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 // Starts parsing data
                 routes = parser.parse(jObject);
+                Log.i("!!!!", routes.toString());
             }
             catch(Exception e)
             {
@@ -739,7 +739,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         @Override
         protected void onPostExecute(List<double[]> result)
         {
-
             ArrayList<LatLng> points = new ArrayList<>();
 
             for(int j = 0; j < result.size(); j++)
@@ -794,23 +793,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             try
             {
-                JSONArray jLegs = ((JSONObject)jObject.getJSONArray("routes").get(0)).getJSONArray("legs");
+                JSONArray legs = ((JSONObject)jObject.getJSONArray("routes").get(0)).getJSONArray("legs");
 
-                /** Traversing all legs */
-                for(int j = 0; j < jLegs.length(); j++)
+                for(int i = 0; i < legs.length(); i++)
                 {
-                    JSONArray jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+                    JSONArray steps = ( (JSONObject)legs.get(i)).getJSONArray("steps");
 
-                    /** Traversing all steps */
-                    for(int k=0; k<jSteps.length(); k++)
+                    for(int j = 0; j < steps.length(); j++)
                     {
-                        String polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
+                        String polyline = (String)((JSONObject)((JSONObject)steps.get(j)).get("polyline")).get("points");
                         List<LatLng> list = decodePoly(polyline);
 
-                        /** Traversing all points */
-                        for(int l = 0; l < list.size(); l++)
+                        for(int k = 0; k < list.size(); k++)
                         {
-                            double[] vals = {list.get(l).latitude, list.get(l).longitude};
+                            double[] vals = {list.get(k).latitude, list.get(k).longitude};
                             route.add(vals);
                         }
                     }
@@ -833,18 +829,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             List<LatLng> poly = new ArrayList<LatLng>();
             int index = 0, len = encoded.length();
             int lat = 0, lng = 0;
-
             while (index < len)
             {
-                int b, shift = 0, result = 0;
+                int currentChar, shift = 0, result = 0;
 
                 do
                 {
-                    b = encoded.charAt(index++) - 63;
-                    result |= (b & 0x1f) << shift;
+                    currentChar = encoded.charAt(index++) - 63;
+                    result |= (currentChar & 0x1f) << shift;
                     shift += 5;
                     //Log.i(TAG, String.valueOf(b));
-                } while (b >= 0x20);
+                } while (currentChar >= 0x20);
                 //Log.i(TAG, "Lat done");
                 lat += ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
 
@@ -853,11 +848,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 do
                 {
-                    b = encoded.charAt(index++) - 63;
-                    result |= (b & 0x1f) << shift;
+                    currentChar = encoded.charAt(index++) - 63;
+                    result |= (currentChar & 0x1f) << shift;
                     shift += 5;
                     //Log.i(TAG, String.valueOf(b));
-                } while (b >= 0x20);
+                } while (currentChar >= 0x20);
                 //Log.i(TAG, "Lng done");
                 lng += ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
                 poly.add(new LatLng((((double) lat / 1E5)), (((double) lng / 1E5))));
