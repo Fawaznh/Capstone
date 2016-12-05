@@ -1,27 +1,21 @@
 package capstone.wumaps;
 
-import android.app.AlertDialog.Builder;
+
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
 import android.widget.Switch;
-import android.widget.TextView;
 
-import static capstone.wumaps.R.drawable.test2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         this.eventsButton = (Button) findViewById(R.id.eventsButton);
         this.eventsButton.setOnClickListener(new MyListener());
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-            findViewById(R.id.choicesTextView).setBackgroundResource(R.drawable.test2);
+            findViewById(R.id.choicesTextView).setBackgroundResource(R.drawable.hbckgrnd);
 
 
         //init shared preferences with main key for this App
