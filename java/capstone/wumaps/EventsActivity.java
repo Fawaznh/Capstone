@@ -21,7 +21,9 @@ public class EventsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
         Intent intent = getIntent();
-        new EventParser().execute();
+        //No longer functioning as of 12-9-16
+        //Active Calendar has an API that you could request a key from.
+        //new EventParser().execute();
     }
 
     @Override
@@ -51,7 +53,7 @@ public class EventsActivity extends AppCompatActivity
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                Document doc = Jsoup.connect("http://go.activecalendar.com/washburn").get();
+                Document doc = Jsoup.connect("http://go.activecalendar.com/washburn/").get();
                 Elements wrapper = doc.select("section.list-event-preview");
 
                 for (Element element : wrapper) {
