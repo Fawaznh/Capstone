@@ -28,10 +28,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FindClassActivity"
-            android:label="FindClassActivity" >
-        </activity>
-        <activity
             android:name=".MapsActivity"
             android:label="MapsActivity" >
         </activity>

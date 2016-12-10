@@ -428,9 +428,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private boolean isContained(LatLng loc)
     {
-        //if(campus.contains(loc))
+        if(campus.contains(loc))
             return true;
-        //return false;
+        return false;
     }
 
     private LatLng getClosestEntrance(Building building, LatLng user)
